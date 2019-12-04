@@ -10,9 +10,12 @@ const MostrarVoltas = (props) => {
 }
 
 const MostarTempo = (props) => {
+  const tempo = props.tempo
+  const minutos = Math.round(tempo / 60)
+  const segundos = tempo % 60
   return (
     <p>
-      {props.tempo}<br />
+      {`${minutos}:${segundos}`}<br />
       Tempo medio por volta
     </p>
   )
