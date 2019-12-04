@@ -13,6 +13,8 @@ const MostarTempo = (props) => {
   const tempo = props.tempo
   const minutos = Math.round(tempo / 60)
   const segundos = tempo % 60
+  const minutosStr = minutos < 10 ? '0' + minutos : minutos
+  const segundosStr = segundos < 10 ? '0' + segundos : segundos
   return (
     <p>
       {`${minutos}:${segundos}`}<br />
@@ -55,14 +57,20 @@ function App() {
     setNumVoltas(numVoltas-1)
   }
 
+  const reset = () => {
+    setNumVoltas(0)
+    setTempo(0)
+  }
+
   return (
     <div className="App">
       <MostrarVoltas voltas={numVoltas} />
       <Button text='+' onClick={increment}/>
       <Button text='-' onClick={decrement}/>
-      <MostarTempo tempo={tempo} />
+      { numVoltas > 0 &&
+        <MostarTempo tempo={tempo/numVoltas} /> }
       <Button text='Iniciar' onClick={toggleRunning} />
-      <Button text='Reiniciar' />
+      <Button text='Reiniciar' onClick={reset}/>
     </div>
   );
 }
