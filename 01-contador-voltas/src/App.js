@@ -68,7 +68,8 @@ function App() {
       <Button text='+' onClick={increment}/>
       <Button text='-' onClick={decrement}/>
       { numVoltas > 0 &&
-        <MostarTempo tempo={tempo/numVoltas} /> }
+        <MostarTempo tempo={Math.round(tempo/numVoltas)} /> 
+      }
       <Button text='Iniciar' onClick={toggleRunning} />
       <Button text='Reiniciar' onClick={reset}/>
     </div>
