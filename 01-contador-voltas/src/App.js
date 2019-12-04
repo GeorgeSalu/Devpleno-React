@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const MostrarVoltas = (props) => {
   return (
@@ -24,6 +24,12 @@ function App() {
 
   const [numVoltas, setNumVoltas] = useState(14)
   const [tempo, setTempo] = useState(0)
+
+  useEffect(() => {
+    setInterval(() => {
+      console.log('chamou')
+    }, 1000)
+  }, [])
 
   const increment = () => {
     setNumVoltas(numVoltas+1)
