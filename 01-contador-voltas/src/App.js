@@ -1,29 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
-const MostrarVoltas = (props) => {
-  return (
-    <p>
-      {props.voltas} <br/>
-      Voltas
-    </p>
-  )
-}
-
-const MostarTempo = (props) => {
-  const tempo = props.tempo
-  const minutos = Math.round(tempo / 60)
-  const segundos = tempo % 60
-  const minutosStr = minutos < 10 ? '0' + minutos : minutos
-  const segundosStr = segundos < 10 ? '0' + segundos : segundos
-  return (
-    <p>
-      {`${minutos}:${segundos}`}<br />
-      Tempo medio por volta
-    </p>
-  )
-}
-
-const Button = (props) => <button onClick={props.onClick}>{props.text}</button>
+import MostrarVoltas from './MostarVoltas'
+import MostarTempo from './MostrarTempo'
+import Button from './Button'
 
 function App() {
 
@@ -54,7 +32,9 @@ function App() {
   }
 
   const decrement = () => {
-    setNumVoltas(numVoltas-1)
+    if(numVoltas > 0) {
+      setNumVoltas(numVoltas-1)
+    }
   }
 
   const reset = () => {
