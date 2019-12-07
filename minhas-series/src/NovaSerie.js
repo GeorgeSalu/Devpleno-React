@@ -30,7 +30,7 @@ const NovaSerie = () => {
           <label >Nome</label>
           <input type='text' value={name} onChange={onChange} className='form-control' id='name' placeholder='Nome da Serie'/>
         </div>
-        <button type='button' onClick={save} className='btn btn-primary'>Salvar Genero</button>
+        <button type='button' onClick={save} className='btn btn-primary'>Salvar Serie</button>
       </form>
     </div>
   )
