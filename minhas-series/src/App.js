@@ -29,7 +29,6 @@ function App() {
         <Header />
         <Route path='/' exact component={Home}/>
         <Route path='/generos'  component={Generos}/>
-        <pre>{JSON.stringify(data)}</pre>
       </div>
     </Router>
   );
