@@ -20,7 +20,7 @@ const NovoGenero = () => {
       <h1>Novo Genero</h1>
       <form>
         <div className='form-group'>
-          <label for='name'>Nome</label>
+          <label >Nome</label>
           <input type='text' value={name} onChange={onChange} className='form-control' id='name' placeholder='Nome do genero'></input>
         </div>
         <button type='button' onClick={save} className='btn btn-primary'>Salvar Genero</button>
