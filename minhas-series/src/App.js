@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './Header'
 import Generos from './Generos'
 import NovoGenero from './NovoGenero'
+import EditarGenero from './EditarGenero'
 import axios from 'axios'
 
 import {
@@ -12,6 +13,7 @@ import {
 const Home = () => {
   return <h1>Home</h1>
 }
+
 
 function App() {
 
@@ -30,6 +32,7 @@ function App() {
         <Route path='/' exact component={Home}/>
         <Route path='/generos' exact  component={Generos}/>
         <Route path='/generos/novo' exact component={NovoGenero}/>
+        <Route path='/generos/:id' exact component={EditarGenero}/>
       </div>
     </Router>
   );
