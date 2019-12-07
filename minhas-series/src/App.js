@@ -4,6 +4,7 @@ import Generos from './Generos'
 import NovoGenero from './NovoGenero'
 import EditarGenero from './EditarGenero'
 import Series from './Series'
+import NovaSerie from './NovaSerie'
 import axios from 'axios'
 
 import {
@@ -30,6 +31,7 @@ function App() {
           <Route path='/generos/novo' exact component={NovoGenero}/>
           <Route path='/generos/:id' exact component={EditarGenero}/>
           <Route path='/series' exact component={Series}/>
+          <Route path='/series/novo' exact component={NovaSerie}/>
         </Switch>
       </div>
     </Router>

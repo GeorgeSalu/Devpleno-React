@@ -39,6 +39,7 @@ const Generos = () => {
     return (
       <div className='container'>
         <h1>Generos</h1>
+        <Link to='/generos/novo' className='btn btn-primary'>Novo Genero</Link>
         <div className='alert alert-warning' role='alert'>
           Voce nao possui generos criados.
         </div>

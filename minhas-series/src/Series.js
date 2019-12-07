@@ -13,8 +13,8 @@ const Series = () => {
       })
   }, [])
 
-  const deleteGenero = id => {
-    axios.delete('/api/genres/'+id)
+  const deleteSerie = id => {
+    axios.delete('/api/series/'+id)
       .then(res => {
         const filtrado = data.filter(item => item.id !== id)
         setData(filtrado)
@@ -27,7 +27,7 @@ const Series = () => {
         <th>{record.id}</th>
         <td>{record.name}</td>
         <td>
-          <button onClick={() => deleteGenero(record.id)} className='btn btn-danger'>remover</button>
+          <button onClick={() => deleteSerie(record.id)} className='btn btn-danger'>remover</button>
           <Link to={'/generos/' + record.id} className='btn btn-info'>Editar</Link>
         </td>
 
@@ -38,9 +38,10 @@ const Series = () => {
   if(data.length === 0) {
     return (
       <div className='container'>
-        <h1>Generos</h1>
+        <h1>Series</h1>
+        <Link to='/series/novo' className='btn btn-primary'>Nova Serie</Link>
         <div className='alert alert-warning' role='alert'>
-          Voce nao possui generos criados.
+          Voce nao possui series criadas.
         </div>
       </div>
     )
@@ -49,7 +50,7 @@ const Series = () => {
   return (
     <div className='container'>
       <h1>Series</h1>
-      <Link to='/generos/novo' className='btn btn-primary'>Nova Serie</Link>
+      <Link to='/series/novo' className='btn btn-primary'>Nova Serie</Link>
       <table className='table table-dark'>
         <thead>
           <tr>
