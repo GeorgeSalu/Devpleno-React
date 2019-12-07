@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from './Header'
+import Generos from './Generos'
 import axios from 'axios'
 
 import {
@@ -11,9 +12,6 @@ const Home = () => {
   return <h1>Home</h1>
 }
 
-const Generos = () => {
-  return <h1>Generos</h1>
-}
 
 function App() {
 
