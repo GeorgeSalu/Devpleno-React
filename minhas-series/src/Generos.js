@@ -13,12 +13,22 @@ const Generos = () => {
       })
   }, [])
 
+  const deleteGenero = id => {
+    axios.delete('/api/genres/'+id)
+      .then(res => {
+        const filtrado = data.filter(item => item.id !== id)
+        setData(filtrado)
+      })
+  }
+
   const rederizaLinha = record => {
     return (
       <tr key={record.id}>
         <th>{record.id}</th>
         <td>{record.name}</td>
-        <td><button>+</button></td>
+        <td><button onClick={() => deleteGenero(record.id)}>-</button>
+        </td>
+
       </tr>
     )
   }
