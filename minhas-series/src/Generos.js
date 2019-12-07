@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 const Generos = () => {
   const [data, setData] = useState([])
-    
+
   useEffect(() => {
     axios
       .get('/api/genres')
@@ -36,6 +37,7 @@ const Generos = () => {
   return (
     <div className='container'>
       <h1>Generos</h1>
+      <Link to='/generos/novo'>Novo Genero</Link>
       <table className='table table-dark'>
         <thead>
           <tr>
