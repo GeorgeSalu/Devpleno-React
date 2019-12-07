@@ -10,11 +10,6 @@ import {
   Route
 } from 'react-router-dom'
 
-const Home = () => {
-  return <h1>Home</h1>
-}
-
-
 function App() {
 
   const [data, setData] = useState({})
