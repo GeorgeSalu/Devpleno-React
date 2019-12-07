@@ -24,7 +24,6 @@ function App() {
     <Router>
       <div>
         <Header />
-        <Route path='/' exact component={Home}/>
         <Route path='/generos/:id' exact component={EditarGenero}/>
         <Route path='/generos/novo' exact component={NovoGenero}/>
         <Route path='/generos' exact component={Generos}/>

@@ -17,10 +17,10 @@ const EditarGenero = ({ match }) => {
   const onChange = evt => {
     setName(evt.target.value)
   }
+
   const save = () => {
     axios.put('/api/genres/'+match.params.id, {
-      name,
-
+      name
     })
     .then(res => {
       setSuccess(true)
