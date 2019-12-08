@@ -130,7 +130,7 @@ const InfoSerie = ({ match }) => {
               </label>
             </div>
             <div className='form-check'>
-              <input className='form-ckeck-input' type='radio' name='status' id='paraAssistido' checked={form.status === 'PARA_ASSISTIDO'} value='PARA_ASSISTIDO' checked onChage={seleciona('ASSISTIDO')}/>
+              <input className='form-ckeck-input' type='radio' name='status' id='paraAssistido' checked={form.status === 'PARA_ASSISTIDO'} value='PARA_ASSISTIDO' checked onChange={seleciona('ASSISTIDO')}/>
               <label className='form-check-label' htmlFor='paraAssistido'>
                 Para assistir
               </label>
