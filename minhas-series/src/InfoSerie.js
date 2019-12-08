@@ -5,16 +5,17 @@ import { Badge } from 'reactstrap'
 
 const InfoSerie = ({ match }) => {
 
-  const [name, setName] = useState('')
+  const [form, setForm] = useState({})
   const [success, setSuccess] = useState(false)
   const [mode, setMode] = useState('INFO')
 
   const [data, setData] = useState({})
   useEffect(() => {
     axios
-      .get('/api/series' + match.params.id)
+      .get('/api/series/' + match.params.id)
       .then(res => {
-        setData(res.data.data)
+        setData(res.data)
+        setForm(res.data)
       })
   }, [match.params.id])
 
@@ -29,12 +30,12 @@ const InfoSerie = ({ match }) => {
   }
 
   const onChange = evt => {
-    setName(evt.target.value)
+    //setName(evt.target.value)
   }
 
   const save = () => {
     axios.post('/api/series', {
-      name
+      form
     })
     .then(res => {
       setSuccess(true)
@@ -66,14 +67,17 @@ const InfoSerie = ({ match }) => {
           </div>
         </div>
       </header>
+      <div>
+        <button className='btn btn-primary' onClick={() => setMode('EDIT')}>Editar</button>
+      </div>
       { mode === 'EDIT' &&
         <div className='container'>
           <h1>Nova Serie</h1>
-
+          <button className='btn btn-primary' onClick={() => setMode('INFO')}>Cancelar Edição</button>
           <form>
             <div className='form-group'>
               <label >Nome</label>
-              <input type='text' value={name} onChange={onChange} className='form-control' id='name' placeholder='Nome da Serie'/>
+              <input type='text' value={form.name} onChange={onChange} className='form-control' id='name' placeholder='Nome da Serie'/>
             </div>
             <button type='button' onClick={save} className='btn btn-primary'>Salvar Serie</button>
           </form>
