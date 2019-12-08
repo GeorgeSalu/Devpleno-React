@@ -8,6 +8,7 @@ const InfoSerie = ({ match }) => {
   const [form, setForm] = useState({})
   const [success, setSuccess] = useState(false)
   const [mode, setMode] = useState('INFO')
+  const [genres, setGenres] = useState([])
 
   const [data, setData] = useState({})
   useEffect(() => {
@@ -17,7 +18,16 @@ const InfoSerie = ({ match }) => {
         setData(res.data)
         setForm(res.data)
       })
+
   }, [match.params.id])
+
+  useEffect(() => {
+    axios
+      .get('/api/genres')
+      .then(res => {
+        setGenres(res.data.data)
+      })
+  }, [])
 
   // custom header
   const masterHeader = {
@@ -29,12 +39,15 @@ const InfoSerie = ({ match }) => {
     backgroundRepeat: 'no-repeat'
   }
 
-  const onChange = evt => {
-    //setName(evt.target.value)
+  const onChange = field => evt => {
+    setForm({
+      ...form,
+      [field]: evt.target.value
+    })
   }
 
   const save = () => {
-    axios.post('/api/series', {
+    axios.put('/api/series/' + match.params.id , {
       form
     })
     .then(res => {
@@ -77,7 +90,29 @@ const InfoSerie = ({ match }) => {
           <form>
             <div className='form-group'>
               <label >Nome</label>
-              <input type='text' value={form.name} onChange={onChange} className='form-control' id='name' placeholder='Nome da Serie'/>
+              <input type='text' value={form.name} onChange={onChange('name')} className='form-control' id='name' placeholder='Nome da Serie'/>
+            </div>
+            <div className='form-group'>
+              <label >Comentarios</label>
+              <input type='text' value={form.comments} onChange={onChange('comments')} className='form-control' id='name' placeholder='Comentarios'/>
+            </div>
+            <div className='form-group'>
+              <label htmlFor='name'>Genero</label>
+              <select className='form-control' onChange={onChange('genre')}>
+                { genres.map(genre => <option key={genre.id} value={genre.id} select={genre.id === form.genre}>{genre.name}</option>)  }
+              </select>
+            </div>
+            <div className='form-check'>
+              <input className='form-ckeck-input' type='radio' name='status' id='assistido' value='ASSISTIDO' checked />
+              <label className='form-check-label' htmlFor='assistido'>
+                Assistido
+              </label>
+            </div>
+            <div className='form-check'>
+              <input className='form-ckeck-input' type='radio' name='status' id='paraAssistido' value='PARA_ASSISTIDO' checked />
+              <label className='form-check-label' htmlFor='paraAssistido'>
+                Para assistir
+              </label>
             </div>
             <button type='button' onClick={save} className='btn btn-primary'>Salvar Serie</button>
           </form>
