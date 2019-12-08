@@ -5,6 +5,7 @@ import NovoGenero from './NovoGenero'
 import EditarGenero from './EditarGenero'
 import Series from './Series'
 import NovaSerie from './NovaSerie'
+import InfoSerie from './InfoSerie'
 
 import {
   BrowserRouter as Router,
@@ -22,6 +23,7 @@ function App() {
           <Route path='/generos/:id' exact component={EditarGenero}/>
           <Route path='/series' exact component={Series}/>
           <Route path='/series/novo' exact component={NovaSerie}/>
+          <Route path='/series/:id' exact component={InfoSerie}/>
         </Switch>
       </div>
     </Router>
