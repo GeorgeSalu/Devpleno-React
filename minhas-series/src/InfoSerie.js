@@ -9,6 +9,7 @@ const InfoSerie = ({ match }) => {
   const [success, setSuccess] = useState(false)
   const [mode, setMode] = useState('INFO')
   const [genres, setGenres] = useState([])
+  const [genreId, setGenreId] = useState('')
 
   const [data, setData] = useState({})
   useEffect(() => {
@@ -26,8 +27,14 @@ const InfoSerie = ({ match }) => {
       .get('/api/genres')
       .then(res => {
         setGenres(res.data.data)
+        const genres = res.data.data
+        const encontrado = genres.find(value => data.genre === value.name)
+
+        if(encontrado) {
+          setGenreId(encontrado.id)
+        }
       })
-  }, [])
+  }, [data])
 
   // custom header
   const masterHeader = {
@@ -46,9 +53,17 @@ const InfoSerie = ({ match }) => {
     })
   }
 
+  const seleciona = value => () => {
+    setForm({
+      ...form,
+      status: value
+    })
+  }
+
   const save = () => {
     axios.put('/api/series/' + match.params.id , {
-      form
+      ...form,
+      genre_id: genreId
     })
     .then(res => {
       setSuccess(true)
@@ -98,18 +113,18 @@ const InfoSerie = ({ match }) => {
             </div>
             <div className='form-group'>
               <label htmlFor='name'>Genero</label>
-              <select className='form-control' onChange={onChange('genre')}>
+              <select className='form-control' onChange={onChange('genre_id')}>
                 { genres.map(genre => <option key={genre.id} value={genre.id} select={genre.id === form.genre}>{genre.name}</option>)  }
               </select>
             </div>
             <div className='form-check'>
-              <input className='form-ckeck-input' type='radio' name='status' id='assistido' value='ASSISTIDO' checked />
+              <input className='form-ckeck-input' type='radio' name='status' id='assistido' value='ASSISTIDO' onClick={seleciona('ASSISTIDO')} />
               <label className='form-check-label' htmlFor='assistido'>
                 Assistido
               </label>
             </div>
             <div className='form-check'>
-              <input className='form-ckeck-input' type='radio' name='status' id='paraAssistido' value='PARA_ASSISTIDO' checked />
+              <input className='form-ckeck-input' type='radio' name='status' id='paraAssistido' value='PARA_ASSISTIDO' checked onClick={seleciona('ASSISTIDO')}/>
               <label className='form-check-label' htmlFor='paraAssistido'>
                 Para assistir
               </label>
