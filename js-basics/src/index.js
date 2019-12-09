@@ -10,6 +10,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
+// variaveis
 console.log(variavel1)
 var variavel1 = 10
 console.log(variavel1)
