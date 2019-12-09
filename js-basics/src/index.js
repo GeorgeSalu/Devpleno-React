@@ -20,3 +20,23 @@ console.log(variavel2)
 
 const variavel3 = 10
 console.log(variavel3)
+
+//funcoes
+console.log(soma(1,2))
+function soma(a, b) {
+  return a + b
+}
+
+const funcSoma = soma
+console.log(funcSoma(4,3))
+
+const soma2 = function soma2(a, b) {
+  return a + b
+}
+console.log(soma(1,2))
+
+//arrow
+const soma3 = (a, b) => {
+  return a + b
+}
+console.log(soma3(1,3))
