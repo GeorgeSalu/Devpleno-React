@@ -1,17 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
+const useCounter = (initialValue) => {
+  const [counter, setCounter] = useState(initialValue)
+  const increment = () => {
+    setCounter(counter+1)
+  }
+  return [counter, increment]
+}
 
 function App() {
-  const [counter, setCounter] = useState(0)
-  const [counter2, setCounter2] = useState(10)
-
-  useEffect(() => {
-    console.log('useEffect')
-  }, [counter])
+  const [counter, increment] = useCounter(0)
+  const [counter2, increment2] = useCounter(10)
 
   return (
     <div className="App">
-      <button onClick={() => setCounter(counter+1)}>incrementar {counter}</button>
-      <button onClick={() => setCounter2(counter2+1)}>incrementar {counter2}</button>
+      <button onClick={increment}>incrementar {counter}</button>
+      <button onClick={increment2}>incrementar {counter2}</button>
     </div>
   );
 }
