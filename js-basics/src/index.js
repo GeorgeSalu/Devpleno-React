@@ -67,3 +67,24 @@ const value = keys.map(item => {
 })
 
 console.log(value)
+
+//destructing assignament
+const objc = {
+  name: 'tulio',
+  lastname: 'faria',
+  address: {
+    city: 'pouso alegre'
+  }
+}
+
+const getName = ({ name }) => {
+  return name
+}
+
+console.log(getName(objc))
+
+const { name } = objc
+console.log(name)
+
+const [i1, i2] = keys
+console.log(i1, i2)
