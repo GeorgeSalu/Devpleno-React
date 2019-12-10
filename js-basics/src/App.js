@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header'
 
 const App = () => {
   const names = ['tulio', 'faria']
@@ -6,6 +7,7 @@ const App = () => {
   return (
     <div className="App">
       {namesElements}
+      <Header />
     </div>
   );
 }
