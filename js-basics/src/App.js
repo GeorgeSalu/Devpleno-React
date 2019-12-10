@@ -5,13 +5,10 @@ import Table from './elements/table/index'
 const App = () => {
   const names = ['tulio', 'faria']
   const namesElements = names.map(name => <p>{name}</p>)
-  return (
-    <div className="App">
-      {namesElements}
-      <Header.Header2 />
-      <Table />
-    </div>
-  );
+  return React.createElement('div', { className: 'App' }, [
+    React.createElement('h1', null, 'hello DevReactJs'),
+    React.createElement('h2', null, 'start editing')
+  ])
 }
 
 export default App;
