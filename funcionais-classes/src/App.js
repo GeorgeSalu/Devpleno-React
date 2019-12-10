@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 class App2 extends React.Component {
   contador = 1
 
+  state = {
+    contador: 1
+  }
+
   increment = () => {
-    this.contador = this.contador + 1
+    this.setState({ contador: this.state.contador + 1 })
   }
 
   render() {
     return (
       <h1>
-        Contador (app2) : {this.contador}
+        Contador (app2) : {this.state.contador}
         <button onClick={this.increment}>Increment</button>
       </h1>
     )
@@ -20,10 +24,10 @@ class App2 extends React.Component {
 }
 
 const App1 = () => {
-  let contador = 1
+  const [contador, setContador] = useState(1)
   
   const increment = () => {
-    contador = contador + 1
+    setContador(contador + 1)
   }
   
   return (
