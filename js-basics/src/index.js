@@ -53,3 +53,17 @@ const obj = {
 
 console.log(obj.name)
 console.log(obj['name'])
+
+const keys = Object.keys(obj)
+console.log(keys)
+
+// high order functions
+keys.forEach(item => {
+  console.log(item)
+})
+
+const value = keys.map(item => {
+  return obj[item]
+})
+
+console.log(value)
