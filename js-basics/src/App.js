@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header'
+import Table from './elements/table/index'
 
 const App = () => {
   const names = ['tulio', 'faria']
@@ -7,7 +8,8 @@ const App = () => {
   return (
     <div className="App">
       {namesElements}
-      <Header />
+      <Header.Header2 />
+      <Table />
     </div>
   );
 }
