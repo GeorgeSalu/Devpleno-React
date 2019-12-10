@@ -4,15 +4,12 @@ import './App.css';
 
 class App2 extends React.Component {
   contador = 1
-
   state = {
     contador: 1
   }
-
   increment = () => {
     this.setState({ contador: this.state.contador + 1 })
   }
-
   render() {
     return (
       <h1>
@@ -25,11 +22,9 @@ class App2 extends React.Component {
 
 const App1 = () => {
   const [contador, setContador] = useState(1)
-  
   const increment = () => {
     setContador(contador + 1)
   }
-  
   return (
     <h1>
       Contador (app1) : {contador} 
