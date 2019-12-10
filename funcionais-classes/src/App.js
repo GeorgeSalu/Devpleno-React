@@ -3,7 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 
 class App2 extends React.Component {
-  contador = 1
+  constructor(props) {
+    super(props)
+    this.increment.bind(this)
+  }
   state = {
     contador: 1
   }
