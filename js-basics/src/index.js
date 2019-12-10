@@ -40,3 +40,15 @@ const soma3 = (a, b) => {
   return a + b
 }
 console.log(soma3(1,3))
+
+//high-order functions , objects e vetores
+const a = 'tulio'
+const str = `ola ${a}`
+console.log(str)
+
+const obj = {
+  name: 'tulio',
+  lastaname: 'faria'
+}
+
+console.log(obj.name)
