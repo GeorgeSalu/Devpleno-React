@@ -48,7 +48,8 @@ console.log(str)
 
 const obj = {
   name: 'tulio',
-  lastaname: 'faria'
+  lastname: 'faria'
 }
 
 console.log(obj.name)
+console.log(obj['name'])
