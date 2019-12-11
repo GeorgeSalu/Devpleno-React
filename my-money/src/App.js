@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useReducer } from 'react';
 import axios from 'axios'
 
 /*
@@ -17,23 +17,31 @@ axios
 
 const url = 'https://mymoney-7fd2e.firebaseio.com/movimentacoes.json'
 
+const reducer = (state, action) => {
+  if(action.type === 'REQUEST') {
+    return {
+      ...state,
+      loading: true
+    }
+  }
+  return state
+}
+
 function App() {
-  const [loading, setLoading] = useState(false)
-  const [data, setData] = useState({})
+  const [data, dispatch] = useReducer(reducer, {
+    loading: true,
+    data: {}
+  })
 
   useEffect(() => {
-    setLoading(true)
+    dispatch({ type: 'REQUEST' })
     axios
       .get(url)
       .then(res => {
-        setData(res.data)
-        setLoading(false)
+        dispatch({ type: 'SUCCESS', data: res.data })
       })
   }, [])
 
-  if(loading) {
-    return <p>Loading....</p>
-  }
 
   return (
     <div className="App">
