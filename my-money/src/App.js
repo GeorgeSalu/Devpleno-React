@@ -27,7 +27,7 @@ const reducer = (state, action) => {
   return state
 }
 
-function App() {
+const useGet = url => {
   const [data, dispatch] = useReducer(reducer, {
     loading: true,
     data: {}
@@ -42,6 +42,12 @@ function App() {
       })
   }, [])
 
+  return data
+}
+
+function App() {
+
+  const data = useGet(url)
 
   return (
     <div className="App">
