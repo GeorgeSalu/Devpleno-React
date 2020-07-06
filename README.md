@@ -1,6 +1,4 @@
-# Devpleno React
-
-
+## Devpleno React
 
 O QUE VOCÊ IRÁ APRENDER
 
