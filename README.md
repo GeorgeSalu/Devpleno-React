@@ -1,4 +1,4 @@
-## Devpleno React
+## Devpleno React - você vai do zero à entrega aplicações profissionais em React
 
 O QUE VOCÊ IRÁ APRENDER
 
