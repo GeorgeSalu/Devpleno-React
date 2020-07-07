@@ -18,7 +18,7 @@ export default class App extends Component {
     this.setState({
       data: 'descobrindo ip...'
     })
-    const ip = await fetch('http://gttpbin.org/ip')
+    const ip = await fetch('http://httpbin.org/ip')
     const data = await ip.json()
     this.setState({
       data: data.origin
