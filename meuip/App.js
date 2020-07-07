@@ -64,7 +64,6 @@ const styles = StyleSheet.create({
   },  
   made: {
     color: 'white',
-    textAlign: 'center',
-
+    textAlign: 'center'
   }
 });
