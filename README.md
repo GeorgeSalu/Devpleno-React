@@ -54,6 +54,9 @@ Algumas funcionalidades específicas que exploramos: trabalhamos com o projeto c
   - Reprodução de sons e criação de alerta.
   - Animações.
   - Publicação na Play Store e na App Store.
+  - Criação de componentes reutilizáveis;
+  - SplashScreen/LaunchScreen personalizada;
+  - Evitar que a tela do celular desligue durante a utilização do app;
 
 Git.
 
