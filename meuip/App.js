@@ -30,7 +30,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <View style={styles.body}>
           <Image source={logo} />
-    <Text style={styles.ip}>{this.state.data}</Text>
+          <Text style={styles.ip}>{this.state.data}</Text>
           <Button title="Descobrir meu ip" onPress={this.findMyIp}></Button>
         </View>
         <View style={styles.footer}>
