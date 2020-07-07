@@ -3,12 +3,12 @@
 
 O QUE VOCÊ IRÁ APRENDER
 
-Alinhamento de conceitos
+Alinhamento de conceitos.
 
   - Tipos de componentes (Classe ES6 e Funcionais).
   - Quando utilizar um ou outro.
 
-1º Projeto Web: Sistema de comentários
+1º Projeto Web: Sistema de comentários.
 
   - State, spread operator, como renderizar uma lista de componentes.
   - Componentização e organização.
@@ -22,12 +22,12 @@ Alinhamento de conceitos
   - Autenticação com Firebase.
   - Layout com Bootstrap.
 
-1º Projeto em React Native: Meu IP
+1º Projeto em React Native: Meu IP.
 
   - Instalação do Genymotion com Google Apps.
   - Layouts e Flexbox.
 
-2º Projeto Web: Gerenciador de produtos
+2º Projeto Web: Gerenciador de produtos.
 
   - Navegação em SPAs.
   - Mapeamento de Categorias. 
@@ -37,7 +37,7 @@ Alinhamento de conceitos
   - Redirecionamento entre rotas.
   - Organização do projeto (Componente Categoria).
 
-2° Projeto em React Native: CalisTimer
+2° Projeto em React Native: CalisTimer.
 
   - Prototipação no Figma.
   - Fontes customizadas.
@@ -50,14 +50,14 @@ Alinhamento de conceitos
   - Animações.
   - Publicação na Play Store e na App Store.
 
-Git
+Git.
 
   - Push para o GitHub.
   - Git pull e checkout (como recuperar um arquivo).
   - Git clone.
   - Git ignore.
 
-Ciclo de vida de um componente em ReactJS
+Ciclo de vida de um componente em ReactJS.
 
   - Ciclo de vida de um componente com Hooks.
   - Ciclo de vida de um componente com classes ES6:
@@ -66,7 +66,7 @@ Ciclo de vida de um componente em ReactJS
     - O método componentDidUpdate.
     - O método getSnapshotBeforeUpdate.
 
-Tópicos avançados
+Tópicos avançados.
 
   - Criando hooks para reutilização de código.
   - High-Order Component (HOC).
@@ -77,13 +77,13 @@ Tópicos avançados
   - Context API / New Context API.
   - Portals.
 
-Teste e documentação com Storybook
+Teste e documentação com Storybook.
 
   - Configuração do Storybook no projeto.
   - Decorators e carregamento de stories dinamicamente.
   - Geração do storybook estático e hospedagem no Github Pages.
 
-Projeto Prático: DevRunning
+Projeto Prático: DevRunning.
 
   - Autenticação e autorização.
   - JWT (JSON Web Token).
