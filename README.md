@@ -39,6 +39,11 @@ Alinhamento de conceitos.
 
 2° Projeto em React Native: CalisTimer.
 
+O CalisTimer é um aplicativo desenhado, programado e publicado para as lojas durante as aulas. Nele exploramos o levantamento das funcionalidades, a busca de inspirações para projetar as interfaces e criar as telas. A partir deste planejamento, desenvolvemos o projeto utilizando React Native.
+
+Algumas funcionalidades específicas que exploramos: trabalhamos com o projeto com código nativo (também conhecido como projeto “ejetado” ou sem utilizar o expo.io). 
+
+
   - Prototipação no Figma.
   - Fontes customizadas.
   - Navegação com React-navigation.
