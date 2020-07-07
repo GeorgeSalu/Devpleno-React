@@ -90,6 +90,11 @@ Teste e documentação com Storybook.
 
 Projeto Prático: DevRunning.
 
+O DevRunning é uma aplicação web onde exploramos ao máximo organização de código e funcionalidades presentes em aplicações de qualidade. É importante notar que a experiência que desenvolvemos durante este projeto pode ser utilizada em qualquer projeto do ecossistema ReactJS, como por exemplo, em projetos React Native.
+
+Um projeto prático para você levar sua experiência em ReactJS para o próximo nível!
+
+
   - Autenticação e autorização.
   - JWT (JSON Web Token).
   - Localização (l18n).
