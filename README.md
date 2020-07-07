@@ -43,7 +43,6 @@ O CalisTimer é um aplicativo desenhado, programado e publicado para as lojas du
 
 Algumas funcionalidades específicas que exploramos: trabalhamos com o projeto com código nativo (também conhecido como projeto “ejetado” ou sem utilizar o expo.io). 
 
-
   - Prototipação no Figma.
   - Fontes customizadas.
   - Navegação com React-navigation.
@@ -96,7 +95,6 @@ Projeto Prático: DevRunning.
 O DevRunning é uma aplicação web onde exploramos ao máximo organização de código e funcionalidades presentes em aplicações de qualidade. É importante notar que a experiência que desenvolvemos durante este projeto pode ser utilizada em qualquer projeto do ecossistema ReactJS, como por exemplo, em projetos React Native.
 
 Um projeto prático para você levar sua experiência em ReactJS para o próximo nível!
-
 
   - Autenticação e autorização.
   - JWT (JSON Web Token).
