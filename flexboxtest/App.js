@@ -7,7 +7,11 @@ export default class App extends Component {
       <View style={styles.container}>
         <View style={styles.box1}></View>
         <View style={styles.box2}></View>
-        <View style={styles.box3}></View>
+        <View style={styles.box3}>
+          <View style={styles.subbox}></View>
+          <View style={styles.subbox}></View>
+          <View style={styles.subbox}></View>
+        </View>
       </View>
     );
   }
@@ -34,9 +38,15 @@ const styles = StyleSheet.create({
     margin: 4
   },
   box3: {
-    flex: 3,
     //padding: 30,
+    height: 120,
     backgroundColor: 'steelblue',
-    margin: 4
+    margin: 4,
+    flexDirection: 'row'
+  },
+  subbox: {
+    flex: 1,
+    margin: 4,
+    backgroundColor: 'red'
   }
 });
