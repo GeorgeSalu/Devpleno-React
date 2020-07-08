@@ -18,11 +18,11 @@ export default class App extends Component {
         <View style={styles.buttons} >
           <View style={styles.col1}>
             { col1Buttons.map( line => 
-            <View style={styles.line}>
-              <Text>Col1</Text>
-              <Text>Col1</Text>
-              <Text>Col1</Text>
-            </View>
+              <View style={styles.line}>
+                <Text>Col1</Text>
+                <Text>Col1</Text>
+                <Text>Col1</Text>
+              </View>
              ) }
             <Text>Col1</Text>
           </View>
