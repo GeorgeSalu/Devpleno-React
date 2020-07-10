@@ -11,23 +11,31 @@ export default class App extends Component {
       [',','0','=']
     ]
 
+    const col2Button = ['C', '/', 'x','-', '+']
+
     return (
       <View style={styles.container}>
         <Text style={styles.display}>Display</Text>
         <Text style={styles.result}>Result</Text>
         <View style={styles.buttons} >
           <View style={styles.col1}>
-            { col1Buttons.map( line => 
-              <View style={styles.line}>
-                <Text>Col1</Text>
-                <Text>Col1</Text>
-                <Text>Col1</Text>
+            { col1Buttons.map( (line, ind) => 
+              <View key={ind} style={styles.line}>
+                { line.map( op => 
+                  <View key={op} style={styles.btn}>
+                    <Text  style={styles.btnText}>{op}</Text>
+                  </View> 
+                ) }
               </View>
              ) }
             <Text>Col1</Text>
           </View>
           <View style={styles.col2}>
-            <Text>Col2</Text>
+          { col2Button.map( op => 
+                  <View key={op} style={styles.btn}>
+                    <Text  style={styles.btnText}>{op}</Text>
+                  </View> 
+                ) }
           </View>
         </View>
       </View>
@@ -69,5 +77,18 @@ const styles = StyleSheet.create({
   col2: {
     flex: 1,
     backgroundColor: 'red'
+  },
+  line: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  btn: {
+    flex: 1,
+    justifyContent: 'center'
+  },
+  btnText: {
+    textAlign: 'center',
+    fontSize: 50,
+
   }
 });
