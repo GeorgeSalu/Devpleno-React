@@ -28,7 +28,6 @@ export default class App extends Component {
                 ) }
               </View>
              ) }
-            <Text>Col1</Text>
           </View>
           <View style={styles.col2}>
             { col2Button.map( op => 
@@ -88,7 +87,6 @@ const styles = StyleSheet.create({
   },
   btnText: {
     textAlign: 'center',
-    fontSize: 50,
-
+    fontSize: 50
   }
 });
