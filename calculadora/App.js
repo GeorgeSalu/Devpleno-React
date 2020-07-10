@@ -31,11 +31,11 @@ export default class App extends Component {
             <Text>Col1</Text>
           </View>
           <View style={styles.col2}>
-          { col2Button.map( op => 
-                  <View key={op} style={styles.btn}>
-                    <Text  style={styles.btnText}>{op}</Text>
-                  </View> 
-                ) }
+            { col2Button.map( op => 
+              <View key={op} style={styles.btn}>
+                <Text  style={styles.btnText}>{op}</Text>
+              </View> 
+            ) }
           </View>
         </View>
       </View>
