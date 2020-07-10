@@ -1,7 +1,44 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 export default class App extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      display: '',
+      result: ''
+    }
+  }
+
+  handleOp(op) {
+
+    if(op==='C') {
+      this.setState({
+        display: '',
+        result: ''
+      })
+    } else if (op==='='){
+      this.setState({
+        display: this.state.result,
+        result: ''
+      })
+    } else {
+      const display = this.state.display + op
+      let result = this.state.result
+
+      try {
+        let fixedOperation = display.split('x').join('*')
+        result = new String(eval(fixedOperation)).toString()
+      } catch(e) {}
+
+      this.setState({
+        display,
+        result
+      })
+    }
+  }
+
   render() {
 
     const col1Buttons = [
@@ -15,25 +52,27 @@ export default class App extends Component {
 
     return (
       <View style={styles.container}>
-        <Text style={styles.display}>Display</Text>
-        <Text style={styles.result}>Result</Text>
+        <Text style={styles.display}>{this.state.display}</Text>
+        <Text style={styles.result}>{this.state.result}</Text>
         <View style={styles.buttons} >
           <View style={styles.col1}>
             { col1Buttons.map( (line, ind) => 
               <View key={ind} style={styles.line}>
                 { line.map( op => 
-                  <View key={op} style={styles.btn}>
+                  <TouchableOpacity key={op} style={styles.btn} 
+                    onPress={() => this.handleOp(op)}>
                     <Text  style={styles.btnText}>{op}</Text>
-                  </View> 
+                  </TouchableOpacity> 
                 ) }
               </View>
              ) }
           </View>
           <View style={styles.col2}>
             { col2Button.map( op => 
-              <View key={op} style={styles.btn}>
+              <TouchableOpacity key={op} style={styles.btn}
+                onPress={() => this.handleOp(op)}>
                 <Text  style={styles.btnText}>{op}</Text>
-              </View> 
+              </TouchableOpacity> 
             ) }
           </View>
         </View>
