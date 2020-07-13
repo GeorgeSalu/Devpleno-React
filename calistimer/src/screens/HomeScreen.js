@@ -19,9 +19,21 @@ HomeScreen.navigationOptions = {
 }
 
 const styles = StyleSheet.create({
-  logo: { fontFamily: 'Ubuntu-Bold', fontSize: 48, textAlign: 'center', color: 'white', marginTop: 111, marginBottom: 111 },
-  btn: { padding: 20 },
-  container: { flex: 1 ,backgroundColor: '#D6304A' }
+  container: { 
+    flex: 1 ,
+    backgroundColor: '#D6304A' 
+  },
+  logo: { 
+    fontFamily: 'Ubuntu-Bold', 
+    fontSize: 48,
+    textAlign: 'center',
+    color: 'white', 
+    marginTop: 111, 
+    marginBottom: 111 
+  },
+  btn: { 
+    padding: 20 
+  }  
 })
 
 export default HomeScreen;
