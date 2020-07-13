@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import Button from '../componentes/Button'
+import Button from '../components/Button'
 
 const HomeScreen = props => {
   return (
