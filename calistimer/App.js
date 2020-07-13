@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import {StyleSheet} from 'react-native';
+import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 import HomeScreen from './src/screens/HomeScreen';
 
