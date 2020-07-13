@@ -6,6 +6,6 @@ import EMOMScreen from './src/screens/EMOMScreen';
 const AppNavigator = createStackNavigator({
   Home: HomeScreen,
   EMOM: EMOMScreen
-}, {initialRouteName: 'EMOM'})
+}, {initialRouteName: 'Home'})
 
 export default createAppContainer(AppNavigator)
