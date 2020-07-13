@@ -1,10 +1,12 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableHighlight } from 'react-native'
 
 const HomeScreen = props => {
   return (
     <View>
-      <Text>Home Screen</Text>
+      <TouchableHighlight onPress={ () => props.navigation.navigate('EMOM') }>
+        <Text>Home Screen</Text>
+      </TouchableHighlight>
     </View>
   )
 }
