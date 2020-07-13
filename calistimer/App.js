@@ -1,16 +1,13 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation'
+import HomeScreen from './src/screens/HomeScreen';
 
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text >Welcome to React Native!</Text>
-        <Text >To get started, edit App.js</Text>
-      </View>
-    );
-  }
-}
+const AppNavigator = createStackNavigator({
+  Home: HomeScreen
+}, {initialRouteName: 'Home'})
+
+export default createAppContainer(AppNavigator)
 
 const styles = StyleSheet.create({
   container: {
