@@ -1,5 +1,5 @@
 ### Devpleno React - devReactJS - você vai do zero à entrega aplicações profissionais em React.
-#### https://lp.devpleno.com/devreactjs/
+##### https://lp.devpleno.com/devreactjs/
 
 O QUE VOCÊ IRÁ APRENDER.
 
@@ -43,7 +43,8 @@ O CalisTimer é um aplicativo desenhado, programado e publicado para as lojas du
 Nele exploramos o levantamento das funcionalidades, a busca de inspirações para projetar as interfaces e criar as telas. 
 A partir deste planejamento, desenvolvemos o projeto utilizando React Native.
 
-Algumas funcionalidades específicas que exploramos: trabalhamos com o projeto com código nativo (também conhecido como projeto “ejetado” ou sem utilizar o expo.io). 
+Algumas funcionalidades específicas que exploramos: trabalhamos com o projeto com código nativo (também conhecido como projeto  
+“ejetado” ou sem utilizar o expo.io). 
 
   - Prototipação no Figma.
   - Fontes customizadas.
@@ -94,7 +95,9 @@ Teste e documentação com Storybook.
 
 Projeto Prático: DevRunning.
 
-O DevRunning é uma aplicação web onde exploramos ao máximo organização de código e funcionalidades presentes em aplicações de qualidade. É importante notar que a experiência que desenvolvemos durante este projeto pode ser utilizada em qualquer projeto do ecossistema ReactJS, como por exemplo, em projetos React Native.
+O DevRunning é uma aplicação web onde exploramos ao máximo organização de código e funcionalidades presentes em aplicações de
+qualidade. É importante notar que a experiência que desenvolvemos durante este projeto pode ser utilizada em qualquer projeto do
+ecossistema ReactJS, como por exemplo, em projetos React Native.
 
 Um projeto prático para você levar sua experiência em ReactJS para o próximo nível!
 
