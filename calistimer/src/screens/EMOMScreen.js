@@ -68,7 +68,6 @@ const styleSelect = StyleSheet.create({
 const EMOMScreen = props => {
   return (
     <View style={styles.container}>
-      <Text>EMOM Screen</Text>
       <Select 
         label='Alertas:'
         options={['desligado','15s', '30s', '45s']}
