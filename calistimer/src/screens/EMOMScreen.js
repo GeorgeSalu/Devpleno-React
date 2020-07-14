@@ -1,20 +1,46 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
-const Select = props => {
-  return (
-    <View style={{flex: 1}}>
-      <Text style={styleSelect.label}>Label</Text>
-      <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around'}}>
-        <TouchableOpacity style={styleSelect.optSelected}> 
-          <Text style={styleSelect.optLabel}>Opt1</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styleSelect.optSelected}>
-          <Text style={styleSelect.optLabel}>Opt1</Text>
-        </TouchableOpacity>
+class Select extends Component {
+
+  state = {
+    current: 'Opt1'
+  }
+
+  handlePress = opt => () => {
+    this.setState({
+      current: opt
+    })
+    if(this.props.onSelect) {
+      this.props.onSelect(opt)
+    }
+  }
+
+  render() {
+    const { options } = this.props
+    const { current } = this.state
+
+    return (
+      <View style={{flex: 1}}>
+        <Text style={styleSelect.label}>Label</Text>
+        <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+          {options.map(opt => {
+            return (
+              <TouchableOpacity 
+                key={opt} 
+                style={[styleSelect.opt, opt === current ? styleSelect.optSelected : null]}
+                onPress={this.handlePress(opt)}
+                > 
+                <Text style={styleSelect.optLabel}>{opt}</Text>
+              </TouchableOpacity>
+            )
+          })}
+          
+        </View>
       </View>
-    </View>
-  )
+    )
+  }
+
 }
 
 const styleSelect = StyleSheet.create({
@@ -24,13 +50,18 @@ const styleSelect = StyleSheet.create({
     fontFamily: 'Ubuntu-Regular',
     fontSize: 24
   },
+  opt: {
+
+  },
   optSelected: {
-    backgroundColor: 'white'
+    backgroundColor: 'rgba(255,255,255,0.6)',
+    opacity: 0.6
   },
   optLabel: {
     color: 'white',
     fontFamily: 'Ubuntu-Regular',
-    fontSize: 24
+    fontSize: 24,
+    opacity: 1
   }
 })
 
@@ -38,7 +69,9 @@ const EMOMScreen = props => {
   return (
     <View style={styles.container}>
       <Text>EMOM Screen</Text>
-      <Select />
+      <Select 
+        options={['Opt1','Opt2', 'Teste']}
+        onSelect={ opt => console.log('selecionado', opt) } />
     </View>
   )
 }
