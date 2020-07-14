@@ -35,7 +35,6 @@ class Select extends Component {
               </TouchableOpacity>
             )
           })}
-          
         </View>
       </View>
     )
