@@ -17,12 +17,12 @@ class Select extends Component {
   }
 
   render() {
-    const { options } = this.props
+    const { options, label } = this.props
     const { current } = this.state
 
     return (
       <View style={{flex: 1}}>
-        <Text style={styleSelect.label}>Label</Text>
+        <Text style={styleSelect.label}>{label}</Text>
         <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
           {options.map(opt => {
             return (
@@ -70,7 +70,13 @@ const EMOMScreen = props => {
     <View style={styles.container}>
       <Text>EMOM Screen</Text>
       <Select 
-        options={['Opt1','Opt2', 'Teste']}
+        label='Alertas:'
+        options={['desligado','15s', '30s', '45s']}
+        onSelect={ opt => console.log('selecionado', opt) } />
+
+      <Select 
+        label='Contagem regressiva'
+        options={['sim','não']}
         onSelect={ opt => console.log('selecionado', opt) } />
     </View>
   )
