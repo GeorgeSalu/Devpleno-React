@@ -1,7 +1,7 @@
-## Devpleno React - devReactJS - você vai do zero à entrega aplicações profissionais em React.
+### Devpleno React - devReactJS - você vai do zero à entrega aplicações profissionais em React.
 #### https://lp.devpleno.com/devreactjs/
 
-O QUE VOCÊ IRÁ APRENDER
+O QUE VOCÊ IRÁ APRENDER.
 
 Alinhamento de conceitos.
 
@@ -39,7 +39,9 @@ Alinhamento de conceitos.
 
 2° Projeto em React Native: CalisTimer.
 
-O CalisTimer é um aplicativo desenhado, programado e publicado para as lojas durante as aulas. Nele exploramos o levantamento das funcionalidades, a busca de inspirações para projetar as interfaces e criar as telas. A partir deste planejamento, desenvolvemos o projeto utilizando React Native.
+O CalisTimer é um aplicativo desenhado, programado e publicado para as lojas durante as aulas. 
+Nele exploramos o levantamento das funcionalidades, a busca de inspirações para projetar as interfaces e criar as telas. 
+A partir deste planejamento, desenvolvemos o projeto utilizando React Native.
 
 Algumas funcionalidades específicas que exploramos: trabalhamos com o projeto com código nativo (também conhecido como projeto “ejetado” ou sem utilizar o expo.io). 
 
@@ -106,4 +108,3 @@ Um projeto prático para você levar sua experiência em ReactJS para o próximo
   - Organização de projeto.
   - Navegação e navegação por tipo de usuário. 
   - Autenticação de diferentes tipos de usuário. 
-
