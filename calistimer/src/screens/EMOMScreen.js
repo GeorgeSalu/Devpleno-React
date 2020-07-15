@@ -85,20 +85,24 @@ const EMOMScreen = props => {
       <Select 
         label='Alertas:'
         current={'desligado'}
-        options={[ {
-          id: 0,
-          label: 'desligado'
-        }, {
-          id: 15, 
-          label: '15s'
-        },
-        { 
-          id: 30,
-          label: '30s' 
-        }, {
-          id: 45,
-          label: '45s'
-        }]}
+        options={[ 
+          {
+            id: 0,
+            label: 'desligado'
+          }, 
+          {
+            id: 15, 
+            label: '15s'
+          },
+          { 
+            id: 30,
+            label: '30s' 
+          }, 
+          {
+            id: 45,
+            label: '45s'
+          }
+        ]}
         onSelect={ opt => console.log('selecionado', opt) } />
 
       <Select 
