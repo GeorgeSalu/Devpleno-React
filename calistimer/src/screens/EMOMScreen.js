@@ -31,13 +31,22 @@ class Select extends Component {
         <Text style={styleSelect.label}>{label}</Text>
         <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
           {options.map(opt => {
+            let id = ''
+            let label = ''
+            if(typeof opt === 'string') {
+              id = opt
+              label = opt
+            } else if(typeof opt === 'object') {
+              id = opt.id
+              label = opt.label
+            }
             return (
               <TouchableOpacity 
-                key={opt} 
-                style={[styleSelect.opt, opt === current ? styleSelect.optSelected : null]}
-                onPress={this.handlePress(opt)}
+                key={id} 
+                style={[styleSelect.opt, id === current ? styleSelect.optSelected : null]}
+                onPress={this.handlePress(id)}
                 > 
-                <Text style={styleSelect.optLabel}>{opt}</Text>
+                <Text style={styleSelect.optLabel}>{label}</Text>
               </TouchableOpacity>
             )
           })}
@@ -76,7 +85,20 @@ const EMOMScreen = props => {
       <Select 
         label='Alertas:'
         current={'desligado'}
-        options={['desligado','15s', '30s', '45s']}
+        options={[ {
+          id: 0,
+          label: 'desligado'
+        }, {
+          id: 15, 
+          label: '15s'
+        },
+        { 
+          id: 30,
+          label: '30s' 
+        }, {
+          id: 45,
+          label: '45s'
+        }]}
         onSelect={ opt => console.log('selecionado', opt) } />
 
       <Select 
