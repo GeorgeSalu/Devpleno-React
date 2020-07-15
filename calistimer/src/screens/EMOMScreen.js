@@ -1,90 +1,13 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-
-class Select extends Component {
-
-  state = {
-    current: ''
-  }
-
-  componentDidMount() {
-    this.setState({
-      current: this.props.current
-    })
-  }
-
-  handlePress = opt => () => {
-    this.setState({
-      current: opt
-    })
-    if(this.props.onSelect) {
-      this.props.onSelect(opt)
-    }
-  }
-
-  render() {
-    const { options, label } = this.props
-    const { current } = this.state
-
-    return (
-      <View style={{flex: 1}}>
-        <Text style={styleSelect.label}>{label}</Text>
-        <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-          {options.map(opt => {
-            let id = ''
-            let label = ''
-            if(typeof opt === 'string') {
-              id = opt
-              label = opt
-            } else if(typeof opt === 'object') {
-              id = opt.id
-              label = opt.label
-            }
-            return (
-              <TouchableOpacity 
-                key={id} 
-                style={[styleSelect.opt, id === current ? styleSelect.optSelected : null]}
-                onPress={this.handlePress(id)}
-                > 
-                <Text style={styleSelect.optLabel}>{label}</Text>
-              </TouchableOpacity>
-            )
-          })}
-        </View>
-      </View>
-    )
-  }
-
-}
-
-const styleSelect = StyleSheet.create({
-  label: {
-    textAlign: 'center',
-    color: 'white',
-    fontFamily: 'Ubuntu-Regular',
-    fontSize: 24
-  },
-  opt: {
-
-  },
-  optSelected: {
-    backgroundColor: 'rgba(255,255,255,0.6)',
-    opacity: 0.6
-  },
-  optLabel: {
-    color: 'white',
-    fontFamily: 'Ubuntu-Regular',
-    fontSize: 24,
-    opacity: 1
-  }
-})
+import Select from '../components/Select'
 
 const EMOMScreen = props => {
   return (
     <View style={styles.container}>
       <Select 
         label='Alertas:'
-        current={'desligado'}
+        current={0}
         options={[ 
           {
             id: 0,
@@ -107,8 +30,8 @@ const EMOMScreen = props => {
 
       <Select 
         label='Contagem regressiva'
-        current={'não'}
-        options={['sim','não']}
+        current={0}
+        options={[{ id: 1, label: 'sim'},{ id: 0, label:'não'}]}
         onSelect={ opt => console.log('selecionado', opt) } />
     </View>
   )
