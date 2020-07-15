@@ -35,7 +35,7 @@ Alinhamento de conceitos.
   - Organização da API.
   - Organização do código.
   - Redirecionamento entre rotas.
-  - Organização do projeto (Componente Categoria).
+  - Organização do projeto (Componente categoria).
 
 2° Projeto em React Native: CalisTimer.
 
