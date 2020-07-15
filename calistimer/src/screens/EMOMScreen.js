@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import React from 'react'
+import { View, StyleSheet } from 'react-native'
 import Select from '../components/Select'
 
 const EMOMScreen = props => {
