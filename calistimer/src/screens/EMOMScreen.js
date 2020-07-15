@@ -3,7 +3,6 @@ import { View, Text, StyleSheet } from 'react-native'
 import Select from '../components/Select'
 import Title from '../components/Title'
 
-
 const EMOMScreen = props => {
   return (
     <View style={styles.container}>
