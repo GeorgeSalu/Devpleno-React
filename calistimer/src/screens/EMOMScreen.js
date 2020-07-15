@@ -4,7 +4,13 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 class Select extends Component {
 
   state = {
-    current: 'Opt1'
+    current: ''
+  }
+
+  componentDidMount() {
+    this.setState({
+      current: this.props.current
+    })
   }
 
   handlePress = opt => () => {
@@ -69,11 +75,13 @@ const EMOMScreen = props => {
     <View style={styles.container}>
       <Select 
         label='Alertas:'
+        current={'desligado'}
         options={['desligado','15s', '30s', '45s']}
         onSelect={ opt => console.log('selecionado', opt) } />
 
       <Select 
         label='Contagem regressiva'
+        current={'não'}
         options={['sim','não']}
         onSelect={ opt => console.log('selecionado', opt) } />
     </View>
