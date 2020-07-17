@@ -1,13 +1,14 @@
 import React from 'react'
-import { View, StyleSheet, Image, Text } from 'react-native'
+import { View, StyleSheet, Image, Text, TextInput, KeyboardAvoidingView } from 'react-native'
 import Select from '../components/Select'
 import Title from '../components/Title'
 
 const EMOMScreen = props => {
   return (
+    <KeyboardAvoidingView style={{flex:1}} behavior='padding'>
     <View style={styles.container}>
       <Title title="EMOM" subTitle="Every Minute On The Minutes" />
-      <Image source={require('../../assets/settings-cog.png')} />
+      <Image style={{ alignSelf: 'center', marginBottom: 17 }} source={require('../../assets/settings-cog.png')} />
       <Select 
         label='Alertas:'
         current={0}
@@ -39,10 +40,12 @@ const EMOMScreen = props => {
         options={[{ id: 1, label: 'sim'},{ id: 0, label:'não'}]}
         onSelect={ opt => console.log('selecionado', opt) } />
       <Text style={styles.label}>Quantod minutos:</Text>
-      <Text style={styles.input}>15</Text>
+      <TextInput style={styles.input} keyboardType='numeric'>15</TextInput>
       <Text style={styles.label}>minutos</Text>
-      <Image source={require('../../assets/btn-play.png')} />
+      <Image style={{ alignSelf: 'center' }} source={require('../../assets/btn-play.png')} />
+      <Text>Testar</Text>
     </View>
+    </KeyboardAvoidingView>
   )
 }
 
@@ -54,7 +57,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#D6304A',
-    paddingTop: 200
+    paddingTop: 20
   },
   label: {
     textAlign: 'center',
