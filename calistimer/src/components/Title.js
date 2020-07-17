@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     fontFamily: 'Ubuntu-Regular',
-    fontSize: 14,
+    fontSize: 16,
     color: 'white',
     textAlign: 'center'
   }
