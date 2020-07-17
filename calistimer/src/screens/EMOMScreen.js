@@ -7,7 +7,7 @@ const EMOMScreen = props => {
   return (
     <KeyboardAvoidingView style={{flex:1}} behavior='padding'>
       <View style={styles.container}>
-        <Title title="EMOM" subTitle="Every Minute On The Minutes" />
+        <Title title="EMOM" subTitle="Every Minute On The Minutes" style={{ paddingTop: 200 }} />
         <Image style={{ alignSelf: 'center', marginBottom: 17 }} source={require('../../assets/settings-cog.png')} />
         <Select 
           label='Alertas:'
