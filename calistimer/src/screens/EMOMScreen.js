@@ -13,7 +13,7 @@ const EMOMScreen = props => {
         options={[ 
           {
             id: 0,
-            label: 'desligado'
+            label: 'Desligado'
           }, 
           {
             id: 15, 
