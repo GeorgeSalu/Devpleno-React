@@ -6,7 +6,7 @@ import Title from '../components/Title'
 const EMOMScreen = props => {
   return (
     <View style={styles.container}>
-      <Title title="EMOM" subTitle="Every Minute On the Minutes" />
+      <Title title="EMOM" subTitle="Every Minute On The Minutes" />
       <Select 
         label='Alertas:'
         current={0}
