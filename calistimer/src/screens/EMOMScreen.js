@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#D6304A',
-    paddingTop: 100
+    paddingTop: 10
   },
   label: {
     textAlign: 'center',
