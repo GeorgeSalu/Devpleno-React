@@ -7,11 +7,9 @@ class EMOMScreen extends Component {
 
   state = {
     keyboardIsVisible: false,
-
     alerts: 0,
     countdown: 1,
     time: '15',
-
     isRunning: false,
     countdownValue: 5
   }
