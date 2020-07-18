@@ -9,10 +9,11 @@ class EMOMScreen extends Component {
     keyboardIsVisible: false,
 
     alerts: 0,
-    countdown: 0,
+    countdown: 1,
     time: '15',
 
-    isRunning: false
+    isRunning: false,
+    countdownValue: 5
   }
 
   componentDidMount() {
@@ -22,6 +23,7 @@ class EMOMScreen extends Component {
     this.kbHide = Keyboard.addListener('keyboardDidHide', () => {
       this.setState({ keyboardIsVisible: false })
     })
+    this.play()
   }
 
   componentWillUnmount() {
@@ -29,11 +31,27 @@ class EMOMScreen extends Component {
     this.kbHide.remove()
   }
 
+  play = () => {
+    this.setState({ isRunning: true })
+    //checar o countdown
+    if(this.state.countdown === 1) {
+      this.countdownTimer = setInterval(() => {
+        this.setState({ countdownValue: this.state.countdownValue - 1 }, () => {
+          if(this.state.countdownValue === 0) {
+            clearInterval(this.countdownTimer)
+          }
+        })
+      }, 1000)
+    }
+    //comecar contar
+    //checar terminou
+  }
+
   render() {
     if(this.state.isRunning) {
       return (
-        <View>
-          <Text>Running</Text>
+        <View style={[styles.container, { justifyContent: 'center' }]}>
+          <Text>countdown : {this.state.countdownValue}</Text>
         </View>
       )
     }
@@ -75,7 +93,7 @@ class EMOMScreen extends Component {
           <Text style={styles.label}>Quantos minutos:</Text>
           <TextInput style={styles.input} keyboardType='numeric' value={this.state.time} onChangeText={ text => this.setState({ time: text }) } />
           <Text style={styles.label}>minutos</Text>
-          <TouchableOpacity style={{ alignSelf: 'center' }} onPress={() => this.setState({ isRunning: true })}>
+          <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.play}>
             <Image  source={require('../../assets/btn-play.png')} />
           </TouchableOpacity>
           <Text>Testar</Text>
