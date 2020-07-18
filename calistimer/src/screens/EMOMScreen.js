@@ -68,6 +68,7 @@ class EMOMScreen extends Component {
           <Text style={styles.label}>minutos</Text>
           <Image style={{ alignSelf: 'center' }} source={require('../../assets/btn-play.png')} />
           <Text>Testar</Text>
+          <Text>{JSON.stringify(this.state)}</Text>
         </ScrollView>
       </KeyboardAvoidingView>
     )
