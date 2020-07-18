@@ -79,7 +79,6 @@ class EMOMScreen extends Component {
             <Image  source={require('../../assets/btn-play.png')} />
           </TouchableOpacity>
           <Text>Testar</Text>
-          <Text>{JSON.stringify(this.state)}</Text>
         </ScrollView>
       </KeyboardAvoidingView>
     )
