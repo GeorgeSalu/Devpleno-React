@@ -9,9 +9,10 @@ class EMOMScreen extends Component {
     keyboardIsVisible: false,
     alerts: 0,
     countdown: 1,
-    time: '15',
+    time: '2',
     isRunning: false,
-    countdownValue: 5
+    countdownValue: 5,
+    count: 0
   }
 
   componentDidMount() {
@@ -31,15 +32,25 @@ class EMOMScreen extends Component {
 
   play = () => {
     this.setState({ isRunning: true })
+    const count = () => {
+      this.setState({ count: this.state.count + 1 }, () => {
+        if(this.state.count === parseInt(this.state.time)*60) {
+          clearInterval(this.countTimer)
+        }
+      })
+    }
     //checar o countdown
     if(this.state.countdown === 1) {
       this.countdownTimer = setInterval(() => {
         this.setState({ countdownValue: this.state.countdownValue - 1 }, () => {
           if(this.state.countdownValue === 0) {
             clearInterval(this.countdownTimer)
+            this.countTimer = setInterval(count, 100)
           }
         })
       }, 1000)
+    } else {
+      this.countTimer = setInterval(count, 100)
     }
     //comecar contar
     //checar terminou
@@ -50,6 +61,7 @@ class EMOMScreen extends Component {
       return (
         <View style={[styles.container, { justifyContent: 'center' }]}>
           <Text>countdown : {this.state.countdownValue}</Text>
+          <Text>count : {this.state.count}</Text>
         </View>
       )
     }
