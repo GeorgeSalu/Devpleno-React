@@ -102,7 +102,7 @@ class EMOMScreen extends Component {
             onSelect={ opt => this.setState({ countdown: opt }) } />
           <Text style={styles.label}>Quantos minutos:</Text>
           <TextInput style={styles.input} keyboardType='numeric' value={this.state.time} onChangeText={ text => this.setState({ time: text }) } />
-          <Text style={styles.label}>minutos</Text>
+          <Text style={styles.label}>minutos:</Text>
           <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.play}>
             <Image  source={require('../../assets/btn-play.png')} />
           </TouchableOpacity>
