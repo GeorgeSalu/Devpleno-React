@@ -38,7 +38,7 @@ class EMOMScreen extends Component {
       )
     }
     return (
-      <KeyboardAvoidingView style={{flex:1}} behavior='padding'>
+      <KeyboardAvoidingView style={{ flex:1 }} behavior='padding'>
         <ScrollView style={styles.container}>
           <Title title="EMOM" subTitle="Every Minute On The Minutes" style={{ paddingTop: this.state.keyboardIsVisible ? 20: 200 }} />
           <Image style={{ alignSelf: 'center', marginBottom: 17 }} source={require('../../assets/settings-cog.png')} />
