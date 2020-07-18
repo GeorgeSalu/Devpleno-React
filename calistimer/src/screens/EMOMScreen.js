@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import { Keyboard, ScrollView, StyleSheet, Image, Text, TextInput, KeyboardAvoidingView } from 'react-native'
+import { Keyboard, ScrollView, StyleSheet, Image, Text, TextInput, KeyboardAvoidingView, View, TouchableOpacity } from 'react-native'
 import Select from '../components/Select'
 import Title from '../components/Title'
 
@@ -10,7 +10,9 @@ class EMOMScreen extends Component {
 
     alerts: 0,
     countdown: 0,
-    time: '15'
+    time: '15',
+
+    isRunning: false
   }
 
   componentDidMount() {
@@ -28,6 +30,13 @@ class EMOMScreen extends Component {
   }
 
   render() {
+    if(this.state.isRunning) {
+      return (
+        <View>
+          <Text>Running</Text>
+        </View>
+      )
+    }
     return (
       <KeyboardAvoidingView style={{flex:1}} behavior='padding'>
         <ScrollView style={styles.container}>
@@ -66,7 +75,9 @@ class EMOMScreen extends Component {
           <Text style={styles.label}>Quantos minutos:</Text>
           <TextInput style={styles.input} keyboardType='numeric' value={this.state.time} onChangeText={ text => this.setState({ time: text }) } />
           <Text style={styles.label}>minutos</Text>
-          <Image style={{ alignSelf: 'center' }} source={require('../../assets/btn-play.png')} />
+          <TouchableOpacity style={{ alignSelf: 'center' }} onPress={() => this.setState({ isRunning: true })}>
+            <Image  source={require('../../assets/btn-play.png')} />
+          </TouchableOpacity>
           <Text>Testar</Text>
           <Text>{JSON.stringify(this.state)}</Text>
         </ScrollView>
