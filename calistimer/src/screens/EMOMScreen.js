@@ -66,7 +66,7 @@ class EMOMScreen extends Component {
           <Text>count : {this.state.count}</Text>
           <Time time={this.state.count} />
           <Text>Minute: {percMinute}</Text>
-          <Text>Time {percTime}</Text>
+          <Text>Time: {percTime}</Text>
         </View>
       )
     }
