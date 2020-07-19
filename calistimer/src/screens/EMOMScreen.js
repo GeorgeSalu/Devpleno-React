@@ -140,7 +140,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Ubuntu-Regular',
     fontSize: 48
   }
-
 })
 
 export default EMOMScreen;
