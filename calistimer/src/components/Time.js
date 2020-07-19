@@ -5,7 +5,7 @@ const Timer = props => {
   const minutes = parseFloat(props.time / 60) 
   const seconds = props.time % 60
   return (
-  <Text>{minutes}:{seconds}</Text>
+    <Text>{minutes}:{seconds}</Text>
   )
 }
 
