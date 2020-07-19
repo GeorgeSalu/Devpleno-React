@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import { Keyboard, ScrollView, StyleSheet, Image, Text, TextInput, KeyboardAvoidingView, View, TouchableOpacity } from 'react-native'
 import Select from '../components/Select'
 import Title from '../components/Title'
+import Time from '../components/Time'
 
 class EMOMScreen extends Component {
 
@@ -22,7 +23,7 @@ class EMOMScreen extends Component {
     this.kbHide = Keyboard.addListener('keyboardDidHide', () => {
       this.setState({ keyboardIsVisible: false })
     })
-    this.play()
+    //this.play()
   }
 
   componentWillUnmount() {
@@ -58,10 +59,15 @@ class EMOMScreen extends Component {
 
   render() {
     if(this.state.isRunning) {
+      const percMinute = (this.state.count % 60)/60
+      const percTime = (this.state.count/60) / parseInt(this.state.time)
       return (
         <View style={[styles.container, { justifyContent: 'center' }]}>
           <Text>countdown : {this.state.countdownValue}</Text>
           <Text>count : {this.state.count}</Text>
+          <Time time={this.state.count} />
+      <Text>Minute: {percMinute}</Text>
+      <Text>Time {percTime}</Text>
         </View>
       )
     }
