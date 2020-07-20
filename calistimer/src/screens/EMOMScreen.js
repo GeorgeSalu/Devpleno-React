@@ -67,12 +67,12 @@ class EMOMScreen extends Component {
         this.setState({ countdownValue: this.state.countdownValue - 1 }, () => {
           if(this.state.countdownValue === 0) {
             clearInterval(this.countdownTimer)
-            this.countTimer = setInterval(count, 100)
+            this.countTimer = setInterval(count, 1000)
           }
         })
       }, 1000)
     } else {
-      this.countTimer = setInterval(count, 100)
+      this.countTimer = setInterval(count, 1000)
     }
     // comecar contar
     // checar terminou
