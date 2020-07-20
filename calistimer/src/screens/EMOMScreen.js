@@ -30,7 +30,6 @@ class EMOMScreen extends Component {
     this.kbHide = Keyboard.addListener('keyboardDidHide', () => {
       this.setState({ keyboardIsVisible: false })
     })
-    //this.play()
   }
 
   componentWillUnmount() {
