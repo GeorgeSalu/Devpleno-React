@@ -11,12 +11,17 @@ const Timer = props => {
     return num
   }
   return (
-    <Text>{format(minutes)}:{format(seconds)}</Text>
+    <Text style={styles.text}>{format(minutes)}:{format(seconds)}</Text>
   )
 }
 
 const styles = StyleSheet.create({
-
+  text: {
+    fontFamily: 'Ubuntu-Bold',
+    fontSize: 96,
+    textAlign: 'center',
+    color: 'white'
+  }
 })
 
 export default Timer
