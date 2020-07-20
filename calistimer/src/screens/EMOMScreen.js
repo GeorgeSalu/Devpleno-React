@@ -4,6 +4,7 @@ import Select from '../components/Select'
 import Title from '../components/Title'
 import Time from '../components/Time'
 import ProgressBar from '../components/Progressbar'
+import BackgroundProgress from '../components/BackgroundProgress'
 
 class EMOMScreen extends Component {
 
@@ -60,10 +61,11 @@ class EMOMScreen extends Component {
 
   render() {
     if(this.state.isRunning) {
-      const percMinute = (this.state.count % 60)/60
+      const percMinute = parseInt(((this.state.count % 60)/60)*100)
       const percTime = parseInt(((this.state.count/60) / parseInt(this.state.time)) * 100)
       return (
-        <View style={[styles.container, { justifyContent: 'center' }]}>
+        <BackgroundProgress percentage={percMinute}>
+        <View style={{ flex: 1, justifyContent: 'center' }}>
           <Text>countdown : {this.state.countdownValue}</Text>
           <Text>count : {this.state.count}</Text>
           <Time time={this.state.count} />
@@ -71,6 +73,7 @@ class EMOMScreen extends Component {
           <Text>Time: {percTime}</Text>
           <ProgressBar percentage={percTime} />
         </View>
+        </BackgroundProgress>
       )
     }
     return (
