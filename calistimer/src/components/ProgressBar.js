@@ -18,7 +18,7 @@ class ProgressBar extends Component {
   }
 
   render() {
-    const { color, percentage, height } = props
+    const { color, percentage, height } = this.props
     const w = this.width.interpolate({
       inputRange: [0,100],
       outputRange: ['0%','100%']
