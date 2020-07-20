@@ -3,6 +3,7 @@ import { Keyboard, ScrollView, StyleSheet, Image, Text, TextInput, KeyboardAvoid
 import Select from '../components/Select'
 import Title from '../components/Title'
 import Time from '../components/Time'
+import ProgressBar from '../components/Progressbar'
 
 class EMOMScreen extends Component {
 
@@ -23,6 +24,7 @@ class EMOMScreen extends Component {
     this.kbHide = Keyboard.addListener('keyboardDidHide', () => {
       this.setState({ keyboardIsVisible: false })
     })
+    this.play()
   }
 
   componentWillUnmount() {
@@ -59,7 +61,7 @@ class EMOMScreen extends Component {
   render() {
     if(this.state.isRunning) {
       const percMinute = (this.state.count % 60)/60
-      const percTime = (this.state.count/60) / parseInt(this.state.time)
+      const percTime = parseInt(((this.state.count/60) / parseInt(this.state.time)) * 100)
       return (
         <View style={[styles.container, { justifyContent: 'center' }]}>
           <Text>countdown : {this.state.countdownValue}</Text>
@@ -67,6 +69,7 @@ class EMOMScreen extends Component {
           <Time time={this.state.count} />
           <Text>Minute: {percMinute}</Text>
           <Text>Time: {percTime}</Text>
+          <ProgressBar percentage={percTime} />
         </View>
       )
     }
