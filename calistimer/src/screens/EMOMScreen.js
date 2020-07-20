@@ -65,14 +65,14 @@ class EMOMScreen extends Component {
       const percTime = parseInt(((this.state.count/60) / parseInt(this.state.time)) * 100)
       return (
         <BackgroundProgress percentage={percMinute}>
-        <View style={{ flex: 1, justifyContent: 'center' }}>
-          <Text>countdown : {this.state.countdownValue}</Text>
-          <Text>count : {this.state.count}</Text>
-          <Time time={this.state.count} />
-          <Text>Minute: {percMinute}</Text>
-          <Text>Time: {percTime}</Text>
-          <ProgressBar percentage={percTime} />
-        </View>
+          <View style={{ flex: 1, justifyContent: 'center' }}>
+            <Text>countdown : {this.state.countdownValue}</Text>
+            <Text>count : {this.state.count}</Text>
+            <Time time={this.state.count} />
+            <Text>Minute: {percMinute}</Text>
+            <Text>Time: {percTime}</Text>
+            <ProgressBar percentage={percTime} />
+          </View>
         </BackgroundProgress>
       )
     }
