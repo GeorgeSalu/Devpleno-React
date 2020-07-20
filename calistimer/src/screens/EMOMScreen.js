@@ -69,10 +69,10 @@ class EMOMScreen extends Component {
             <Text>countdown : {this.state.countdownValue}</Text>
             <Text>count : {this.state.count}</Text>
             <Time time={this.state.count} />
+            <ProgressBar percentage={percTime} />
             <Time time={parseInt(this.state.time)*60 - this.state.count} type='text2' appendedText={' restantes'} />
             <Text>Minute: {percMinute}</Text>
             <Text>Time: {percTime}</Text>
-            <ProgressBar percentage={percTime} />
           </View>
         </BackgroundProgress>
       )
