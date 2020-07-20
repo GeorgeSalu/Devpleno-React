@@ -48,10 +48,9 @@ class Select extends Component {
     }
     return current === item
   }
-  
+
   render() {
     const { options, label } = this.props
-    const { current } = this.state
 
     return (
       <View style={{flex: 1}}>
