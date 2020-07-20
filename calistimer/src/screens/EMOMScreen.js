@@ -82,7 +82,7 @@ class EMOMScreen extends Component {
             [ 
               {
                 id: 0,
-                label: 'Desligado'
+                label: 'desligado'
               }, 
               {
                 id: 15, 
