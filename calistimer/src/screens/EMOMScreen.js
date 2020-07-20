@@ -5,12 +5,15 @@ import Title from '../components/Title'
 import Time from '../components/Time'
 import ProgressBar from '../components/Progressbar'
 import BackgroundProgress from '../components/BackgroundProgress'
+import Sound from 'react-native-sound'
+
+const alert = require('../../assets/sounds/alert.wav')
 
 class EMOMScreen extends Component {
 
   state = {
     keyboardIsVisible: false,
-    alerts: 0,
+    alerts: [0],
     countdown: 1,
     time: '2',
     isRunning: false,
@@ -19,13 +22,15 @@ class EMOMScreen extends Component {
   }
 
   componentDidMount() {
+    Sound.setCategory('Playback', true)
+    this.alert = new Sound(alert)
     this.kbShow = Keyboard.addListener('keyboardDidShow', () => {
       this.setState({ keyboardIsVisible: true })
     })
     this.kbHide = Keyboard.addListener('keyboardDidHide', () => {
       this.setState({ keyboardIsVisible: false })
     })
-    this.play()
+    //this.play()
   }
 
   componentWillUnmount() {
@@ -37,6 +42,9 @@ class EMOMScreen extends Component {
     this.setState({ isRunning: true })
     const count = () => {
       this.setState({ count: this.state.count + 1 }, () => {
+        if(this.state.count % this.state.alerts === 0) {
+          this.alert.play()
+        }
         if(this.state.count === parseInt(this.state.time)*60) {
           clearInterval(this.countTimer)
         }
@@ -44,7 +52,9 @@ class EMOMScreen extends Component {
     }
     // checar o countdown
     if(this.state.countdown === 1) {
+      this.alert.play()
       this.countdownTimer = setInterval(() => {
+        this.alert.play()
         this.setState({ countdownValue: this.state.countdownValue - 1 }, () => {
           if(this.state.countdownValue === 0) {
             clearInterval(this.countdownTimer)
@@ -89,7 +99,7 @@ class EMOMScreen extends Component {
             [ 
               {
                 id: 0,
-                label: 'desligado'
+                label: '0s'
               }, 
               {
                 id: 15, 

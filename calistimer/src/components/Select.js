@@ -22,6 +22,10 @@ class Select extends Component {
     }
   }
 
+  checkItem  = item => {
+    const { current } = this.state
+    
+  }
   render() {
     const { options, label } = this.props
     const { current } = this.state
