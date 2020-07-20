@@ -32,7 +32,6 @@ class Select extends Component {
         this.props.onSelect(newCurrent)
       }
     } else {
-      
       this.setState({
         current: opt
       })
@@ -49,6 +48,7 @@ class Select extends Component {
     }
     return current === item
   }
+  
   render() {
     const { options, label } = this.props
     const { current } = this.state
