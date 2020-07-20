@@ -11,7 +11,7 @@ const Timer = props => {
     return num
   }
   return (
-    <Text style={styles.text}>{format(minutes)}:{format(seconds)}</Text>
+  <Text style={styles[props.type ? props.type : 'text']}>{format(minutes)}:{format(seconds)}{props.appendedText}</Text>
   )
 }
 
@@ -21,6 +21,12 @@ const styles = StyleSheet.create({
     fontSize: 96,
     textAlign: 'center',
     color: 'white'
+  },
+  text2: {
+    fontFamily: 'Ubuntu-Regular',
+    fontSize: 24,
+    color: 'white',
+    textAlign: 'center'
   }
 })
 
