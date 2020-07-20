@@ -13,7 +13,7 @@ class EMOMScreen extends Component {
 
   state = {
     keyboardIsVisible: false,
-    alerts: [0],
+    alerts: [0, 15],
     countdown: 1,
     time: '2',
     isRunning: false,
@@ -38,13 +38,23 @@ class EMOMScreen extends Component {
     this.kbHide.remove()
   }
 
+  playAlert = () => {
+    const resto = this.state.count % 60
+    if(this.state.alerts.indexOf(resto) >= 0) {
+      this.alert.play();
+    }
+    if(this.state.countdown === 1){
+      if(resto>= 55 && resto < 60) {
+        this.alert.play()
+      } 
+    }
+  }
+
   play = () => {
     this.setState({ isRunning: true })
     const count = () => {
       this.setState({ count: this.state.count + 1 }, () => {
-        if(this.state.count % this.state.alerts === 0) {
-          this.alert.play()
-        }
+        this.playAlert()
         if(this.state.count === parseInt(this.state.time)*60) {
           clearInterval(this.countTimer)
         }
