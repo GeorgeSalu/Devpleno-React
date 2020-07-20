@@ -11,7 +11,7 @@ const Timer = props => {
     return num
   }
   return (
-  <Text style={styles[props.type ? props.type : 'text']}>{format(minutes)}:{format(seconds)}{props.appendedText}</Text>
+    <Text style={styles[props.type ? props.type : 'text']}>{format(minutes)}:{format(seconds)}{props.appendedText}</Text>
   )
 }
 
