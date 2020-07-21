@@ -94,9 +94,8 @@ class EMOMScreen extends Component {
               <Time time={parseInt(this.state.time)*60 - this.state.count} type='text2' appendedText={' restantes'} />
             </View>
             <View>
-            <Text style={styles.countdown}>{this.state.countdownValue}</Text>
+              <Text style={styles.countdown}>{this.state.countdownValue}</Text>
             </View>
-            
           </View>
         </BackgroundProgress>
       )
