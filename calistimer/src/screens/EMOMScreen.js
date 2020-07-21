@@ -108,8 +108,8 @@ class EMOMScreen extends Component {
             <View style={{ flex: 1, justifyContent: 'flex-end' }}>
               {
                 this.state.countdownValue > 0 ?
-                <Text style={styles.countdown}>{this.state.countdownValue}</Text>
-                : null
+                  <Text style={styles.countdown}>{this.state.countdownValue}</Text>
+                  : null
               }
               <TouchableOpacity style={{ alignSelf: 'center', marginBottom: 20 }} onPress={this.stop}>
                 <Image  source={require('../../assets/btn-stop.png')} />
