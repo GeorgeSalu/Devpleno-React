@@ -18,7 +18,7 @@ class BackgroundProgress extends Component {
   }
 
   render() {
-    const { children, percentage } = this.props
+    const { children } = this.props
     const h = this.height.interpolate({
       inputRange: [0,100],
       outputRange: ['0%', '100%']
