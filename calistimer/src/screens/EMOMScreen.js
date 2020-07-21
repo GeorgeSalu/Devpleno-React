@@ -85,13 +85,18 @@ class EMOMScreen extends Component {
       return (
         <BackgroundProgress percentage={percMinute}>
           <View style={{ flex: 1, justifyContent: 'center' }}>
-            <Text>countdown : {this.state.countdownValue}</Text>
-            <Text>count : {this.state.count}</Text>
-            <Time time={this.state.count} />
-            <ProgressBar percentage={percTime} />
-            <Time time={parseInt(this.state.time)*60 - this.state.count} type='text2' appendedText={' restantes'} />
-            <Text>Minute: {percMinute}</Text>
-            <Text>Time: {percTime}</Text>
+            <View>
+              <Text>EMOM</Text>
+            </View>
+            <View>
+              <Time time={this.state.count} />
+              <ProgressBar percentage={percTime} />
+              <Time time={parseInt(this.state.time)*60 - this.state.count} type='text2' appendedText={' restantes'} />
+            </View>
+            <View>
+            <Text style={styles.countdown}>{this.state.countdownValue}</Text>
+            </View>
+            
           </View>
         </BackgroundProgress>
       )
@@ -165,6 +170,12 @@ const styles = StyleSheet.create({
     color: 'black',
     fontFamily: 'Ubuntu-Regular',
     fontSize: 48
+  },
+  countdown: {
+    fontFamily: 'Ubuntu-Bold',
+    fontSize: 144,
+    color: 'white',
+    textAlign: 'center'
   }
 })
 
