@@ -105,13 +105,13 @@ class EMOMScreen extends Component {
               <ProgressBar percentage={percTime} />
               <Time time={parseInt(this.state.time)*60 - this.state.count} type='text2' appendedText={' restantes'} />
             </View>
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1, justifyContent: 'flex-end' }}>
               {
                 this.state.countdownValue > 0 ?
                 <Text style={styles.countdown}>{this.state.countdownValue}</Text>
                 : null
               }
-              <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.stop}>
+              <TouchableOpacity style={{ alignSelf: 'center', marginBottom: 20 }} onPress={this.stop}>
                 <Image  source={require('../../assets/btn-stop.png')} />
               </TouchableOpacity>
             </View>
