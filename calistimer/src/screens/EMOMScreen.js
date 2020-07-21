@@ -17,7 +17,7 @@ class EMOMScreen extends Component {
     countdown: 1,
     time: '2',
     isRunning: false,
-    countdownValue: 5,
+    countdownValue: 0,
     count: 0
   }
 
@@ -49,7 +49,19 @@ class EMOMScreen extends Component {
     }
   }
 
+  stop = () => {
+    clearInterval(this.countdownTimer)
+    clearInterval(this.countTimer)
+    this.setState({
+      isRunning: false
+    })
+  }
+
   play = () => {
+    this.setState({
+      count: 0,
+      countdownValue: this.state.countdown === 1 ? 5 : 0
+    })
     this.setState({ isRunning: true })
     const count = () => {
       this.setState({ count: this.state.count + 1 }, () => {
@@ -85,16 +97,23 @@ class EMOMScreen extends Component {
       return (
         <BackgroundProgress percentage={percMinute}>
           <View style={{ flex: 1, justifyContent: 'center' }}>
-            <View>
-              <Text>EMOM</Text>
+            <View style={{ flex: 1 }}>
+              <Title title="EMOM" subTitle="Every Minute On The Minute" style={{ paddingTop: this.state.keyboardIsVisible ? 20: 200 }} />
             </View>
-            <View>
+            <View style={{ flex: 1, justifyContent: 'center' }}>
               <Time time={this.state.count} />
               <ProgressBar percentage={percTime} />
               <Time time={parseInt(this.state.time)*60 - this.state.count} type='text2' appendedText={' restantes'} />
             </View>
-            <View>
-              <Text style={styles.countdown}>{this.state.countdownValue}</Text>
+            <View style={{ flex: 1 }}>
+              {
+                this.state.countdownValue > 0 ?
+                <Text style={styles.countdown}>{this.state.countdownValue}</Text>
+                : null
+              }
+              <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.stop}>
+                <Image  source={require('../../assets/btn-stop.png')} />
+              </TouchableOpacity>
             </View>
           </View>
         </BackgroundProgress>
