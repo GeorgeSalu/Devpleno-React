@@ -71,7 +71,6 @@ class EMOMScreen extends Component {
         }
       })
     }
-    // checar o countdown
     if(this.state.countdown === 1) {
       this.alert.play()
       this.countdownTimer = setInterval(() => {
@@ -86,8 +85,6 @@ class EMOMScreen extends Component {
     } else {
       this.countTimer = setInterval(count, 1000)
     }
-    // comecar contar
-    // checar terminou
   }
 
   render() {
