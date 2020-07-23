@@ -45,7 +45,7 @@ class IsometriaScreen extends Component {
   }
 
   back = () => {
-    if(this.state.paused) {
+    if(this.state.paused || !this.state.isRunning) {
       clearInterval(this.countTimer)
       clearInterval(this.countdownTimer)
       this.props.navigation.goBack()
@@ -160,9 +160,14 @@ class IsometriaScreen extends Component {
             onSelect={ opt => this.setState({ goal: opt }) } />
           <Text style={styles.label}>Quantos segundos:</Text>
           <TextInput style={styles.input} keyboardType='numeric' value={this.state.time} onChangeText={ text => this.setState({ time: text }) } />          
-          <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.play}>
-            <Image  source={require('../../assets/btn-play.png')} />
-          </TouchableOpacity>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' , marginBottom: 20}}>
+            <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.back}>
+              <Image   source={require('../../assets/left-arrow.png')} />
+            </TouchableOpacity>
+            <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.play}>
+              <Image  source={require('../../assets/btn-play.png')} />
+            </TouchableOpacity>
+          </View>
           <Text>Testar</Text>
         </ScrollView>
       </KeyboardAvoidingView>
