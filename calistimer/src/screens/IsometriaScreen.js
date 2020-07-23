@@ -47,9 +47,6 @@ class IsometriaScreen extends Component {
   stop = () => {
     clearInterval(this.countdownTimer)
     clearInterval(this.countTimer)
-    /*this.setState({
-      isRunning: false
-    })*/
   }
 
   play = () => {
@@ -61,9 +58,6 @@ class IsometriaScreen extends Component {
     const count = () => {
       this.setState({ count: this.state.count + 1 }, () => {
         this.playAlert()
-        /*if(this.state.count === parseInt(this.state.time)) {
-          clearInterval(this.countTimer)
-        }*/
       })
     }
     this.alert.play()
