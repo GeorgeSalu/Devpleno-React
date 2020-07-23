@@ -37,7 +37,6 @@ class IsometriaScreen extends Component {
   }
 
   playAlert = () => {
-    const resto = 0
     const {count, time} = this.state
     if(count >= parseInt(time) - 5 && count <= parseInt(time)) {
       this.alert.play()
