@@ -3,7 +3,6 @@ import { Keyboard, ScrollView, StyleSheet, Image, Text, TextInput, KeyboardAvoid
 import Select from '../components/Select'
 import Title from '../components/Title'
 import Time from '../components/Time'
-import ProgressBar from '../components/ProgressBar'
 import BackgroundProgress from '../components/BackgroundProgress'
 import Sound from 'react-native-sound'
 
