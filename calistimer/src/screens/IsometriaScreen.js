@@ -45,10 +45,11 @@ class IsometriaScreen extends Component {
   }
 
   back = () => {
-    
-    clearInterval(this.countTimer)
-    clearInterval(this.countdownTimer)
-    this.props.navigation.goBack()
+    if(this.state.paused) {
+      clearInterval(this.countTimer)
+      clearInterval(this.countdownTimer)
+      this.props.navigation.goBack()
+    }
   }
 
   restart = () => {
