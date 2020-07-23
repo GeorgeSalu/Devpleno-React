@@ -7,7 +7,7 @@ import IsometriaScreen from './src/screens/IsometriaScreen';
 const AppNavigator = createStackNavigator({
   Home: HomeScreen,
   EMOM: EMOMScreen,
-  IsometriaScreen: IsometriaScreen
+  Isometria: IsometriaScreen
 }, {initialRouteName: 'Home'})
 
 export default createAppContainer(AppNavigator)
