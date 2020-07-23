@@ -96,7 +96,7 @@ class AMRAPScreen extends Component {
         <BackgroundProgress percentage={percMinute}>
           <View style={{ flex: 1, justifyContent: 'center' }}>
             <View style={{ flex: 1 }}>
-              <Title title="AMRAP" subTitle="As Many Repetitions As Posible" style={{ paddingTop: this.state.keyboardIsVisible ? 20: 200 }} />
+              <Title title="AMRAP" subTitle="As Many Repetitions As Possible" style={{ paddingTop: this.state.keyboardIsVisible ? 20: 200 }} />
             </View>
             <View style={{ flex: 1, justifyContent: 'center' }}>
               <Time time={this.state.count} />
@@ -130,7 +130,7 @@ class AMRAPScreen extends Component {
     return (
       <KeyboardAvoidingView style={{ flex:1 }} behavior='padding'>
         <ScrollView style={styles.container}>
-          <Title title="AMRAP" subTitle="As Many Repetitions As Posible" style={{ paddingTop: this.state.keyboardIsVisible ? 20: 200 }} />
+          <Title title="AMRAP" subTitle="As Many Repetitions As Possible" style={{ paddingTop: this.state.keyboardIsVisible ? 20: 200 }} />
           <Image style={{ alignSelf: 'center', marginBottom: 17 }} source={require('../../assets/settings-cog.png')} />
           <Select 
             label='Alertas:'
