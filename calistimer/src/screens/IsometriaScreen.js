@@ -30,7 +30,6 @@ class IsometriaScreen extends Component {
     this.kbHide = Keyboard.addListener('keyboardDidHide', () => {
       this.setState({ keyboardIsVisible: false })
     })
-    this.play()
   }
 
   componentWillUnmount() {
@@ -45,16 +44,32 @@ class IsometriaScreen extends Component {
     }
   }
 
+  back = () => {
+    
+    clearInterval(this.countTimer)
+    clearInterval(this.countdownTimer)
+    this.props.navigation.goBack()
+  }
+
+  restart = () => {
+    if(this.state.paused) {
+      clearInterval(this.countTimer)
+      clearInterval(this.countdownTimer)
+      this.play()
+    }
+  }
+
   stop = () => {
     this.setState({
-      paused: true
+      paused: !this.state.paused
     })
   }
 
   play = () => {
     this.setState({
       count: 0,
-      countdownValue: 5
+      countdownValue: 5,
+      paused: false
     })
     this.setState({ isRunning: true })
     const count = () => {
@@ -84,6 +99,7 @@ class IsometriaScreen extends Component {
     if(this.state.isRunning) {
       const percMinute = parseInt(((this.state.count)/parseInt(this.state.time))*100)    
       const restante = parseInt(this.state.time)>=this.state.count ?  parseInt(this.state.time) - this.state.count : 0
+      const opacity = !this.state.paused ? 0.6 : 1
       return (
         <BackgroundProgress percentage={percMinute}>
           <View style={{ flex: 1, justifyContent: 'center' }}>
@@ -101,14 +117,18 @@ class IsometriaScreen extends Component {
                   : null
               }
               <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' , marginBottom: 20}}>
-                <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.stop}>
-                  <Image  source={require('../../assets/left-arrow.png')} />
+                <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.back}>
+                  <Image style={{opacity}}  source={require('../../assets/left-arrow.png')} />
                 </TouchableOpacity>
                 <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.stop}>
-                  <Image  source={require('../../assets/btn-stop.png')} />
+                  {
+                    this.state.paused ?
+                    <Image  source={require('../../assets/btn-play.png')} />
+                    : <Image  source={require('../../assets/btn-stop.png')} />
+                  }
                 </TouchableOpacity>
-                <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.stop}>
-                  <Image  source={require('../../assets/restart.png')} />
+                <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.restart}>
+                  <Image style={{opacity}}  source={require('../../assets/restart.png')} />
                 </TouchableOpacity>
               </View>
             </View>
