@@ -66,8 +66,6 @@ class IsometriaScreen extends Component {
         }
       })
     }
-    // checar o countdown
-    
     this.alert.play()
     this.countdownTimer = setInterval(() => {
       this.alert.play()
@@ -78,9 +76,6 @@ class IsometriaScreen extends Component {
         }
       })
     }, 1000)
-    
-    // comecar contar
-    // checar terminou
   }
 
   render() {
