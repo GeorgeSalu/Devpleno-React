@@ -111,7 +111,9 @@ class IsometriaScreen extends Component {
             </View>
             <View style={{ flex: 1, justifyContent: 'center' }}>
               <Time time={this.state.count} />
-              <Time time={restante} type='text2' appendedText={' restantes'} />
+              {
+                this.state.goal === 1 ? <Time time={restante} type='text2' appendedText={' restantes'} /> : null
+              }
             </View>
             <View style={{ flex: 1, justifyContent: 'flex-end' }}>
               {
