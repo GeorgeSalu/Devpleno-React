@@ -39,9 +39,9 @@ class IsometriaScreen extends Component {
 
   playAlert = () => {
     const resto = 0
-      if(resto>= 55 && resto < 60) {
-        this.alert.play()
-      }
+    if(resto>= 55 && resto < 60) {
+      this.alert.play()
+    }
   }
 
   stop = () => {
@@ -68,16 +68,16 @@ class IsometriaScreen extends Component {
     }
     // checar o countdown
     
+    this.alert.play()
+    this.countdownTimer = setInterval(() => {
       this.alert.play()
-      this.countdownTimer = setInterval(() => {
-        this.alert.play()
-        this.setState({ countdownValue: this.state.countdownValue - 1 }, () => {
-          if(this.state.countdownValue === 0) {
-            clearInterval(this.countdownTimer)
-            this.countTimer = setInterval(count, 1000)
-          }
-        })
-      }, 1000)
+      this.setState({ countdownValue: this.state.countdownValue - 1 }, () => {
+        if(this.state.countdownValue === 0) {
+          clearInterval(this.countdownTimer)
+          this.countTimer = setInterval(count, 1000)
+        }
+      })
+    }, 1000)
     
     // comecar contar
     // checar terminou
