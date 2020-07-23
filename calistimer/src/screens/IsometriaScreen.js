@@ -29,6 +29,7 @@ class IsometriaScreen extends Component {
     this.kbHide = Keyboard.addListener('keyboardDidHide', () => {
       this.setState({ keyboardIsVisible: false })
     })
+    this.play()
   }
 
   componentWillUnmount() {
@@ -91,9 +92,11 @@ class IsometriaScreen extends Component {
                   <Text style={styles.countdown}>{this.state.countdownValue}</Text>
                   : null
               }
-              <TouchableOpacity style={{ alignSelf: 'center', marginBottom: 20 }} onPress={this.stop}>
-                <Image  source={require('../../assets/btn-stop.png')} />
-              </TouchableOpacity>
+              <View>
+                <TouchableOpacity style={{ alignSelf: 'center', marginBottom: 20 }} onPress={this.stop}>
+                  <Image  source={require('../../assets/btn-stop.png')} />
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
         </BackgroundProgress>
