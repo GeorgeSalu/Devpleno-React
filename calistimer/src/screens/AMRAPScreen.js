@@ -88,6 +88,20 @@ class AMRAPScreen extends Component {
     }
   }
 
+  decrement = () => {
+    if(this.state.repetitions > 0) {
+      this.setState({
+        repetitions: this.state.repetitions - 1
+      })
+    }
+  }
+
+  increment = () => {
+    this.setState({
+      repetitions: this.state.repetitions + 1
+    })
+  }
+
   render() {
     if(this.state.isRunning) {
       const percMinute = parseInt(((this.state.count % 60)/60)*100)
@@ -109,11 +123,11 @@ class AMRAPScreen extends Component {
                   <Text style={styles.countdown}>{this.state.countdownValue}</Text>
                   : 
                   <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={this.decrement}>
                       <Text style={styles.countdown}>-</Text>  
                     </TouchableOpacity>
                     <Text style={styles.countdown}>{this.state.repetitions}</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={this.increment}>
                       <Text style={styles.countdown}>+</Text>  
                     </TouchableOpacity>
                   </View>
