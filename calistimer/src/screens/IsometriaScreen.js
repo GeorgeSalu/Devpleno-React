@@ -168,7 +168,6 @@ class IsometriaScreen extends Component {
               <Image  source={require('../../assets/btn-play.png')} />
             </TouchableOpacity>
           </View>
-          <Text>Testar</Text>
         </ScrollView>
       </KeyboardAvoidingView>
     )
