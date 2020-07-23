@@ -26,9 +26,9 @@ class ProgressBar extends Component {
     return (
       <View>
         <Animated.View style={{
-              width: w,
-              backgroundColor: color ? color : 'white',
-              height: height ? height : 3 }} />
+            width: w,
+            backgroundColor: color ? color : 'white',
+            height: height ? height : 3 }} />
       </View>
     )
   }
