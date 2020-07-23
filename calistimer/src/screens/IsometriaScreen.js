@@ -85,8 +85,7 @@ class IsometriaScreen extends Component {
 
   render() {
     if(this.state.isRunning) {
-      const percMinute = parseInt(((this.state.count)/parseInt(this.state.time))*100)
-      
+      const percMinute = parseInt(((this.state.count)/parseInt(this.state.time))*100)    
       return (
         <BackgroundProgress percentage={percMinute}>
           <View style={{ flex: 1, justifyContent: 'center' }}>
@@ -132,11 +131,8 @@ class IsometriaScreen extends Component {
             ]
             }
             onSelect={ opt => this.setState({ goal: opt }) } />
-  
-          
           <Text style={styles.label}>Quantos segundos:</Text>
-          <TextInput style={styles.input} keyboardType='numeric' value={this.state.time} onChangeText={ text => this.setState({ time: text }) } />
-          
+          <TextInput style={styles.input} keyboardType='numeric' value={this.state.time} onChangeText={ text => this.setState({ time: text }) } />          
           <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.play}>
             <Image  source={require('../../assets/btn-play.png')} />
           </TouchableOpacity>
