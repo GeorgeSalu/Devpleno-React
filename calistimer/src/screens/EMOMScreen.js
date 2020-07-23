@@ -157,7 +157,6 @@ class EMOMScreen extends Component {
           <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.play}>
             <Image  source={require('../../assets/btn-play.png')} />
           </TouchableOpacity>
-          <Text>Testar</Text>
         </ScrollView>
       </KeyboardAvoidingView>
     )
