@@ -8,6 +8,6 @@ const AppNavigator = createStackNavigator({
   Home: HomeScreen,
   EMOM: EMOMScreen,
   Isometria: IsometriaScreen
-}, {initialRouteName: 'Home'})
+}, {initialRouteName: 'Isometria'})
 
 export default createAppContainer(AppNavigator)
