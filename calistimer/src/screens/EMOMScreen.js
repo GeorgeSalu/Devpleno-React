@@ -145,7 +145,6 @@ class EMOMScreen extends Component {
             ]
             }
             onSelect={ opt => this.setState({ alerts: opt }) } />
-  
           <Select 
             label='Contagem regressiva:'
             current={this.state.countdown}
