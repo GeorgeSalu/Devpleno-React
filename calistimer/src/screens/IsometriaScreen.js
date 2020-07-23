@@ -16,6 +16,7 @@ class IsometriaScreen extends Component {
     countdown: 1,
     time: '20',
     isRunning: false,
+    paused: false,
     countdownValue: 0,
     count: 0
   }
@@ -45,8 +46,9 @@ class IsometriaScreen extends Component {
   }
 
   stop = () => {
-    clearInterval(this.countdownTimer)
-    clearInterval(this.countTimer)
+    this.setState({
+      paused: true
+    })
   }
 
   play = () => {
@@ -56,12 +58,18 @@ class IsometriaScreen extends Component {
     })
     this.setState({ isRunning: true })
     const count = () => {
+      if(this.state.paused) {
+        return;
+      }
       this.setState({ count: this.state.count + 1 }, () => {
         this.playAlert()
       })
     }
     this.alert.play()
     this.countdownTimer = setInterval(() => {
+      if(this.state.paused) {
+        return;
+      }
       this.alert.play()
       this.setState({ countdownValue: this.state.countdownValue - 1 }, () => {
         if(this.state.countdownValue === 0) {
@@ -92,9 +100,15 @@ class IsometriaScreen extends Component {
                   <Text style={styles.countdown}>{this.state.countdownValue}</Text>
                   : null
               }
-              <View>
-                <TouchableOpacity style={{ alignSelf: 'center', marginBottom: 20 }} onPress={this.stop}>
+              <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' , marginBottom: 20}}>
+                <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.stop}>
+                  <Image  source={require('../../assets/left-arrow.png')} />
+                </TouchableOpacity>
+                <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.stop}>
                   <Image  source={require('../../assets/btn-stop.png')} />
+                </TouchableOpacity>
+                <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.stop}>
+                  <Image  source={require('../../assets/restart.png')} />
                 </TouchableOpacity>
               </View>
             </View>
