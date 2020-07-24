@@ -31,7 +31,7 @@ class AMRAPScreen extends Component {
     this.kbHide = Keyboard.addListener('keyboardDidHide', () => {
       this.setState({ keyboardIsVisible: false })
     })
-    this.play()
+    //this.play()
   }
 
   componentWillUnmount() {
@@ -107,22 +107,25 @@ class AMRAPScreen extends Component {
     if(this.state.isRunning) {
       const percMinute = parseInt(((this.state.count % 60)/60)*100)
       const percTime = parseInt(((this.state.count/60) / parseInt(this.state.time)) * 100)
+      const media = this.state.repetitions > 0 ? this.state.count / this.state.repetitions : 0
+      const estimated = media > 0 ? Math.floor((parseInt(this.state.time)*60) / media) : 0
       return (
         <BackgroundProgress percentage={percMinute}>
           <View style={{ flex: 1, justifyContent: 'center' }}>
             <View style={{ flex: 1 }}>
               <Title title="AMRAP" subTitle="As Many Repetitions As Possible" style={{ paddingTop: this.state.keyboardIsVisible ? 20: 200 }} />
             </View>
+            { this.state.repetitions > 0 ?
             <View style={{ flexDirection: 'row' }}>
               <View style={{ flex: 1 }}>
                 <Time time={10} type='text3' />
-                <Text>por repetição</Text>
+                <Text style={styles.subTitle}>por repetição</Text>
               </View>
               <View style={{ flex: 1 }}>
-                <Text>10</Text>
-                <Text>por repetição</Text>
+      <Text style={styles.count}>{estimated}</Text>
+                <Text style={styles.subTitle}>repetições</Text>
               </View>
-            </View>
+            </View> : null }
             <View style={{ flex: 1, justifyContent: 'center' }}>
               <Time time={this.state.count} />
               <ProgressBar percentage={percTime} />
@@ -225,10 +228,17 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center'
   },
+  count: {
+    fontFamily: 'Ubuntu-Bold',
+    fontSize: 37,
+    color: 'white',
+    textAlign: 'center'
+  },  
   subTitle: {
     fontFamily: 'Ubuntu-Bold',
     fontSize: 11,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: 'white'
   }
 })
 
