@@ -122,7 +122,7 @@ class AMRAPScreen extends Component {
                 <Text style={styles.subTitle}>por repetição</Text>
               </View>
               <View style={{ flex: 1 }}>
-      <Text style={styles.count}>{estimated}</Text>
+                <Text style={styles.count}>{estimated}</Text>
                 <Text style={styles.subTitle}>repetições</Text>
               </View>
             </View> : null }
