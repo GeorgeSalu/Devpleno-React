@@ -31,6 +31,7 @@ class AMRAPScreen extends Component {
     this.kbHide = Keyboard.addListener('keyboardDidHide', () => {
       this.setState({ keyboardIsVisible: false })
     })
+    this.play()
   }
 
   componentWillUnmount() {
@@ -111,6 +112,16 @@ class AMRAPScreen extends Component {
           <View style={{ flex: 1, justifyContent: 'center' }}>
             <View style={{ flex: 1 }}>
               <Title title="AMRAP" subTitle="As Many Repetitions As Possible" style={{ paddingTop: this.state.keyboardIsVisible ? 20: 200 }} />
+            </View>
+            <View style={{ flexDirection: 'row' }}>
+              <View style={{ flex: 1 }}>
+                <Time time={10} type='text3' />
+                <Text>por repeticao</Text>
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text>10</Text>
+                <Text>por repeticao</Text>
+              </View>
             </View>
             <View style={{ flex: 1, justifyContent: 'center' }}>
               <Time time={this.state.count} />
@@ -213,6 +224,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Ubuntu-Bold',
     fontSize: 144,
     color: 'white',
+    textAlign: 'center'
+  },
+  subTitle: {
+    fontFamily: 'Ubuntu-Bold',
+    fontSize: 11,
     textAlign: 'center'
   }
 })
