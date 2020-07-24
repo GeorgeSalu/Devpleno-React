@@ -6,6 +6,7 @@ import Time from '../components/Time'
 import ProgressBar from '../components/ProgressBar'
 import BackgroundProgress from '../components/BackgroundProgress'
 import Sound from 'react-native-sound'
+import KeepAwake from 'react-native-keep-awake'
 
 const alert = require('../../assets/sounds/alert.wav')
 
@@ -131,6 +132,7 @@ class AMRAPScreen extends Component {
       return (
         <BackgroundProgress percentage={percMinute}>
           <View style={{ flex: 1, justifyContent: 'center' }}>
+            <KeepAwake />
             <View style={{ flex: 1 }}>
               <Title title="AMRAP" subTitle="As Many Repetitions As Possible" style={{ paddingTop: this.state.keyboardIsVisible ? 20: 200 }} />
             </View>
