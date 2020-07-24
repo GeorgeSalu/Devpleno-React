@@ -153,9 +153,14 @@ class EMOMScreen extends Component {
           <Text style={styles.label}>Quantos minutos:</Text>
           <TextInput style={styles.input} keyboardType='numeric' value={this.state.time} onChangeText={ text => this.setState({ time: text }) } />
           <Text style={styles.label}>minutos</Text>
-          <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.play}>
-            <Image  source={require('../../assets/btn-play.png')} />
-          </TouchableOpacity>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' , marginBottom: 20}}>
+            <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.back}>
+              <Image   source={require('../../assets/left-arrow.png')} />
+            </TouchableOpacity>
+            <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.play}>
+              <Image  source={require('../../assets/btn-play.png')} />
+            </TouchableOpacity>
+          </View>
         </ScrollView>
       </KeyboardAvoidingView>
     )
