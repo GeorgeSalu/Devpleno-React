@@ -18,7 +18,8 @@ class EMOMScreen extends Component {
     time: '2',
     isRunning: false,
     countdownValue: 0,
-    count: 0
+    count: 0,
+    paused: false
   }
 
   componentDidMount() {
@@ -49,21 +50,39 @@ class EMOMScreen extends Component {
     }
   }
 
+  back = () => {
+    if(this.state.paused || !this.state.isRunning) {
+      clearInterval(this.countTimer)
+      clearInterval(this.countdownTimer)
+      this.props.navigation.goBack()
+    }
+  }
+
+  restart = () => {
+    if(this.state.paused) {
+      clearInterval(this.countTimer)
+      clearInterval(this.countdownTimer)
+      this.play()
+    }
+  }
+
   stop = () => {
-    clearInterval(this.countdownTimer)
-    clearInterval(this.countTimer)
+    //clearInterval(this.countdownTimer)
+    //clearInterval(this.countTimer)
     this.setState({
-      isRunning: false
+      paused: !this.state.paused
     })
   }
 
   play = () => {
     this.setState({
+      paused: false,
       count: 0,
       countdownValue: this.state.countdown === 1 ? 5 : 0
     })
     this.setState({ isRunning: true })
     const count = () => {
+      if(this.state.paused) { return; }
       this.setState({ count: this.state.count + 1 }, () => {
         this.playAlert()
         if(this.state.count === parseInt(this.state.time)*60) {
@@ -74,6 +93,7 @@ class EMOMScreen extends Component {
     if(this.state.countdown === 1) {
       this.alert.play()
       this.countdownTimer = setInterval(() => {
+        if(this.state.paused) { return; }
         this.alert.play()
         this.setState({ countdownValue: this.state.countdownValue - 1 }, () => {
           if(this.state.countdownValue === 0) {
@@ -91,6 +111,7 @@ class EMOMScreen extends Component {
     if(this.state.isRunning) {
       const percMinute = parseInt(((this.state.count % 60)/60)*100)
       const percTime = parseInt(((this.state.count/60) / parseInt(this.state.time)) * 100)
+      const opacity = !this.state.paused ? 0.6 : 1
       return (
         <BackgroundProgress percentage={percMinute}>
           <View style={{ flex: 1, justifyContent: 'center' }}>
@@ -108,9 +129,21 @@ class EMOMScreen extends Component {
                   <Text style={styles.countdown}>{this.state.countdownValue}</Text>
                   : null
               }
-              <TouchableOpacity style={{ alignSelf: 'center', marginBottom: 20 }} onPress={this.stop}>
-                <Image  source={require('../../assets/btn-stop.png')} />
-              </TouchableOpacity>
+             <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' , marginBottom: 20}}>
+                <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.back}>
+                  <Image style={{opacity}}  source={require('../../assets/left-arrow.png')} />
+                </TouchableOpacity>
+                <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.stop}>
+                  {
+                    this.state.paused ?
+                    <Image  source={require('../../assets/btn-play.png')} />
+                    : <Image  source={require('../../assets/btn-stop.png')} />
+                  }
+                </TouchableOpacity>
+                <TouchableOpacity style={{ alignSelf: 'center' }} onPress={this.restart}>
+                  <Image style={{opacity}}  source={require('../../assets/restart.png')} />
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
         </BackgroundProgress>
