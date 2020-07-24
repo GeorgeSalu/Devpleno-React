@@ -142,8 +142,7 @@ class AMRAPScreen extends Component {
                       <Text style={styles.countdown}>+</Text>  
                     </TouchableOpacity>
                   </View>
-              }
-              
+              } 
               <TouchableOpacity style={{ alignSelf: 'center', marginBottom: 20 }} onPress={this.stop}>
                 <Image  source={require('../../assets/btn-stop.png')} />
               </TouchableOpacity>
