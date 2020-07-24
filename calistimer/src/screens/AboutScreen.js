@@ -11,7 +11,7 @@ const AboutScreen = props => {
     return(
         <View style={styles.container}>
             <Text style={styles.logo}>CalisTimer</Text>
-            <Text style={styles.description}>Este aplicativo foi construtído durante as aulas do curso de ReactJS/React-Native do DevPleno, o devReactJS nos módulos de react-native.</Text>
+            <Text style={styles.description}>Este aplicativo foi construtído durante as aulas do curso de ReactJS/React-Native do DevPleno, o devReactJS nos módulos de react-native (0.57.8).</Text>
             <TouchableOpacity onPress={openURL('https://devpleno.com')}>
                 <Image source={require('../../assets/devpleno.png')} />
             </TouchableOpacity>
