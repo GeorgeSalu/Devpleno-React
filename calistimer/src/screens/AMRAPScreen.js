@@ -116,11 +116,11 @@ class AMRAPScreen extends Component {
             <View style={{ flexDirection: 'row' }}>
               <View style={{ flex: 1 }}>
                 <Time time={10} type='text3' />
-                <Text>por repeticao</Text>
+                <Text>por repetição</Text>
               </View>
               <View style={{ flex: 1 }}>
                 <Text>10</Text>
-                <Text>por repeticao</Text>
+                <Text>por repetição</Text>
               </View>
             </View>
             <View style={{ flex: 1, justifyContent: 'center' }}>
