@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
   text3: {
     fontFamily: 'Ubuntu-Bold',
-    fontSize: 36,
+    fontSize: 37,
     color: 'white',
     textAlign: 'center'
   }
