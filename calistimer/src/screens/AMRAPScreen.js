@@ -68,8 +68,6 @@ class AMRAPScreen extends Component {
   }
 
   stop = () => {
-    //clearInterval(this.countdownTimer)
-    //clearInterval(this.countTimer)
     this.setState({
       paused: !this.state.paused
     })
