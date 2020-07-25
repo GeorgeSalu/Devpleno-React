@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import { Keyboard, ScrollView, StyleSheet, Image, Text, TextInput, KeyboardAvoidingView, View, TouchableOpacity } from 'react-native'
+import { Platform, Keyboard, ScrollView, StyleSheet, Image, Text, TextInput, KeyboardAvoidingView, View, TouchableOpacity } from 'react-native'
 import Select from '../components/Select'
 import Title from '../components/Title'
 import Time from '../components/Time'
@@ -187,10 +187,12 @@ class AMRAPScreen extends Component {
         </BackgroundProgress>
       )
     }
+    const behavior = Platform.OS !== 'ios' ? 'height': 'padding'
+    const paddingTop = Platform.OS === 'ios' ? this.state.keyboardIsVisible ? 20: 200 : 50
     return (
-      <KeyboardAvoidingView style={{ flex:1 }} behavior='padding'>
+      <KeyboardAvoidingView style={{ flex:1 }} behavior={behavior}>
         <ScrollView style={styles.container}>
-          <Title title="AMRAP" subTitle="As Many Repetitions As Possible" style={{ paddingTop: this.state.keyboardIsVisible ? 20: 200 }} />
+          <Title title="AMRAP" subTitle="As Many Repetitions As Possible" style={{ paddingTop }} />
           <Image style={{ alignSelf: 'center', marginBottom: 17 }} source={require('../../assets/settings-cog.png')} />
           <Select 
             label='Alertas:'
