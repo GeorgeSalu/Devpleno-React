@@ -65,8 +65,7 @@ class Select extends Component {
             } else if(typeof opt === 'object') {
               id = opt.id
               label = opt.label
-            }
-            
+            }  
             return (
               <TouchableOpacity 
                 key={id} 

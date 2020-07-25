@@ -7,7 +7,6 @@ import BackgroundProgress from '../components/BackgroundProgress'
 import Sound from 'react-native-sound'
 import KeepAwake from 'react-native-keep-awake'
 
-
 const alert = require('../../assets/sounds/alert.wav')
 
 class IsometriaScreen extends Component {
