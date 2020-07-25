@@ -149,7 +149,7 @@ class IsometriaScreen extends Component {
     return (
       <KeyboardAvoidingView style={{ flex:1 }} behavior={behavior}>
         <ScrollView style={styles.container}>
-          <Title title="Isometria"  style={{ paddingTops }} />
+          <Title title="Isometria"  style={{ paddingTop }} />
           <Image style={{ alignSelf: 'center', marginBottom: 17 }} source={require('../../assets/settings-cog.png')} />
           <Select 
             label='Objetivo:'
