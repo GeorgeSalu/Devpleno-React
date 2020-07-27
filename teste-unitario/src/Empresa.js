@@ -4,7 +4,7 @@ import Map from './MapGoogle'
 const Empresa = ({ companyName, location }) => {
   return (
     <div>
-      <p>{companyName}</p>
+      <p data-testid='company-name'>{companyName}</p>
       <Map location={location} />
     </div>
   )
