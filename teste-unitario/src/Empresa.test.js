@@ -28,4 +28,5 @@ it('renders', () => {
   })
 
   expect(container.querySelector('[data-testid="company-name"]').textContent).toBe('devpleno')
+  expect(container.querySelector('[data-testid="map"]').textContent).toBe('lat:long')
 })
