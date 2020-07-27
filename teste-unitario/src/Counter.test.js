@@ -3,29 +3,29 @@ import { render, unmountComponentAtNode } from 'react-dom'
 import { act } from 'react-dom/test-utils'
 import Counter from  './Counter'
 
-let contaner = null
+let container = null
 beforeEach(() => {
-  contaner = document.createElement('div')
-  document.body.appendChild(contaner)
+  container = document.createElement('div')
+  document.body.appendChild(container)
 })
 
 afterEach(() => {
-  unmountComponentAtNode(contaner)
-  contaner.remove()
-  contaner = null
+  unmountComponentAtNode(container)
+  container.remove()
+  container = null
 })
 
 it('counts when inc clicked', () => {
 
   act(() => {
-    render(<Counter />, contaner)
+    render(<Counter />, container)
   })
-  expect(contaner.textContent).toBe('0Inc.')
+  expect(container.textContent).toBe('0Inc.')
 
   const button = document.querySelector('[data-testid=inc]')
 
   act(() => {
     button.dispatchEvent(new MouseEvent('click', { bubbles: true }))
   })
-  expect(contaner.textContent).toBe('1Inc.')
+  expect(container.textContent).toBe('1Inc.')
 })
