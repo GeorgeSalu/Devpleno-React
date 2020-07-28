@@ -64,8 +64,11 @@ function App() {
       CEP: {cep}
       <InputCPF onChange={evt => setCPF(evt.target.value)} />
       CPF: {cpf}
+      placa
       <InputPlaca placeholder='AAA-9999' />
+      celular
       <InputCel />
+      real
       <InputBRL />
     </div>
   );
