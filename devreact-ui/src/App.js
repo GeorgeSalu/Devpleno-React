@@ -1,9 +1,11 @@
 import React from 'react';
+import { Input } from './components';
 
 function App() {
   return (
     <div >
-      ReactJs
+      <h1>Input</h1>
+      <Input />
     </div>
   );
 }
