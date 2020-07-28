@@ -60,10 +60,10 @@ function App() {
   const [cpf, setCPF] = useState('')
   return (
     <div >
-      <InputCEP onChange={evt => setCEP(evt.target.value)} />
       CEP: {cep}
-      <InputCPF onChange={evt => setCPF(evt.target.value)} />
+      <InputCEP onChange={evt => setCEP(evt.target.value)} />
       CPF: {cpf}
+      <InputCPF onChange={evt => setCPF(evt.target.value)} />
       placa
       <InputPlaca placeholder='AAA-9999' />
       celular
