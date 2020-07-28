@@ -30,7 +30,7 @@ const InputPlaca = (props) => {
 }
 
 const InputCel = (props) => {
-  const mask = ['(',/\d/,/\d/,')', ' ',/\d/,/\d/,/\d/, '-',/\d/,/\d/,/\d/,/\d/];
+  const mask = ['(',/\d/,/\d/,')', ' ',/[8-9]/,/\d/,/\d/,/\d/, '-',/\d/,/\d/,/\d/,/\d/];
   return (
     <InputMask
         guide
