@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prebuild": "babel src/components --out-dir lib --copy-files"
+    "prebuild": "babel src/components --out-dir lib --copy-files",
+    "prepare": "npm run prebuild"
   },
   "eslintConfig": {
     "extends": "react-app"
