@@ -20,6 +20,15 @@ const InputCPF = (props) => {
   )
 }
 
+const InputPlaca = (props) => {
+  const mask = [/[A-Z]/,/[A-Z]/, /[A-Z]/, '-',/\d/,/\d/,/\d/,/\d/];
+  return (
+    <InputMask
+        guide
+        mask={mask} {...props} />
+  )
+}
+
 function App() {
   const [cep, setCEP] = useState('')
   const [cpf, setCPF] = useState('')
@@ -29,6 +38,7 @@ function App() {
       CEP: {cep}
       <InputCPF onChange={evt => setCPF(evt.target.value)} />
       CPF: {cpf}
+      <InputPlaca placeholder='AAA-9999' />
     </div>
   );
 }
