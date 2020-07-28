@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import InputMask from 'react-text-mask'
+import createNumberMask from 'text-mask-addons/dist/createNumberMask'
 
 const InputCEP = (props) => {
   const mask = [/\d/, /\d/, '.',/\d/,/\d/,/\d/,'-',/\d/,/\d/,/\d/];
@@ -38,6 +39,22 @@ const InputCel = (props) => {
   )
 }
 
+const InputBRL = (props) => {
+  const mask = createNumberMask({
+    prefix: 'R$ ',
+    suffix: '',
+    thousandsSeparatorSymbol: '.',
+    allowDecimal: true,
+    decimalSymbol: ',',
+    requireDecimal: true
+  })
+  return (
+    <InputMask
+        guide
+        mask={mask} {...props} />
+  )
+}
+
 function App() {
   const [cep, setCEP] = useState('')
   const [cpf, setCPF] = useState('')
@@ -49,6 +66,7 @@ function App() {
       CPF: {cpf}
       <InputPlaca placeholder='AAA-9999' />
       <InputCel />
+      <InputBRL />
     </div>
   );
 }
