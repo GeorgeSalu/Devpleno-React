@@ -7,7 +7,7 @@ const Counter = ({count, increment, decrement}) => {
     <p>
       Contador: {count}
       <button onClick={increment}>+</button>
-        <button onClick={decrement}>-</button>
+      <button onClick={decrement}>-</button>
     </p>
   )
 }
