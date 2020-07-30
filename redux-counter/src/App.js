@@ -3,7 +3,6 @@ import Counter from './Counter'
 import DisplayCounter from './DisplayCounter'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-
 import counterReducer from './reducer'
 
 let store = createStore(counterReducer)
