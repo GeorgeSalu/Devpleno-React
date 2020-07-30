@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import counterReducer from './reducer'
 import logger from 'redux-logger'
-
+import Ola from './Ola'
 let store = createStore(
   counterReducer, 
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
@@ -19,6 +19,7 @@ class App extends Component {
         <div>
           <Counter />
           <DisplayCounter />
+          <Ola nome='tulio' />
         </div>
       </Provider>
     )
