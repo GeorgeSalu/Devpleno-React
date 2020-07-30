@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 import {increment, decrement} from './actions'
 
@@ -11,7 +11,6 @@ const Counter = ({count, increment, decrement}) => {
     </p>
   )
 }
-
 
 const mapStateToProps = (state) => {
   return {
