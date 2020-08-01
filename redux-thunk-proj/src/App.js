@@ -4,7 +4,7 @@ import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import logger from 'redux-logger'
 import {reducer} from './reducer'
-import { Info } from './Info'
+import Info  from './Info'
 
 const store = createStore(
   reducer,
