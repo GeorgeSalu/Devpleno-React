@@ -15,9 +15,9 @@ const store = createStore(
 function App() {
   return (
     <Provider store={store}>
-    <div className="App">
-      <Info />
-    </div>
+      <div className="App">
+        <Info />
+      </div>
     </Provider>
   );
 }
