@@ -12,6 +12,9 @@ export class Info extends React.Component {
     if(this.props.isFetching) {
       return <span>Loading....</span>
     }
+    if(this.props.error) {
+      return <span>Error</span>
+    }
     return <span>Info: {JSON.stringify(this.data)}</span>
   }
 }
@@ -19,7 +22,8 @@ export class Info extends React.Component {
 const mapStateToProps = (state) => {
   return {
     isFetching: state.isFetching,
-    data: state.data
+    data: state.data,
+    error: state.error
   }
 }
 
