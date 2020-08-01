@@ -1,10 +1,10 @@
-const INITIAL_STATE = {
+const initial_state = {
   data: [],
   isFetching: false,
   error: false
 }
 
-export const reducer = (state = INITIAL_STATE, action) => {
+export const reducer = (state = initial_state, action) => {
   if(action.type === 'LOAD_DATA_REQUEST') {
     return {
       isFetching: true,
@@ -17,7 +17,7 @@ export const reducer = (state = INITIAL_STATE, action) => {
       data: action.data,
       error: false
     }
-  }else if(action.type === 'LOAD_DATA_ERROR') {
+  } else if(action.type === 'LOAD_DATA_ERROR') {
     return {
       isFetching: false,
       data: action.data,
