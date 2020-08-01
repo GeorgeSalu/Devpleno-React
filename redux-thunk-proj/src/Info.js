@@ -12,7 +12,7 @@ export class Info extends React.Component {
     if(this.props.isFetching) {
       return <span>Loading....</span>
     }
-    return <span>Info: {this.data.origin}</span>
+    return <span>Info: {JSON.stringify(this.data)}</span>
   }
 }
 
