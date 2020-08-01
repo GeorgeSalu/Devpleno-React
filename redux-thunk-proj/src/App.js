@@ -1,19 +1,21 @@
 import React from 'react';
 
-import {createStore} from 'redux'
+import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
-
+import logger from 'redux-logger'
 import {reducer} from './reducer'
+import { Info } from './Info'
 
 const store = createStore(
-  reducer
+  reducer,
+  applyMiddleware(logger)
 )
 
 function App() {
   return (
     <Provider store={store}>
     <div className="App">
-      react
+      <Info />
     </div>
     </Provider>
   );
