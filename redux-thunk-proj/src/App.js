@@ -4,8 +4,9 @@ import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
-import {reducer} from './reducer'
+import reducer from './reducer'
 import Info  from './Info'
+import UserAgent from './UserAggent'
 
 const store = createStore(
   reducer,
@@ -17,6 +18,7 @@ function App() {
     <Provider store={store}>
       <div className="App">
         <Info />
+        <UserAgent />
       </div>
     </Provider>
   );
