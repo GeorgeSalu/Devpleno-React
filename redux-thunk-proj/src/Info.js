@@ -15,7 +15,7 @@ export class Info extends React.Component {
     if(this.props.error) {
       return <span>Error</span>
     }
-    return <span>Info: {JSON.stringify(this.data)}</span>
+    return <span>Info: {this.props.data.origin}</span>
   }
 }
 
