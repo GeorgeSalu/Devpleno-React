@@ -1,10 +1,21 @@
 import React from 'react';
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import reducers from './reducers/index'
 import Info from './info'
 
-const store = createStore(reducers)
+import createSagaMiddleware from 'redux-saga'
+const sagaMiddleware = createSagaMiddleware()
+
+const store = createStore(
+  reducers,
+  applyMiddleware(sagaMiddleware)
+)
+
+function *ola() {
+  console.log('hello from saga')
+}
+sagaMiddleware.run(ola)
 
 function App() {
   return (
