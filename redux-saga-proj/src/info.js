@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { loadDataRequest } from './actions'
 import { connect } from 'react-redux'
 

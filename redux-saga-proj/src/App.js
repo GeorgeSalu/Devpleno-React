@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStore } from 'redux'
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
 import reducers from './reducers/index'
 import Info from './info'
 
