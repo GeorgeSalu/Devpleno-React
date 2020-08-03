@@ -2,7 +2,7 @@ import React from 'react';
 import { createStore } from 'redux'
 import {Provider} from 'react-redux'
 import reducers from './reducers/index'
-import Info from './infor'
+import Info from './info'
 
 const store = createStore(reducers)
 
