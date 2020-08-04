@@ -1,10 +1,10 @@
-const INITIAL_STATE = {
+const initial_state = {
   data: [],
   isFetching: false,
   error: false
 }
 
-const ip = (state = INITIAL_STATE, action) => {
+const ip = (state = initial_state, action) => {
   if(action.type === 'LOAD_DATA_REQUEST') {
     return {
       isFetching: true,
