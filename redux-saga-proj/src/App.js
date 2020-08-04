@@ -4,6 +4,8 @@ import { Provider } from 'react-redux'
 import reducers from './reducers/index'
 import Info from './info'
 import axios from 'axios'
+import {put} from 'redux-saga/effects'
+import {loadDataSuccess} from './actions'
 
 import createSagaMiddleware from 'redux-saga'
 const sagaMiddleware = createSagaMiddleware()
@@ -13,8 +15,7 @@ const store = createStore(
   applyMiddleware(sagaMiddleware)
 )
 
-import {put} from 'redux-saga/effects'
-import {loadDataSuccess} from './actions'
+
 
 function *ola() {
   console.log('hello from saga')
