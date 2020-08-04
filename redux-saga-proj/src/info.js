@@ -4,7 +4,11 @@ import { connect } from 'react-redux'
 
 class Info extends Component {
   render() {
-    return <p>Info</p>
+    return (
+      <p>
+        Info : <button onClick={() => this.props.loadData()}>Load</button>
+      </p>
+    )
   }
 }
 
