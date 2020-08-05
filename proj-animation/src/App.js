@@ -34,7 +34,10 @@ class App extends Component {
           >
             Learn React
           </a>
-          <ReactCSSTransitionGroup transitionName="anim" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
+          <ReactCSSTransitionGroup 
+            transitionName="anim" 
+            transitionEnterTimeout={500} 
+            transitionLeaveTimeout={500}>
             {this.state.items.map((value, index) => 
               <div key={value}>
                 {value}
