@@ -3,6 +3,7 @@ import './App.css';
 import HeaderHome from './HeaderHome'
 import AnuncioHome from './AnuncioHome'
 import Footer from './Footer'
+import LinkCategoria from './LinkCategoria'
 
 class App extends Component {
   render() {
@@ -10,7 +11,13 @@ class App extends Component {
       <div className="App">
         <HeaderHome />
         <div className="container">
-          <AnuncioHome />
+          <div className="row">
+            <AnuncioHome />
+          </div>
+          <h3>Categorias</h3>
+          <LinkCategoria />
+          <LinkCategoria />
+          <LinkCategoria />
         </div>
         <Footer />
       </div>
