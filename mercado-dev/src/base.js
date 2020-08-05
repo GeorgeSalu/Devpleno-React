@@ -8,3 +8,12 @@ const config = {
   appId: "1:33962729639:web:fdfe380fe3b3697109bb82",
   measurementId: "G-RM3GV6RJ9T"
 };
+
+const Rebase = require('re-base')
+const firebase = require('firebase/app')
+require('firebase/database')
+
+const app = firebase.initializeApp(config)
+const base = Rebase.createClass(app.database())
+
+export default base
