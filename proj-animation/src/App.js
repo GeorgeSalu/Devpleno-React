@@ -9,6 +9,13 @@ class App extends Component {
     this.state = {
       items: [1,2,3]
     }
+    this.remove = this.remove.bind(this)
+  }
+
+  remove(index) {
+    let newItem = [...this.state.items]
+    newItem.splice(index, 1)
+    this.setState({items: newItem})
   }
 
   render() {
@@ -27,8 +34,13 @@ class App extends Component {
           >
             Learn React
           </a>
-          <ReactCSSTransitionGroup transitionName="anim">
-            {this.state.items.map((value) => <div key={value}>{value}</div>)}
+          <ReactCSSTransitionGroup transitionName="anim" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
+            {this.state.items.map((value, index) => 
+              <div key={value}>
+                {value}
+                <button onClick={() => this.remove(index)}>x</button>
+              </div>
+            )}
           </ReactCSSTransitionGroup>
           <button onClick={
             () => this.setState({ items: [...this.state.items, new Date().getTime()] })}>

@@ -45,3 +45,12 @@
   opacity: 1;
   transition: all 500ms ease-in;
 }
+
+.anim-leave {
+  opacity: 1;
+}
+
+.anim-leave.anim-leave-active{
+  opacity: 0.01;
+  transition: all 500ms ease-in;
+}
