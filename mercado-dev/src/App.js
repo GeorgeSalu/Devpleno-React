@@ -20,7 +20,10 @@ class App extends Component {
     })
     base.bindToState('anuncios', {
       context: this,
-      state: 'anuncios'
+      state: 'anuncios',
+      queries: {
+        limitToLast: 3
+      }
     })
   }
 
