@@ -32,7 +32,7 @@ class App extends Component {
           <div className="row">
             { this.state.categorias.map( (cat, indice) => {
               return [
-                <LinkCategoria categoria={{ cat }} key={indice} />,
+                <LinkCategoria categoria={ cat } key={indice} />,
                 ++index%4 === 0 && <div key={'c'+indice} className="w-100"></div>
               ]
             } ) }
