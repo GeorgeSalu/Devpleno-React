@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './App.css';
 import HeaderHome from './HeaderHome'
 import AnuncioHome from './AnuncioHome'
 import Footer from './Footer'
