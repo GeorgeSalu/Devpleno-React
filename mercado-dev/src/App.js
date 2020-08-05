@@ -15,9 +15,8 @@ class App extends Component {
             <AnuncioHome />
           </div>
           <h3>Categorias</h3>
-          <LinkCategoria />
-          <LinkCategoria />
-          <LinkCategoria />
+          <LinkCategoria categoria={{ categoria: 'bicicleta', 'icon': 'fa-lightbulb-o' }} />
+
         </div>
         <Footer />
       </div>
