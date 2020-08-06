@@ -4,10 +4,7 @@ import Footer from './Footer'
 import Home from './Home'
 
 class App extends Component {
-
-
-  render() {
-    
+  render() {    
     return (
       <div className="App">
         <HeaderHome />
