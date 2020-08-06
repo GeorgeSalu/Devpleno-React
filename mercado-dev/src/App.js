@@ -32,6 +32,7 @@ class App extends Component {
       <div className="App">
         <HeaderHome />
         <div className="container">
+          <h3>Últimos Anúncios</h3>
           <div className="row">
             {this.state.anuncios.map((anuncio, indice ) => {
               return <AnuncioHome anuncio={anuncio} key={indice} />
