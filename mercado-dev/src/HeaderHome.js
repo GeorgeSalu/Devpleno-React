@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from './logo.png';
+import {Link} from 'react-router-dom'
 
 const HeaderHome = (props) => {
   return (
@@ -9,9 +10,9 @@ const HeaderHome = (props) => {
           <img src={logo} className="App-logo" alt="logo" width="200" />
         </h1>
         <p className="text-center">
-          <a className="btn btn-anuncie btn-lg" to="/novo-anuncio" role="button">
+          <Link className="btn btn-anuncie btn-lg" to="/novo-anuncio" role="button">
             Anuncie Grátis &raquo;
-          </a>
+          </Link>
         </p>
       </div>
     </div>
