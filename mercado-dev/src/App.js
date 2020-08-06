@@ -34,19 +34,17 @@ class App extends Component {
         <div className="container">
           <div className="row">
             {this.state.anuncios.map((anuncio, indice ) => {
-              
               return <AnuncioHome anuncio={anuncio} key={indice} />
-
-            }) }
+            })}
           </div>
           <h3>Categorias</h3>
           <div className="row">
             { this.state.categorias.map( (cat, indice) => {
               return [
-                <LinkCategoria categoria={ cat } key={indice} />,
-                ++index%4 === 0 && <div key={'c'+indice} className="w-100"></div>
-              ]
-            } ) }
+                      <LinkCategoria categoria={ cat } key={indice} />,
+                      ++index%4 === 0 && <div key={'c'+indice} className="w-100"></div>
+                     ]
+            })}
           </div>
         </div>
         <Footer />
