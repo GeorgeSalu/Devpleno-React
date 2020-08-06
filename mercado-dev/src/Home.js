@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import LinkCategoria from './LinkCategoria'
 import base from './base'
 import AnuncioHome from './AnuncioHome'
+import HeaderHome from './HeaderHome'
 
 class Home extends Component {
   constructor(props) {
@@ -26,21 +27,24 @@ class Home extends Component {
   render() {
     let index = 0
     return (
-      <div className="container">
-        <h3>Últimos Anúncios</h3>
-        <div className="row">
-          {this.state.anuncios.map((anuncio, indice ) => {
-            return <AnuncioHome anuncio={anuncio} key={indice} />
-          })}
-        </div>
-        <h3>Categorias</h3>
-        <div className="row">
-          { this.state.categorias.map( (cat, indice) => {
-            return [
-                    <LinkCategoria categoria={ cat } key={indice} />,
-                    ++index%4 === 0 && <div key={'c'+indice} className="w-100"></div>
-                    ]
-          })}
+      <div>
+        <HeaderHome />
+        <div className="container">
+          <h3>Últimos Anúncios</h3>
+          <div className="row">
+            {this.state.anuncios.map((anuncio, indice ) => {
+              return <AnuncioHome anuncio={anuncio} key={indice} />
+            })}
+          </div>
+          <h3>Categorias</h3>
+          <div className="row">
+            { this.state.categorias.map( (cat, indice) => {
+              return [
+                      <LinkCategoria categoria={ cat } key={indice} />,
+                      ++index%4 === 0 && <div key={'c'+indice} className="w-100"></div>
+                      ]
+            })}
+          </div>
         </div>
       </div>
     )
