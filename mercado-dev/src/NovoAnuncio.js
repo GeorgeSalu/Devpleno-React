@@ -2,32 +2,52 @@ import React, {Component} from 'react'
 import HeaderInterno from './HeaderInterno'
 
 class NovoAnuncio extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit() {
+    const novoAnuncio = {
+      nome: this.nome.value,
+      descricao: this.descricao.value,
+      preco: this.preco.value,
+      vendedor: this.vendedor.value,
+      foto: 'http://placehold.it/200x140',
+      telefone: this.telefone.value
+    }
+    console.log(novoAnuncio)
+    return false
+  }
+
   render() {
     return (
       <div>
         <HeaderInterno />
         <div className="container" style={{ paddingTop: '120px' }}>
           <h1>Novo anúncio</h1>
-          <form onSubmit={null}>
+          <form onSubmit={this.handleSubmit}>
             <div className="form-group">
               <label htmlFor='nome'>Nome</label>
-              <input type='text' className='form-control' id='nome' placeholder='nome'></input>
+              <input type='text' className='form-control' id='nome' placeholder='nome' ref={(ref) => this.nome = ref}></input>
             </div>
             <div className="form-group">
               <label htmlFor='descricao'>Descrição</label>
-              <input type='text' className='form-control' id='descricao' placeholder='descricao'></input>
+              <input type='text' className='form-control' id='descricao' placeholder='descricao' ref={(ref) => this.descricao = ref}></input>
             </div>
             <div className="form-group">
               <label htmlFor='preco'>Preço</label>
-              <input type='text' className='form-control' id='preco' placeholder='preco'></input>
+              <input type='text' className='form-control' id='preco' placeholder='preco' ref={(ref) => this.preco = ref}></input>
             </div>
             <div className="form-group">
               <label htmlFor='telefone'>Telefone</label>
-              <input type='text' className='form-control' id='telefone' placeholder='telefone'></input>
+              <input type='text' className='form-control' id='telefone' placeholder='telefone' ref={(ref) => this.telefone = ref}></input>
             </div>
             <div className="form-group">
               <label htmlFor='nome'>Vendedor</label>
-              <input type='text' className='form-control' id='vendedor' placeholder='vendedor'></input>
+              <input type='text' className='form-control' id='vendedor' placeholder='vendedor' ref={(ref) => this.vendedor = ref}></input>
             </div>
             <button type='submit' className="btn btn-primary">Salvar anúncio</button>
           </form>
