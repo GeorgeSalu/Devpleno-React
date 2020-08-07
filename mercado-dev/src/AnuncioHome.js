@@ -10,7 +10,7 @@ const AnuncioHome = ({anuncio}) => {
         </Link>
         <div className="card-body">
           <h4 className="card-title">
-            <a to={`/anuncios/ver/`}>{anuncio.nome}</a>
+            <Link to={`/anuncios/ver/`}>{anuncio.nome}</Link>
           </h4>
           <h5>{anuncio.preco}</h5>
           <p className="card-text">{anuncio.descricao}</p>
