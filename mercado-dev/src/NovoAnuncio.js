@@ -7,18 +7,18 @@ class NovoAnuncio extends Component {
       <div>
         <HeaderInterno />
         <div className="container" style={{ paddingTop: '120px' }}>
-          <h1>Novo anuncio</h1>
+          <h1>Novo anúncio</h1>
           <form onSubmit={null}>
             <div className="form-group">
               <label htmlFor='nome'>Nome</label>
               <input type='text' className='form-control' id='nome' placeholder='nome'></input>
             </div>
             <div className="form-group">
-              <label htmlFor='descricao'>Desricao</label>
+              <label htmlFor='descricao'>Descrição</label>
               <input type='text' className='form-control' id='descricao' placeholder='descricao'></input>
             </div>
             <div className="form-group">
-              <label htmlFor='preco'>preco</label>
+              <label htmlFor='preco'>Preço</label>
               <input type='text' className='form-control' id='preco' placeholder='preco'></input>
             </div>
             <div className="form-group">
@@ -29,7 +29,7 @@ class NovoAnuncio extends Component {
               <label htmlFor='nome'>Vendedor</label>
               <input type='text' className='form-control' id='vendedor' placeholder='vendedor'></input>
             </div>
-            <button type='submit' className="btn btn-primary">Salvar</button>
+            <button type='submit' className="btn btn-primary">Salvar anúncio</button>
           </form>
         </div>
       </div>
