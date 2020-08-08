@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const Header = props => {
   return (
@@ -16,18 +17,24 @@ const Header = props => {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav mx-auto">
               <li className="nav-item active px-lg-4">
-                <a className="nav-link text-uppercase text-expanded" href="index.html">Início
-                  <span className="sr-only">(current)</span>
-                </a>
+                <Link to='/' className="nav-link text-uppercase text-expanded" >
+                  Inicio
+                </Link>
               </li>
               <li className="nav-item px-lg-4">
-                <a className="nav-link text-uppercase text-expanded" href="about.html">Sobre</a>
+                <Link to='/sobre' className="nav-link text-uppercase text-expanded" >
+                  Sobre
+                </Link>
               </li>
               <li className="nav-item px-lg-4">
-                <a className="nav-link text-uppercase text-expanded" href="products.html">Campanhas</a>
+                <Link to='/campanhas' className="nav-link text-uppercase text-expanded" >
+                  Campanhas
+                </Link>
               </li>
               <li className="nav-item px-lg-4">
-                <a className="nav-link text-uppercase text-expanded" href="store.html">Contato</a>
+                <Link to='/contato' className="nav-link text-uppercase text-expanded" >
+                  Contato
+                </Link>
               </li>
             </ul>
           </div>
