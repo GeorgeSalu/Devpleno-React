@@ -36,10 +36,7 @@ class NovoAnuncio extends Component {
         .then(() => {
           this.setState({ success: true })
         })
-      })
-
-   
-    
+      })    
     e.preventDefault()
   }
 
