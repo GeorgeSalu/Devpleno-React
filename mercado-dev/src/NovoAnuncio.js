@@ -1,12 +1,15 @@
 import React, {Component} from 'react'
 import HeaderInterno from './HeaderInterno'
 import base,{storage} from './base'
+import {Redirect} from 'react-router-dom'
 
 class NovoAnuncio extends Component {
 
   constructor(props) {
     super(props)
-
+    this.state = {
+      success: false
+    }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
@@ -29,12 +32,9 @@ class NovoAnuncio extends Component {
         }
         base.push('anuncios', {
           data: novoAnuncio
-        }, (err) => {
-          if(err) {
-    
-          }else {
-    
-          }
+        })
+        .then(() => {
+          this.setState({ success: true })
         })
       })
 
@@ -44,6 +44,9 @@ class NovoAnuncio extends Component {
   }
 
   render() {
+    if(this.state.success) {
+      return <Redirect to='/' />
+    }
     return (
       <div>
         <HeaderInterno />
