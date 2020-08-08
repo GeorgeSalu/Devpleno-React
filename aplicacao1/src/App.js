@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
 import Counter from './Counter'
 
 const Home = props => <h1>Seja bem vindo</h1>
-const Sobre = props => <h1>Sobre a </h1>
+const Sobre = props => <h1>Sobre a instituição</h1>
 
 // stateful
 class App extends Component {
@@ -31,6 +31,8 @@ class App extends Component {
               Edit <code>src/App.js</code> and save to reload.
               {this.state.counter}
             </p>
+            <Link to='/'>Home</Link>
+            <Link to='/sobre'>Sobre</Link>
             <Counter counter={this.state.counter} />
             <Route path='/' exact component={Home} />
             <Route path='/sobre' exact component={Sobre} />
