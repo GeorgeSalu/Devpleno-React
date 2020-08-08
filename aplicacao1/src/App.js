@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
 import Counter from './Counter'
-
-const Home = props => <h1>Seja bem vindo</h1>
-const Sobre = props => <h1>Sobre a instituição</h1>
+import Home from './Home'
+import Sobre from './Sobre'
 
 // stateful
 class App extends Component {
