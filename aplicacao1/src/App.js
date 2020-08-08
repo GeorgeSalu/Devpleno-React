@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-const Counter = props => {
-  return <h1>Counter: {props.counter}</h1>
-}
+import Counter from './Counter'
 
 // stateful
 class App extends Component {
