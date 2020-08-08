@@ -7,7 +7,6 @@ const Header = props => {
           <img src='img/logo.png' />
       </h1>
 
-      {/* Navigation */}
       <nav className="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
         <div className="container">
           <a className="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Asilo Melhor Idade</a>
