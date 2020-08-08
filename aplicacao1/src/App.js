@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const Counter = props => {
+  return <h1>Counter: {props.counter}</h1>
+}
 
 // stateful
 class App extends Component {
@@ -26,6 +29,7 @@ class App extends Component {
             Edit <code>src/App.js</code> and save to reload.
             {this.state.counter}
           </p>
+          <Counter counter={this.state.counter} />
           <a
             className="App-link"
             href="https://reactjs.org"
