@@ -2,6 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const Component1 = (props) => {
+  return <h1>{props.name}</h1>
+}
+
 function App() {
   return (
     <div className="App">
@@ -9,6 +13,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+          <Component1 name='George' />
         </p>
         <a
           className="App-link"
