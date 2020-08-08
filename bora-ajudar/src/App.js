@@ -9,14 +9,13 @@ import {
 
 function App() {
   return (
-      <Router>
-        <div>
-            <Header />
-            <Route exact path='/' component={Home} />
-            <Home />
-            <Footer />
-        </div>
-      </Router>
+    <Router>
+      <div>
+          <Header />
+          <Route exact path='/' component={Home} />
+          <Footer />
+      </div>
+    </Router>
   );
 }
 
