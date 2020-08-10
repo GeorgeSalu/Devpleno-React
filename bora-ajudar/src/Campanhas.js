@@ -39,7 +39,7 @@ const Campanhas = props => {
               <div class="p-5 rounded">
                 <p class="mb-0">Our seasonal menu features delicious snacks, baked goods, and even full meals perfect for breakfast or lunchtime. We source our ingredients from local, oragnic farms whenever possible, alongside premium vendors for specialty goods.</p>
                 <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-success" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <p>Meta: R$ 5.000,00 / Atingidos: R$ 2.500,00</p>
                 <div>
