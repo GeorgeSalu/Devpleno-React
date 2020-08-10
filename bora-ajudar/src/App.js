@@ -11,6 +11,7 @@ import Sobre from './Sobre'
 import Contato from './Contato'
 import Campanhas from './Campanhas'
 import Admin from './Admin'
+import Login from './Login'
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path='/contato' exact component={Contato} />
             <Route path='/campanhas' exact component={Campanhas} />
             <Route path='/admin' exact component={Admin} />
+            <Route path='/login' exact component={Login} />
             <Footer />
         </div>
       </Router>
