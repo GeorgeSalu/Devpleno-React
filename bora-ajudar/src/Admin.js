@@ -1,6 +1,10 @@
 import React,{Component} from 'react'
 import base, {auth} from './base'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Route} from 'react-router-dom'
+
+
+import AdminCampanhas from './AdminCampanhas'
+const AdminHome = props => <p>Seja bem vindo</p>
 
 class Admin extends Component {
   constructor(props) {
@@ -29,7 +33,13 @@ class Admin extends Component {
     if(!this.state.isLoggedIn) {
       return <Redirect to='/login' />
     }
-    return <h1>Admin</h1>
+    return (
+      <div>
+        <h1>Painel adiministrativo</h1>
+        <Route path='/' component={AdminHome}/>
+        <Route path={`${this.props.match.url}/campanhas`} component={AdminCampanhas}/>
+      </div>
+    )
   }
 }
 
