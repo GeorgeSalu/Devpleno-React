@@ -16,9 +16,9 @@ function App() {
       <div>
           <Header />
           <Route exact path='/' component={Home} />
-          <Router path='/sobre' exact component={Sobre} />
-          <Router path='/contato' exact component={Contato} />
-          <Router path='/campanhas' exact component={Campanhas} />
+          <Route path='/sobre' exact component={Sobre} />
+          <Route path='/contato' exact component={Contato} />
+          <Route path='/campanhas' exact component={Campanhas} />
           <Footer />
       </div>
     </Router>
