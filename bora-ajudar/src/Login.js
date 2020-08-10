@@ -22,13 +22,11 @@ class Login extends Component {
     this.setState({ isLogging: true , error: false})
     auth.signInWithEmailAndPassword(this.email.value, this.passwd.value)
       .then((user) => {
-        console.log('logged in', user)
         this.setState({
           isLoggedIn: true
         })
       })
       .catch(error => {
-        console.log('erro', error)
         this.setState({
           error: true,
           isLogging: false
