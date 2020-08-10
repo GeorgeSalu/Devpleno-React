@@ -4,7 +4,7 @@ class AdminCampanhas extends Component {
   render() {
     return (
       <div>
-        <h1>Campanhas</h1>
+        <h1>Campanhassss</h1>
       </div>
     )
   }

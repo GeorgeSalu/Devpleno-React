@@ -34,9 +34,9 @@ class Admin extends Component {
       return <Redirect to='/login' />
     }
     return (
-      <div>
+      <div className='card'>
         <h1>Painel adiministrativo</h1>
-        <Route path='/' component={AdminHome}/>
+        <Route path='/' component={AdminHome} />
         <Route path={`${this.props.match.url}/campanhas`} component={AdminCampanhas}/>
       </div>
     )

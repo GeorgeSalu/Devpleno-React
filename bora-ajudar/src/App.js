@@ -23,7 +23,7 @@ class App extends Component {
             <Route path='/sobre' exact component={Sobre} />
             <Route path='/contato' exact component={Contato} />
             <Route path='/campanhas' exact component={Campanhas} />
-            <Route path='/admin' exact component={Admin} />
+            <Route path='/admin'  component={Admin} />
             <Route path='/login' exact component={Login} />
             <Footer />
         </div>
