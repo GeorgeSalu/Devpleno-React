@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import base, {auth} from './base'
+import {auth} from './base'
 import {Redirect, Route} from 'react-router-dom'
 
 
