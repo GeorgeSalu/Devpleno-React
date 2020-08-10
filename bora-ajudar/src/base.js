@@ -11,7 +11,7 @@ const config = {
   appId: "1:660328552656:web:6a498fe072f82df497a6d5"
 };
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(config);
 const base = Rebase.createClass(app.database())
 
 export default base
