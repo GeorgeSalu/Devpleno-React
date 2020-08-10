@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {auth} from './base'
+import {Redirect} from 'react-router-dom'
 
 class Login extends Component {
   constructor(props) {
@@ -22,7 +23,9 @@ class Login extends Component {
     auth.signInWithEmailAndPassword(this.email.value, this.passwd.value)
       .then((user) => {
         console.log('logged in', user)
-
+        this.setState({
+          isLoggedIn: true
+        })
       })
       .catch(error => {
         console.log('erro', error)
@@ -34,6 +37,9 @@ class Login extends Component {
   }
 
   render() {
+    if(this.state.isLoggedIn) {
+      return <Redirect to='/admin' />
+    }
     return (
       <div>
         <input type='email' ref={ref => this.email = ref} />
