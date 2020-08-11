@@ -41,6 +41,17 @@ class AdminCampanhas extends Component {
         if(!err) {
           this.nome.value = ''
           this.descricao.value = ''
+          this.subTitulo.value = ''
+          this.setState({ tipo: '' })
+          if(this.meta) {
+            this.meta.value = ''
+          }
+          if(this.doado) {
+            this.doado.value = ''
+          }
+          if(this.comoDoar) {
+            this.comoDoar.value = ''
+          }
         }
       }
     })
