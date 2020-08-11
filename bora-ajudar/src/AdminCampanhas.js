@@ -79,7 +79,7 @@ class AdminCampanhas extends Component {
         <br/> <input type='radio' name='tipo' onClick={() => this.setState({ tipo: 'produtos' })} /> Produtos <br />
         
         { this.state.tipo === 'doacao' && <di>
-          <h4>Doacao</h4>
+          <h4>Doação</h4>
           Meta : <input type='text' ref={ref => this.meta = ref} /><br/>
           Doado : <input type='text' ref={ref => this.doado = ref} defaultValue={0} /><br/>
         </di> }
