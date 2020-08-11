@@ -10,6 +10,7 @@ class AdminCampanhas extends Component {
 
     this.renderCampanha = this.renderCampanha.bind(this)
     this.removeCampanha = this.removeCampanha.bind(this)
+    this.handleSave = this.handleSave.bind(this)
   }
 
   componentDidMount(){
@@ -22,6 +23,17 @@ class AdminCampanhas extends Component {
 
   removeCampanha(key) {
     base.remove('campanhas/'+key, err => {
+      console.log(err)
+    })
+  }
+
+  handleSave() {
+    const nome = this.nome.value
+    const descricao = this.descricao.value
+
+    base.push('campanhas', {
+      data: {nome, descricao}
+    }, err => {
       console.log(err)
     })
   }
@@ -40,6 +52,10 @@ class AdminCampanhas extends Component {
     return (
       <div>
         <h1>Campanhas</h1>
+        <h2>Nova Campanha</h2>
+        Campanha: <input type="text" ref={ref => this.nome = ref} /><br />
+        Descricao: <textarea ref={ref => this.descricao = ref} ></textarea><br/>
+        <button onClick={this.handleSave}>Salvar nova campanha</button>
         <ul>
           { Object.keys(this.state.campanhas).map(key => this.renderCampanha(key, this.state.campanhas[key])) }
         </ul>
