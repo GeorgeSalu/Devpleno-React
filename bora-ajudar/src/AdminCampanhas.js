@@ -32,9 +32,13 @@ class AdminCampanhas extends Component {
     const descricao = this.descricao.value
 
     base.push('campanhas', {
-      data: {nome, descricao}
-    }, err => {
-      console.log(err)
+      data: {nome, descricao},
+      then: err => {
+        if(!err) {
+          this.nome.value = ''
+          this.descricao.value = ''
+        }
+      }
     })
   }
 
