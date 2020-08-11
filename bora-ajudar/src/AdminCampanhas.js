@@ -21,12 +21,14 @@ class AdminCampanhas extends Component {
   }
 
   removeCampanha(key) {
-    
+    base.remove('campanhas/'+key, err => {
+      console.log(err)
+    })
   }
 
   renderCampanha(key, campanha) {
     return (
-      <li>
+      <li key={key}>
         {campanha.nome}
         <button onClick={() => 1}>Editar</button>
         <button onClick={() => this.removeCampanha(key)}>Remover</button>
