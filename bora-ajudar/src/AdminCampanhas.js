@@ -73,7 +73,7 @@ class AdminCampanhas extends Component {
         <h1>Campanhas</h1>
         <h2>Nova Campanha</h2>
         Campanha: <input type="text" ref={ref => this.nome = ref} /><br />
-        SubTitulo: <input type="text" ref={ref => this.subTitulo = ref} /><br />
+        Sub-titulo: <input type="text" ref={ref => this.subTitulo = ref} /><br />
         Descricao: <textarea ref={ref => this.descricao = ref} ></textarea><br/>
         Tipo: <br/> <input type='radio' name='tipo' onClick={() => this.setState({ tipo: 'doacao' })}  /> Doação <br />
         <br/> <input type='radio' name='tipo' onClick={() => this.setState({ tipo: 'produtos' })} /> Produtos <br />
