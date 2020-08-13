@@ -12,10 +12,10 @@ import {
   BrowserRouter as Router 
 } from 'react-router-dom'
 
-const Home = props => <h1>Home</h1>
-const Admin = props => <h1>Admin</h1>
-const Restrito = props => <h1>Restrito</h1>
-const Login = props => <h1>Login</h1>
+import Home from './screens/Home'
+import Admin from './screens/admin'
+import Restrito from './screens/restrito'
+import Login from './screens/Login'
 
 class App extends Component {
 
