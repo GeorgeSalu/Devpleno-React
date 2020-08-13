@@ -36,3 +36,11 @@ export const signinFailure = (state = INITIAL_STATE, action) => {
     errorMessage: action.error
   }
 }
+
+export const HANDLERS = {
+  [Types.SIGNIN_REQUEST]: signinRequest,
+  [Types.SIGNIN_SUCCESS]: signinSuccess,
+  [Types.SIGNIN_FAILURE]: signinFailure
+}
+
+export default createReducer(INITIAL_STATE, HANDLERS)

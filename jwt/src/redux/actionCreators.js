@@ -3,7 +3,7 @@ import { createActions } from 'reduxsauce'
 export const {
   Types,
   Creators
-} = ({
+} = createActions({
   signinRequest: ['email', 'passwd'],
   signinSuccess: ['user'],
   signinFailure: ['error'],
