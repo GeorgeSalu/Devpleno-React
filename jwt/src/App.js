@@ -7,6 +7,15 @@ import './App.css';
 import store from './redux'
 import {Provider} from 'react-redux'
 import Header from './Header';
+import { 
+  Route, 
+  BrowserRouter as Router 
+} from 'react-router-dom'
+
+const Home = props => <h1>Home</h1>
+const Admin = props => <h1>Admin</h1>
+const Restrito = props => <h1>Restrito</h1>
+const Login = props => <h1>Login</h1>
 
 class App extends Component {
 
@@ -34,23 +43,29 @@ class App extends Component {
   render() {
     return (
       <Provider store={store} >
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <Header />
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </div>
+        <Router>
+          <div className="App">
+            <header className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <p>
+                Edit <code>src/App.js</code> and save to reload.
+              </p>
+              <Route exact path='/' component={Home} />
+              <Route path='/admin' component={Admin} />
+              <Route path='/restrito' component={Restrito} />
+              <Route path='/login' component={Login} />
+              <Header />
+              <a
+                className="App-link"
+                href="https://reactjs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Learn React
+              </a>
+            </header>
+          </div>
+        </Router>
       </Provider>
     );
   }
