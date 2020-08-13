@@ -1,6 +1,5 @@
 import { createReducer } from 'reduxsauce'
 import {Types} from '../actionCreators'
-import { act } from 'react-dom/test-utils'
 
 export const INITIAL_STATE = {
   isAuthing: false,
