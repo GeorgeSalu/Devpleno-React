@@ -18,10 +18,16 @@ class App extends Component {
       })
       token = login.data.token
       localStorage.setItem('token', token)
-    } else {
-      const decoded = jwtDecode(token)
-      console.log(decoded)
-    }
+    } 
+    const decoded = jwtDecode(token)
+    console.log(decoded)
+  
+    const user = await axios.get('http://localhost:3001/users/me', {
+      headers: {
+        Authorization: 'Bearer '+token
+      }
+    })
+    console.log(user)
   }
 
   render() {
