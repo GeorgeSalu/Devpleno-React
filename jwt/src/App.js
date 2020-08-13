@@ -5,9 +5,6 @@ import jwtDecode from 'jwt-decode'
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   async componentDidMount() {
     let token = localStorage.getItem('token')
