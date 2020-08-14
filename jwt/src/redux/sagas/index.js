@@ -13,7 +13,6 @@ function* login(action) {
   if(login.data.token) {
     token = login.data.token
     localStorage.setItem('token', token)
-
     const user = jwtDecode(token)
     localStorage.setItem('user', user)
     yield put(ActionCreators.signinSuccess(user))
