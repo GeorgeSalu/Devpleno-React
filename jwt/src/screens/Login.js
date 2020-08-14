@@ -40,7 +40,7 @@ class Login extends Component {
         <button onClick={this.login}>Logar</button>
         {
           this.props.auth.error &&
-          <p>Error ao logar</p>
+          <p>Erro ao logar</p>
         }
       </div>
     )
