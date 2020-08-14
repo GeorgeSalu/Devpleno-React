@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import axios from 'axios'
-import jwtDecode from 'jwt-decode'
 import './App.css';
 
 import store from './redux'
