@@ -5,7 +5,6 @@ import jwtDecode from 'jwt-decode'
 import ActionCreators from '../actionCreators'
 
 function* login(action) {
-  console.log(action)
   let token = localStorage.getItem('token')
     
   const login = yield axios.post('http://localhost:3001/users/login', {
@@ -22,12 +21,10 @@ function* login(action) {
   } else {
     yield put(ActionCreators.signinFailure(login.data.message))
   }
-     
 }
 
 export default function* rootSaga() {
   yield all([
     takeLatest(Types.SIGNIN_REQUEST, login)
   ])
-  
 }
