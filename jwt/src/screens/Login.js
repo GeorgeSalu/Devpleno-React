@@ -1,4 +1,6 @@
 import React,{Component} from 'react'
+import ActionCreators from '../redux/actionCreators'
+import {connect} from 'react-redux'
 
 class Login extends Component {
 
@@ -9,7 +11,7 @@ class Login extends Component {
     }
   }
 
-  handleChange = fieldname => event =>{
+  handleChange = fieldname => event => {
     const form = {
       ...this.state.form
     }
@@ -18,7 +20,8 @@ class Login extends Component {
   }
 
   login = () => {
-    console.log(this.state.form)
+    const {email, passwd} = this.state.form
+    this.props.login(email, passwd)
   }
 
   render() {
@@ -33,4 +36,16 @@ class Login extends Component {
   }
 }
 
-export default Login
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    login: (email, passwd) => dispatch(ActionCreators.signinRequest(email, passwd))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
