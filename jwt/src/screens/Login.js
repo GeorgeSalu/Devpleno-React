@@ -25,12 +25,22 @@ class Login extends Component {
   }
 
   render() {
+    if(this.props.auth.isAuth) {
+      if(this.props.auth.user.role === 'admin') {
+        return <h1>admin</h1>
+      }
+      return <h1>user</h1>
+    }
     return (
       <div>
         <h1>Login</h1>
         <input type='text' value={this.state.form.email} onChange={this.handleChange('email')} />
         <input type='text' value={this.state.form.passwd} onChange={this.handleChange('passwd')} />
         <button onClick={this.login}>Logar</button>
+        {
+          this.props.auth.error &&
+          <p>Error ao logar</p>
+        }
       </div>
     )
   }

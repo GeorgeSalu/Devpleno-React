@@ -1,11 +1,33 @@
-import { takeLatest } from 'redux-saga/effects'
+import { takeLatest, all, put } from 'redux-saga/effects'
 import {Types} from '../actionCreators'
+import axios from 'axios'
+import jwtDecode from 'jwt-decode'
+import ActionCreators from '../actionCreators'
 
 function* login(action) {
   console.log(action)
+  let token = localStorage.getItem('token')
+    
+  const login = yield axios.post('http://localhost:3001/users/login', {
+    email: action.email,
+    passwd: action.passwd
+  })
+  if(login.data.token) {
+    token = login.data.token
+    localStorage.setItem('token', token)
+
+    const user = jwtDecode(token)
+    localStorage.setItem('user', user)
+    yield put(ActionCreators.signinSuccess(user))
+  } else {
+    yield put(ActionCreators.signinFailure(login.data.message))
+  }
+     
 }
 
 export default function* rootSaga() {
-  console.log('root saga')
-  takeLatest(Types.SIGNIN_REQUEST, login)
+  yield all([
+    takeLatest(Types.SIGNIN_REQUEST, login)
+  ])
+  
 }
