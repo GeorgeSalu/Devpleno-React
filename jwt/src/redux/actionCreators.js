@@ -10,7 +10,11 @@ export const {
 
   authRequest: null,
   authSuccess: ['user'],
-  authFailure: null
+  authFailure: null,
+
+  getRunsRequest: null,
+  getRunsSuccess: ['runs'],
+  getRunsFailure: null
 })
 
 export default Creators
