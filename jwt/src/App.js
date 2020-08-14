@@ -18,7 +18,7 @@ import Restrito from './screens/restrito'
 import Login from './screens/Login'
 
 class App extends Component {
-render() {
+  render() {
     return (
       <Provider store={store} >
         <Router>
