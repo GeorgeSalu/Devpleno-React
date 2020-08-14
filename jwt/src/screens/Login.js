@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import ActionCreators from '../redux/actionCreators'
 import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom'
 
 class Login extends Component {
 
@@ -27,9 +28,9 @@ class Login extends Component {
   render() {
     if(this.props.auth.isAuth) {
       if(this.props.auth.user.role === 'admin') {
-        return <h1>admin</h1>
+        return <Redirect to='/admin' />
       }
-      return <h1>user</h1>
+      return <Redirect to='/restrito' />
     }
     return (
       <div>
