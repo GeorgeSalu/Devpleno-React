@@ -1,9 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Redirect, Link, Route} from 'react-router-dom'
-
-const Home = props => <h1>Home</h1>
-const Users = props => <h1>Users</h1>
+import Home from './Home'
+import Runs from './Runs'
 
 const Restrito = props => {
   if(!props.auth.isAuth) {
@@ -13,12 +12,12 @@ const Restrito = props => {
     <div>
       <h1>Restrito</h1>
       <p>
-        <Link to='/admin'>Home</Link>
-        <Link to='/admin/users'>Users</Link>
+        <Link to='/restrito'>Home</Link>
+        <Link to='/restrito/runs'>Runs</Link>
       </p>
       <div>
         <Route path={`${props.match.path}/`} exact component={Home} />
-        <Route path={`${props.match.path}/users`} component={Users} />
+        <Route path={`${props.match.path}/runs`} component={Runs} />
       </div>
     </div>
   )
