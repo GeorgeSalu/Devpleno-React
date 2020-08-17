@@ -6,44 +6,7 @@ import ActionCreators from '../actionCreators'
 
 import {getRuns, createRun} from './runs'
 
-function* login(action) {
-  let token = localStorage.getItem('token')
-  const login = yield axios.post('http://localhost:3001/users/login', {
-    email: action.email,
-    passwd: action.passwd
-  })
-  if(login.data.token) {
-    token = login.data.token
-    localStorage.setItem('token', token)
-    const user = jwtDecode(token)
-    localStorage.setItem('user', user)
-    yield put(ActionCreators.signinSuccess(user))
-  } else {
-    yield put(ActionCreators.signinFailure(login.data.message))
-  }
-}
-
-function* auth() {
-  const token = localStorage.getItem('token')
-  if(token) {
-
-    try {
-      const user = jwtDecode(token)
-      yield put(ActionCreators.authSuccess(user))
-    } catch(err) {
-      yield put(ActionCreators.authFailure('invalid'))
-    }
-  } else {
-    yield put(ActionCreators.authFailure('no token'))
-  }
-}
-
-function* destroyAuth() {
-  localStorage.removeItem('token')
-  localStorage.removeItem('user')
-  yield put(ActionCreators.destroyAuthSuccess())
-
-}
+import { auth, login, destroyAuth } from './auth'
 
 export default function* rootSaga() {
   yield all([
