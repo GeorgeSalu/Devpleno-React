@@ -23,7 +23,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    signin: (email, passwd) => ActionCreators.signinRequest(email, passwd)
+    signin: (email, passwd) => ActionCreators.signinRequest(email, passwd),
+    logout: () => dispatch(ActionCreators.destroyAuthRequest())
   }
 }
 
