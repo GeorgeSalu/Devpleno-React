@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import ActionCreators from '../../redux/actionCreators'
 import {connect} from 'react-redux'
-import {Table, Tab, Button} from 'semantic-ui-react'
+import {Table, Button} from 'semantic-ui-react'
 
 class Runs extends Component {
 
