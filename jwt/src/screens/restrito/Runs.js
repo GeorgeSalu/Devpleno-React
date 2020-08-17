@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import ActionCreators from '../../redux/actionCreators'
 import {connect} from 'react-redux'
-import {Table, Tab} from 'semantic-ui-react'
+import {Table, Tab, Button} from 'semantic-ui-react'
 
 class Runs extends Component {
 
@@ -29,9 +29,16 @@ class Runs extends Component {
   }
 
   render() {
+    const run = {
+      friendly_name: 'run de test',
+      duration: 100,
+      distance: 100,
+      created: '2018-01-01 00:00:00'
+    }
     return (
       <div>
         <h1>Runs</h1>
+        <Button onClick={() => this.props.create(run)}>created</Button>
         <Table>
           <Table.HeaderCell>Name</Table.HeaderCell>
           <Table.HeaderCell>Duração</Table.HeaderCell>
