@@ -16,9 +16,8 @@ const Admin = props => {
   return (
     <div>
       <Header />
-        <Route path={`${props.match.path}/admin`} exact component={Home} />
-        <Route path={`${props.match.path}/users`} component={Users} />
-      
+      <Route path={`${props.match.path}/admin`} exact component={Home} />
+      <Route path={`${props.match.path}/users`} component={Users} />
     </div>
   )
 }

@@ -12,10 +12,8 @@ const Restrito = props => {
   return(
     <div>
       <Header />
-      <div>
-        <Route path={`${props.match.path}/`} exact component={Home} />
-        <Route path={`${props.match.path}/runs`} component={Runs} />
-      </div>
+      <Route path={`${props.match.path}/`} exact component={Home} />
+      <Route path={`${props.match.path}/runs`} component={Runs} />
     </div>
   )
 }
