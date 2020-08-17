@@ -14,7 +14,7 @@ const Header = props => {
       <Menu.Menu position='right'>
         <Dropdown item text={props.auth.user.name}>
           <Dropdown.Menu>
-            <Dropdown.Item>Minha contsta</Dropdown.Item>
+            <Dropdown.Item>Minha conta</Dropdown.Item>
             <Dropdown.Item>Alterar senha</Dropdown.Item>
             <Dropdown.Item>sair</Dropdown.Item>
           </Dropdown.Menu>
