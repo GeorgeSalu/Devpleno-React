@@ -7315,6 +7315,18 @@ mkdirp@^0.5.3, mkdirp@^0.5.5:
   dependencies:
     minimist "^1.2.5"
 
+moment-timezone@0.5.17:
+  version "0.5.17"
+  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.17.tgz#3c8fef32051d84c3af174d91dc52977dcb0ad7e5"
+  integrity sha512-Y/JpVEWIOA9Gho4vO15MTnW1FCmHi3ypprrkUaxsZ1TKg3uqC8q/qMBjTddkHoiwwZN3qvZSr4zJP7x9V3LpXA==
+  dependencies:
+    moment ">= 2.9.0"
+
+"moment@>= 2.9.0":
+  version "2.27.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
+  integrity sha512-al0MUK7cpIcglMv3YF13qSgdAIqxHTO7brRtaz3DlSULbqfazqkc5kEjNrLDOM7fsjshoFIihnU8snrP7zUvhQ==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
