@@ -1,7 +1,5 @@
 import { takeLatest, all, put } from 'redux-saga/effects'
 import {Types} from '../actionCreators'
-import axios from 'axios'
-import jwtDecode from 'jwt-decode'
 import ActionCreators from '../actionCreators'
 
 import {getRuns, createRun} from './runs'
