@@ -40,14 +40,16 @@ export function* auth() {
 
 export function* updateProfile(action) {
   const token = localStorage.getItem('token')
-  const user = yield axios.patch(`http://localhost:3001/users/${action.user.id}`,{
+  const userTo = {
     unit: action.user.unit,
     timezone: action.user.timezone
-  } , {
+  }
+  const user = yield axios.patch(`http://localhost:3001/users/${action.user.id}`, userTo , {
     headers: {
       Authorization: 'Bearer '+token
     }
   })
+  yield put(ActionCreators.updateProfileSuccess(userTo))
 }
 
 export function* destroyAuth() {

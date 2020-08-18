@@ -85,10 +85,16 @@ export const updateProfileRequest = (state = INITIAL_STATE, action) => {
 }
 
 export const updateProfileSuccess = (state = INITIAL_STATE, action) => {
+  const newUser = {
+    ...state.user
+  }
+  Object.keys(action.user).forEach(key => {
+    newUser[key] = action.user[key]
+  })
   return {
     ...state,
     isSaving: false,
-    user: action.user
+    user: newUser
   }
 }
 
