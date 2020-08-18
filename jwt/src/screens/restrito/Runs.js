@@ -5,6 +5,7 @@ import {Table, Button} from 'semantic-ui-react'
 
 import Duration from '../elements/Duration'
 import Distance from '../elements/Distance'
+import DateStr from '../elements/DataStr'
 
 class Runs extends Component {
 
@@ -25,7 +26,7 @@ class Runs extends Component {
           <Distance distance={ run.distance } metric={'metric'} />
         </Table.Cell>
         <Table.Cell>
-          { run.created }
+          <DateStr date={ run.created } timezone={'America/Sao_paulo'} />
         </Table.Cell>
       </Table.Row>
     )
