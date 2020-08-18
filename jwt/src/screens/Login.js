@@ -38,7 +38,7 @@ class Login extends Component {
         <h1>Login</h1>
         <Form>
           <Form.Field>
-            <label>Email</label>
+            <label>E-mail</label>
             <input type='text' value={this.state.form.email} onChange={this.handleChange('email')} />
           </Form.Field>
           <Form.Field>
