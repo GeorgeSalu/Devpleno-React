@@ -25,8 +25,13 @@ export function* auth() {
   if(token) {
 
     try {
-      const user = jwtDecode(token)
-      yield put(ActionCreators.authSuccess(user))
+      //const user = jwtDecode(token)
+      const user = yield axios.get('http://localhost:3001/users/me', {
+        headers: {
+          Authorization: 'Bearer '+token
+        }
+      })
+      yield put(ActionCreators.authSuccess(user.data))
     } catch(err) {
       yield put(ActionCreators.authFailure('invalid'))
     }
