@@ -51,5 +51,4 @@ export function* destroyAuth() {
   localStorage.removeItem('token')
   localStorage.removeItem('user')
   yield put(ActionCreators.destroyAuthSuccess())
-
 }
