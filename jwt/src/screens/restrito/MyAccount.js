@@ -29,6 +29,14 @@ class MyAccount extends Component {
     })
   }
 
+  handleSave = () => {
+    this.props.save({
+      unit: this.state.unit,
+      timezone: this.state.timezone,
+      id: this.props.auth.user.id
+    })
+  }
+
   render() {
     
     return (
@@ -48,7 +56,7 @@ class MyAccount extends Component {
           }
         </select>
 
-        <Button onClick={() => this.props.create()}>Salvar</Button>
+        <Button onClick={this.handleSave}>Salvar</Button>
       </div>
     )
   }
@@ -62,7 +70,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-
+    save: (user) => dispatch(ActionCreators.updateProfileRequest(user))
   }
 }
 
