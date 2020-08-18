@@ -23,9 +23,7 @@ export function* login(action) {
 export function* auth() {
   const token = localStorage.getItem('token')
   if(token) {
-
     try {
-      //const user = jwtDecode(token)
       const user = yield axios.get('http://localhost:3001/users/me', {
         headers: {
           Authorization: 'Bearer '+token
