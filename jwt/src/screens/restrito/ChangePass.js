@@ -7,7 +7,12 @@ class ChangePass extends Component {
 
   state = {
     passwd: '',
-    passwd2: ''
+    passwd2: '',
+    error: ''
+  }
+
+  componentDidMount() {
+    this.props.reset()
   }
 
   handleChange = fieldname => event => {
@@ -17,10 +22,23 @@ class ChangePass extends Component {
   }
 
   handleSave = () => {
-    this.props.save({
-      passwd: this.state.passwd,
-      id: this.props.auth.user.id
-    })
+    if(this.state.passwd !== this.state.passwd2) {
+      this.setState({
+        error: 'equal' 
+      })
+    } else if(this.state.passwd.length < 6) {
+      this.setState({
+        error: 'length'
+      })
+    } else {
+      this.setState({
+        error: ''
+      })
+      this.props.save({
+        passwd: this.state.passwd,
+        id: this.props.auth.user.id
+      })
+    }
   }
 
   render() {
@@ -29,12 +47,17 @@ class ChangePass extends Component {
       <div>
         <h1>Alterar Senha</h1>
         {
+          this.state.error === 'equal' && <Segment color='red'>A senha e sua confirmação devem ser iguais</Segment>
+        }
+        {
+          this.state.error === 'length' && <Segment color='red'>A senha e sua confirmação devem ser iguais</Segment>
+        }
+        {
           this.props.auth.saved && <Segment color='green'>Senha alterada com sucesso</Segment>
         }
         {
           !this.props.auth.saved &&
           <Form>
-            
             <input type='password' value={this.state.passwd} onChange={this.handleChange('passwd')} />
             <input type='password' value={this.state.passwd2} onChange={this.handleChange('passwd2')} />
             <Button onClick={this.handleSave}>Alterar Senha</Button>
@@ -53,7 +76,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    save: (user) => dispatch(ActionCreators.updateProfileRequest(user))
+    save: (user) => dispatch(ActionCreators.updateProfileRequest(user)),
+    reset: () => dispatch(ActionCreators.updateProfileReset())
   }
 }
 

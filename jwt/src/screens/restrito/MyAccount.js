@@ -17,6 +17,7 @@ class MyAccount extends Component {
       unit: this.props.auth.user.unit,
       timezone: this.props.auth.user.timezone
     })
+    this.props.reset()
   }
 
   handleChange = fieldname => event => {
@@ -74,7 +75,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    save: (user) => dispatch(ActionCreators.updateProfileRequest(user))
+    save: (user) => dispatch(ActionCreators.updateProfileRequest(user)),
+    reset: () => dispatch(ActionCreators.updateProfileReset())
   }
 }
 
