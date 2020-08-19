@@ -3,6 +3,7 @@ import ActionCreators from '../redux/actionCreators'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 import {Form, Button} from 'semantic-ui-react'
+import Header from '../Header'
 
 class Login extends Component {
 
@@ -35,6 +36,7 @@ class Login extends Component {
     }
     return (
       <div>
+        <Header />
         <h1>Login</h1>
         <Form>
           <Form.Field>

@@ -3,12 +3,12 @@ import {connect} from 'react-redux'
 import ActionCreators from './redux/actionCreators'
 
 import {Link} from 'react-router-dom'
-import {Menu} from 'semantic-ui-react'
+import {Menu, Image} from 'semantic-ui-react'
 
 const Header = props => {
   return (
     <Menu>
-      <Menu.Item>Corridas Online</Menu.Item>
+      <Menu.Item ><Image src={'/logo.png'} size='small' />Corridas Online <b>Restrito</b></Menu.Item>
       <Menu.Item as={Link} to='/'>Home</Menu.Item>
       <Menu.Item as={Link} to='/admin'>Admin</Menu.Item>
       <Menu.Item as={Link} to='/restrito'>Restrito</Menu.Item>
