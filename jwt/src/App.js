@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import store from './redux'
 import {Provider} from 'react-redux'
-import Header from './Header';
 import { 
   Route, 
   BrowserRouter as Router 
