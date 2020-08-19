@@ -50,7 +50,7 @@ class ChangePass extends Component {
           this.state.error === 'equal' && <Segment color='red'>A senha e sua confirmação devem ser iguais</Segment>
         }
         {
-          this.state.error === 'length' && <Segment color='red'>A senha e sua confirmação devem ser iguais</Segment>
+          this.state.error === 'length' && <Segment color='red'>A senha deve ter mas de 6 caracteres</Segment>
         }
         {
           this.props.auth.saved && <Segment color='green'>Senha alterada com sucesso</Segment>
