@@ -42,7 +42,6 @@ class ChangePass extends Component {
   }
 
   render() {
-    
     return (
       <div>
         <h1>Alterar Senha</h1>

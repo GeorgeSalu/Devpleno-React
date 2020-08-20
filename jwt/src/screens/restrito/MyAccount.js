@@ -35,7 +35,6 @@ class MyAccount extends Component {
   }
 
   render() {
-    
     return (
       <div>
         <h1>Minha Conta</h1>
