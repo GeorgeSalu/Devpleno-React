@@ -51,6 +51,18 @@ export function* updateProfile(action) {
   yield put(ActionCreators.updateProfileSuccess(userToSave))
 }
 
+export function* createProfile(action) {
+  const userToSave = {
+    ...action.user
+  }
+  const user = yield axios.post(`http://localhost:3001/users/`, userToSave )
+  if(user && user.data && user.data.error) {
+    yield put(ActionCreators.createProfileFailure(user.data.message))
+  }else {
+    yield put(ActionCreators.createProfileSuccess(userToSave))
+  }
+}
+
 export function* destroyAuth() {
   localStorage.removeItem('token')
   localStorage.removeItem('user')
