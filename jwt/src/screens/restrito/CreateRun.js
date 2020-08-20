@@ -77,7 +77,9 @@ class CreateRun extends Component {
               moment={this.state.created}
               onChange={(val) => this.setState({ created: val })}
                />
-            <Button onClick={this.handleSave}>criar corrida</Button>
+            <div>
+              <Button onClick={this.handleSave}>criar corrida</Button>
+            </div>
           </Form>
         }
       </div>
