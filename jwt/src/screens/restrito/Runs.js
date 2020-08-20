@@ -6,6 +6,7 @@ import {Table, Button} from 'semantic-ui-react'
 import Duration from '../elements/Duration'
 import Distance from '../elements/Distance'
 import DateStr from '../elements/DataStr'
+import { Link } from 'react-router-dom'
 
 class Runs extends Component {
 
@@ -42,7 +43,7 @@ class Runs extends Component {
     return (
       <div>
         <h1>Runs</h1>
-        <Button onClick={() => this.props.create(run)}>created</Button>
+        <Button as={Link} to='/restrito/create-run'>created</Button>
         <Table>
           <Table.HeaderCell>Name</Table.HeaderCell>
           <Table.HeaderCell>Duração</Table.HeaderCell>
