@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import { Button, Segment, Form} from 'semantic-ui-react'
 
 import timezone from 'moment-timezone/data/meta/latest.json'
+import { Redirect } from 'react-router-dom'
 
 class CreateAccount extends Component {
 
@@ -51,6 +52,9 @@ class CreateAccount extends Component {
   }
 
   render() {
+    if(this.props.auth.isAuth) {
+      return <Redirect to='/restrito' />
+    }
     return (
       <div>
         <h1>Criar conta</h1>
