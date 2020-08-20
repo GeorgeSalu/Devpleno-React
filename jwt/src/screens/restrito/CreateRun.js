@@ -38,7 +38,6 @@ class CreateRun extends Component {
       distance: this.props.auth.user.unit === 'metric' ? distance : distance * 1.60934,
       created: d2
     })
-    
   }
 
   render() {
