@@ -4,6 +4,9 @@ import {connect} from 'react-redux'
 import { Button, Segment, Form} from 'semantic-ui-react'
 
 import InputMoment from 'input-moment'
+import moment from 'moment'
+import momentTz from 'moment-timezone'
+import 'input-moment/dist/input-moment.css'
 
 class CreateRun extends Component {
 
@@ -11,7 +14,7 @@ class CreateRun extends Component {
     friendly_name: '',
       duration: 0,
       distance: 0,
-      created: new Date(),
+      created: moment(),
       error: ''
   }
 
@@ -26,12 +29,14 @@ class CreateRun extends Component {
   }
 
   handleSave = () => {
+    const d = moment.tz(this.state.created, this.props.auth.user.timezone)
+    const d2 = d.clone().utc().format('YYYY-MM-DD H:mm:ss')
     const distance = this.state.distance
     this.props.create({
       friendly_name: this.state.friendly_name,
       duration: this.state.duration,
       distance: this.props.auth.user.unit === 'metric' ? distance : distance * 1.60934,
-      created: this.state.created
+      created: d2
     })
     
   }
@@ -66,8 +71,12 @@ class CreateRun extends Component {
             </Form.Field>
             <Form.Field>
               <label>criacao</label>
-              <input type='text' value={this.state.created} onChange={this.handleChange('created')} />
+              <input type='text' value={this.state.created.format('DD/MM/YYYY H:mm:ss')} onChange={this.handleChange('created')} />
             </Form.Field>
+            <InputMoment 
+              moment={this.state.created}
+              onChange={(val) => this.setState({ created: val })}
+               />
             <Button onClick={this.handleSave}>criar corrida</Button>
           </Form>
         }
