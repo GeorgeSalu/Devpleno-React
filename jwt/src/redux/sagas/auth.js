@@ -60,6 +60,7 @@ export function* createProfile(action) {
     yield put(ActionCreators.createProfileFailure(user.data.message))
   }else {
     yield put(ActionCreators.createProfileSuccess(userToSave))
+    yield put(ActionCreators.signinRequest(userToSave.email,userToSave.passwd))
   }
 }
 
