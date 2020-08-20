@@ -57,8 +57,14 @@ class ChangePass extends Component {
         {
           !this.props.auth.saved &&
           <Form>
-            <input type='password' value={this.state.passwd} onChange={this.handleChange('passwd')} />
-            <input type='password' value={this.state.passwd2} onChange={this.handleChange('passwd2')} />
+            <Form.Field>
+              <label>Senha</label>
+              <input type='password' value={this.state.passwd} onChange={this.handleChange('passwd')} />
+            </Form.Field>
+            <Form.Field>
+              <label>Confirmação da senha</label>
+              <input type='password' value={this.state.passwd2} onChange={this.handleChange('passwd2')} />
+            </Form.Field>
             <Button onClick={this.handleSave}>Alterar Senha</Button>
           </Form>
         }
