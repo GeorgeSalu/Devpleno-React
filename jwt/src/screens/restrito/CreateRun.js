@@ -3,6 +3,8 @@ import ActionCreators from '../../redux/actionCreators'
 import {connect} from 'react-redux'
 import { Button, Segment, Form} from 'semantic-ui-react'
 
+import InputMoment from 'input-moment'
+
 class CreateRun extends Component {
 
   state = {
