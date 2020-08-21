@@ -2,7 +2,6 @@ import React,{Component} from 'react'
 import ActionCreators from '../../redux/actionCreators'
 import {connect} from 'react-redux'
 import { Button, Segment, Form} from 'semantic-ui-react'
-
 import InputMoment from 'input-moment'
 import moment from 'moment'
 import 'input-moment/dist/input-moment.css'
