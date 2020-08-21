@@ -40,7 +40,7 @@ class Users extends Component {
         <Table>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>NOme</Table.HeaderCell>
+              <Table.HeaderCell>Nome</Table.HeaderCell>
               <Table.HeaderCell>Email</Table.HeaderCell>
               <Table.HeaderCell>Tipo</Table.HeaderCell>
               <Table.HeaderCell>Ações</Table.HeaderCell>
