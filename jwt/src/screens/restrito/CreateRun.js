@@ -55,7 +55,7 @@ class CreateRun extends Component {
               <input type='text' value={this.state.friendly_name} onChange={this.handleChange('friendly_name')} />
             </Form.Field>
             <Form.Field>
-              <label>Duracao</label>
+              <label>Duração</label>
               <input type='number' value={this.state.duration} onChange={this.handleChange('duration')} />
             </Form.Field>
             <Form.Field>
