@@ -57,7 +57,6 @@ class MyAccount extends Component {
                   })
               }
             </select>
-    
             <Button onClick={this.handleSave}>Salvar</Button>
           </Form>
         }
