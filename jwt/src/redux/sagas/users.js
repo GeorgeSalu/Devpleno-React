@@ -11,3 +11,13 @@ export function* getUsers(action) {
   })
   yield put(ActionCreators.getUsersSuccess(users.data))
 }
+
+export function* removeUser(action) {
+  const token = localStorage.getItem('token')
+  yield axios.delete(`http://localhost:3001/users/${action.id}`, {
+    headers: {
+      Authorization: 'Bearer '+token
+    }
+  })
+  yield put(ActionCreators.removeUserSuccess(action.id))
+}

@@ -29,10 +29,41 @@ export const getUsersFailure = (state = INITIAL_STATE, action) => {
   }
 }
 
+export const removeUserRequest = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    isSaving: true
+  }
+}
+
+export const removeUserSuccess = (state = INITIAL_STATE, action) => {
+  const runs = [...state.data]
+  const id = action.id
+  const indexToDelete = runs.findIndex( run => run.id === id)
+  runs.splice(indexToDelete, 1)
+  return {
+    ...state,
+    isSaving: false,
+    data: runs
+  }
+}
+
+export const removeUserFailure = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    isSaving: false
+  }
+}
+
+
 export const HANDLERS = {
   [Types.GET_USERS_REQUEST]: getUsersRequest,
   [Types.GET_USERS_SUCCESS]: getUsersSuccess,
-  [Types.GET_USERS_FAILURE]: getUsersFailure
+  [Types.GET_USERS_FAILURE]: getUsersFailure,
+
+  [Types.REMOVE_USER_REQUEST]: removeUserRequest,
+  [Types.REMOVE_USER_SUCCESS]: removeUserSuccess,
+  [Types.REMOVE_USER_FAILURE]: removeUserFailure
 
 }
 

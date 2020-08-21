@@ -67,7 +67,7 @@ const mapDispatchToProps = dispatch => {
   return {
     load: () => dispatch(ActionCreators.getUsersRequest()),
     create: (run) => dispatch(ActionCreators.createRunRequest(run)),
-    remove: id => dispatch(ActionCreators.removeRunRequest(id))
+    remove: id => dispatch(ActionCreators.removeUserRequest(id))
   }
 }
 
