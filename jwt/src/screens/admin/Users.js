@@ -22,7 +22,7 @@ class Users extends Component {
           { user.role }
         </Table.Cell>
         <Table.Cell>
-          <Button color='red' onClick={() => this.props.remove(user.id)}>Remover</Button>
+          <Button color='red' onClick={() => this.props.remove(user.id)}>Remover Usuario</Button>
         </Table.Cell>
       </Table.Row>
     )
