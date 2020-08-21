@@ -69,7 +69,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    load: () => dispatch(ActionCreators.getRunsRequest(false)),
+    load: () => dispatch(ActionCreators.getRunsRequest(true)),
     create: (run) => dispatch(ActionCreators.createRunRequest(run)),
     remove: id => dispatch(ActionCreators.removeRunRequest(id))
   }
