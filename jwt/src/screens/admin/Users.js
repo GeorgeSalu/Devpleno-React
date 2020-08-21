@@ -36,7 +36,6 @@ class Users extends Component {
     return (
       <div>
         <h1>Usuarios</h1>
-        <Button as={Link} to='/restrito/create-run'>created</Button>
         <Table>
           <Table.Header>
             <Table.Row>
