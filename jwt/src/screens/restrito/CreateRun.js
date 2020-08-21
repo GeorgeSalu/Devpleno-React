@@ -63,7 +63,7 @@ class CreateRun extends Component {
               <input type='number' value={this.state.distance} onChange={this.handleChange('distance')} />
             </Form.Field>
             <Form.Field>
-              <label>criacao</label>
+              <label>Criação</label>
               <input type='text' value={this.state.created.format('DD/MM/YYYY H:mm:ss')} onChange={this.handleChange('created')} />
             </Form.Field>
             <InputMoment 
