@@ -16,7 +16,7 @@ class Runs extends Component {
 
   renderRun = (run) => {
     return (
-      <Table.Row>
+      <Table.Row key={run.id}>
         <Table.Cell>
           { run.friendly_name }
         </Table.Cell>
@@ -48,11 +48,15 @@ class Runs extends Component {
         <h1>Runs</h1>
         <Button as={Link} to='/restrito/create-run'>created</Button>
         <Table>
-          <Table.HeaderCell>Name</Table.HeaderCell>
-          <Table.HeaderCell>Duração</Table.HeaderCell>
-          <Table.HeaderCell>Distancia</Table.HeaderCell>
-          <Table.HeaderCell>Data</Table.HeaderCell>
-          <Table.HeaderCell>Ações</Table.HeaderCell>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Name</Table.HeaderCell>
+              <Table.HeaderCell>Duração</Table.HeaderCell>
+              <Table.HeaderCell>Distancia</Table.HeaderCell>
+              <Table.HeaderCell>Data</Table.HeaderCell>
+              <Table.HeaderCell>Ações</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
           <Table.Body>
             { this.props.runs.data.map(this.renderRun) }
           </Table.Body>
