@@ -6,6 +6,7 @@ import Runs from './Runs'
 import Users from './Users'
 
 const Home = props => <h1>Home</h1>
+const EditUser = props => <h1>Edit</h1>
 
 const Admin = props => {
   if(!props.auth.isAuth) {
@@ -18,6 +19,7 @@ const Admin = props => {
     <div>
       <Header />
       <Route path={`${props.match.path}/admin`} exact component={Home} />
+      <Route path={`${props.match.path}/users/:id/edit`} exact component={EditUser} />
       <Route path={`${props.match.path}/users`} component={Users} />
       <Route path={`${props.match.path}/runs`} component={Runs} />
     </div>

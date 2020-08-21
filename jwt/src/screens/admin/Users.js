@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import ActionCreators from '../../redux/actionCreators'
 import {connect} from 'react-redux'
 import {Table, Button} from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 class Users extends Component {
 
@@ -20,6 +21,9 @@ class Users extends Component {
         </Table.Cell>
         <Table.Cell>
           { user.role }
+        </Table.Cell>
+        <Table.Cell>
+          <Button color='blue' as={Link} to={`/admin/users/${user.id}/edit`}>Editar usuário</Button>
         </Table.Cell>
         <Table.Cell>
           <Button color='red' onClick={() => this.props.remove(user.id)}>Remover usuário</Button>
