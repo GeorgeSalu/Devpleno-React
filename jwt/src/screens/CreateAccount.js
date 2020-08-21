@@ -88,7 +88,7 @@ class CreateAccount extends Component {
             </Form.Field>
             <select value={this.state.unit} onChange={this.handleChange('unit')}>
               <option value='metric' >Metrico Km</option>
-              <option value='imperial' >imperial</option>
+              <option value='imperial' >Imperial</option>
             </select>
             <select value={this.state.timezone} onChange={this.handleChange('timezone')}>
               {
