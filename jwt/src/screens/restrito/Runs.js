@@ -39,7 +39,7 @@ class Runs extends Component {
     return (
       <div>
         <h1>Runs</h1>
-        <Button as={Link} to='/restrito/create-run'>created</Button>
+        <Button as={Link} to='/restrito/create-run'>Criar corrida</Button>
         <Table>
           <Table.Header>
             <Table.Row>
