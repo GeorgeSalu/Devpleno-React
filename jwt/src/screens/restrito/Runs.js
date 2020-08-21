@@ -37,12 +37,6 @@ class Runs extends Component {
   }
 
   render() {
-    const run = {
-      friendly_name: 'run de test',
-      duration: 100,
-      distance: 100,
-      created: '2018-01-01 00:00:00'
-    }
     return (
       <div>
         <h1>Runs</h1>

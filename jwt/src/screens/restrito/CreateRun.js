@@ -5,7 +5,6 @@ import { Button, Segment, Form} from 'semantic-ui-react'
 
 import InputMoment from 'input-moment'
 import moment from 'moment'
-import momentTz from 'moment-timezone'
 import 'input-moment/dist/input-moment.css'
 import { Redirect } from 'react-router-dom'
 
