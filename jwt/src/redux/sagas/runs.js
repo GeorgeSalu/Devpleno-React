@@ -19,4 +19,5 @@ export function* createRun(action) {
       Authorization: 'Bearer '+token
     }
   })
+  yield put(ActionCreators.createRunSuccess(runs.data))
 }
