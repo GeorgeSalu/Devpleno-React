@@ -2,10 +2,6 @@ import React,{Component} from 'react'
 import ActionCreators from '../../redux/actionCreators'
 import {connect} from 'react-redux'
 import {Table, Button} from 'semantic-ui-react'
-import Duration from '../elements/Duration'
-import Distance from '../elements/Distance'
-import DateStr from '../elements/DataStr'
-import { Link } from 'react-router-dom'
 
 class Users extends Component {
 
