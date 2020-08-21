@@ -22,7 +22,7 @@ class Users extends Component {
           { user.role }
         </Table.Cell>
         <Table.Cell>
-          <Button color='red' onClick={() => this.props.remove(user.id)}>Remover Usuario</Button>
+          <Button color='red' onClick={() => this.props.remove(user.id)}>Remover usuários</Button>
         </Table.Cell>
       </Table.Row>
     )
@@ -31,7 +31,7 @@ class Users extends Component {
   render() {
     return (
       <div>
-        <h1>Usuarios</h1>
+        <h1>Usuários</h1>
         <Table>
           <Table.Header>
             <Table.Row>
