@@ -29,6 +29,9 @@ class Runs extends Component {
         <Table.Cell>
           <DateStr date={ run.created } timezone={this.props.auth.user.timezone} />
         </Table.Cell>
+        <Table.Cell>
+          <Button color='red' onClick={() => this.props.remove(run.id)}>Remover</Button>
+        </Table.Cell>
       </Table.Row>
     )
   }
@@ -49,7 +52,7 @@ class Runs extends Component {
           <Table.HeaderCell>Duração</Table.HeaderCell>
           <Table.HeaderCell>Distancia</Table.HeaderCell>
           <Table.HeaderCell>Data</Table.HeaderCell>
-
+          <Table.HeaderCell>Ações</Table.HeaderCell>
           <Table.Body>
             { this.props.runs.data.map(this.renderRun) }
           </Table.Body>
@@ -69,7 +72,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     load: () => dispatch(ActionCreators.getRunsRequest()),
-    create: (run) => dispatch(ActionCreators.createRunRequest(run))
+    create: (run) => dispatch(ActionCreators.createRunRequest(run)),
+    remove: id => dispatch(ActionCreators.removeRunRequest(id))
   }
 }
 
