@@ -62,7 +62,7 @@ class EditUser extends Component {
               <input type='text' value={this.state.name} onChange={this.handleChange('name')} />
             </Form.Field>
             <Form.Field>
-              <label>Email</label>
+              <label>E-mail</label>
               <input type='email' value={this.state.email} onChange={this.handleChange('email')} />
             </Form.Field>
             <div>
