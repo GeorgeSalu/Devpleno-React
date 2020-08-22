@@ -24,8 +24,6 @@ class Users extends Component {
         </Table.Cell>
         <Table.Cell>
           <Button color='blue' as={Link} to={`/admin/users/${user.id}/edit`}>Editar usuário</Button>
-        </Table.Cell>
-        <Table.Cell>
           <Button color='red' onClick={() => this.props.remove(user.id)}>Remover usuário</Button>
         </Table.Cell>
       </Table.Row>
