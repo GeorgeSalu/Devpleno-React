@@ -23,6 +23,10 @@ export const {
   getUsersSuccess: ['users'],
   getUsersFailure: null,
 
+  getUserRequest: ['id'],
+  getUserSuccess: ['users'],
+  getUserFailure: null,
+
   createRunReset: null,
   createRunRequest: ['run'],
   createRunSuccess: ['run'],

@@ -4,7 +4,8 @@ import {Types} from '../actionCreators'
 export const INITIAL_STATE = {
   isLoading: false,
   data: [],
-  isSaving: false
+  isSaving: false,
+  user: {}
 }
 
 export const getUsersRequest = (state = INITIAL_STATE, action) => {
@@ -55,11 +56,37 @@ export const removeUserFailure = (state = INITIAL_STATE, action) => {
   }
 }
 
+export const getUserRequest = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    isLoading: true
+  }
+}
+
+export const getUserSuccess = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    isLoading: false,
+    user: action.user
+  }
+}
+
+export const getUserFailure = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    isLoading: false
+  }
+}
+
 
 export const HANDLERS = {
   [Types.GET_USERS_REQUEST]: getUsersRequest,
   [Types.GET_USERS_SUCCESS]: getUsersSuccess,
   [Types.GET_USERS_FAILURE]: getUsersFailure,
+
+  [Types.GET_USER_REQUEST]: getUserRequest,
+  [Types.GET_USER_SUCCESS]: getUserSuccess,
+  [Types.GET_USER_FAILURE]: getUserFailure,
 
   [Types.REMOVE_USER_REQUEST]: removeUserRequest,
   [Types.REMOVE_USER_SUCCESS]: removeUserSuccess,
