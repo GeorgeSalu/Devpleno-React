@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import ActionCreators from './redux/actionCreators'
-
 import {Link} from 'react-router-dom'
 import {Menu, Image} from 'semantic-ui-react'
 
