@@ -2,7 +2,6 @@ import React,{Component} from 'react'
 import ActionCreators from '../redux/actionCreators'
 import {connect} from 'react-redux'
 import { Button, Segment, Form} from 'semantic-ui-react'
-
 import timezone from 'moment-timezone/data/meta/latest.json'
 import { Redirect } from 'react-router-dom'
 
