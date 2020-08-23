@@ -6,7 +6,7 @@ const Home = props => {
   return (
     <div>
       <Header />
-      <h1>Seja bem-vindo</h1>
+      <h1>Seja bem-vindo!</h1>
       <Image src='/logo-home.png' size='medium' spaced={true} centered={true}></Image>
     </div>
   )
