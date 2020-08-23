@@ -5,12 +5,10 @@ import {
   Route, 
   BrowserRouter as Router 
 } from 'react-router-dom'
-
 import Home from './screens/Home'
 import Admin from './screens/admin'
 import Restrito from './screens/restrito'
 import Login from './screens/Login'
-
 import {Container} from 'semantic-ui-react'
 import CreateAccount from './screens/CreateAccount';
 
