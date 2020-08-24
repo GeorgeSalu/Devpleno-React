@@ -40,13 +40,13 @@ export default class HomeScreen extends React.Component {
           <Image source={require('../assets/logo-devpleno.png')} />
         </View>
         <TouchableWithoutFeedback onPress={this.handleCounter}>
-        <View style={{ 
-          backgroundColor: 'white',
-          paddingBottom: 16,
-          paddingTop: 16
-        }}>
-          <Text style={{ textAlign: 'center', fontSize: 18 }}>COMEÇAR!{this.state.counter}</Text>
-        </View>
+          <View style={{ 
+            backgroundColor: 'white',
+            paddingBottom: 16,
+            paddingTop: 16
+          }}>
+            <Text style={{ textAlign: 'center', fontSize: 18 }}>COMEÇAR!{this.state.counter}</Text>
+          </View>
         </TouchableWithoutFeedback>
       </ImageBackground>
     )
