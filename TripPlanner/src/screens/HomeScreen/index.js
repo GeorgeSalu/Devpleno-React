@@ -1,5 +1,7 @@
 import React from 'react'
 import {StyleSheet, View, Text, ImageBackground, Image, TouchableWithoutFeedback} from 'react-native'
+import assets from './assets'
+import styles from './styles'
 
 export default class HomeScreen extends React.Component {
 
@@ -35,39 +37,3 @@ export default class HomeScreen extends React.Component {
     )
   }
 }
-
-const assets = {
-  background: require('../assets/background.png'),
-  tripplanner: require('../assets/logo-tripplanner.png'),
-  devpleno: require('../assets/logo-devpleno.png')
-}
-
-const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'stretch',
-    justifyContent: 'space-between'
-  },
-  wrapperlogoTripePlanner: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  wrapperlogoDevPLeno: { 
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    justifyContent: 'center',
-    paddingBottom: 32
-  },
-  buttonBackground: { 
-    backgroundColor: 'white',
-    paddingBottom: 16,
-    paddingTop: 16
-  },
-  buttonText: { 
-    textAlign: 'center',
-    fontSize: 18,
-    color: 'black'
-  }
-})
