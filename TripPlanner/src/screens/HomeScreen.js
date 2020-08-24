@@ -1,7 +1,7 @@
-import React,{Component} from 'react'
+import React from 'react'
 import {View, Text, ImageBackground, Image} from 'react-native'
 
-export default class HomeScreen extends Component {
+export default class HomeScreen extends React.Component {
   render() {
     return(
       <ImageBackground 
