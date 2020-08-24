@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import {View, Text, ImageBackground, Image} from 'react-native'
 
-class HomeScreen extends Component {
+export default class HomeScreen extends Component {
   render() {
     return(
       <ImageBackground 
@@ -26,5 +26,3 @@ class HomeScreen extends Component {
     )
   }
 }
-
-export default HomeScreen
