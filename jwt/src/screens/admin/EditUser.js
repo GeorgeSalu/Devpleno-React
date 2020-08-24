@@ -9,6 +9,7 @@ class EditUser extends Component {
   state = {
     name: '',
     email: '',
+    role: '',
     error: ''
   }
 
@@ -42,8 +43,10 @@ class EditUser extends Component {
   }
 
   handleSave = () => {
-    this.props.create({
-      name: this.state.name
+    this.props.save({
+      id: this.props.match.params.id,
+      name: this.state.name,
+      email: this.state.email
     })
   }
 
@@ -83,8 +86,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    create: (run) => dispatch(ActionCreators.createRunRequest(run)),
-    reset: () => dispatch(ActionCreators.createRunReset()),
+    save: (user) => dispatch(ActionCreators.updateUserRequest(user)),
+    reset: () => dispatch(ActionCreators.updateUserReset()),
     load: id => dispatch(ActionCreators.getUserRequest(id))
   }
 }
