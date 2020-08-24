@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyleSheet, View, Text, ImageBackground, Image, TouchableWithoutFeedback} from 'react-native'
+import { View, Text, ImageBackground, Image, TouchableWithoutFeedback} from 'react-native'
 import assets from './assets'
 import styles from './styles'
 
