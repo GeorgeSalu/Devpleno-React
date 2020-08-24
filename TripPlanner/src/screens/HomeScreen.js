@@ -4,7 +4,7 @@ import {View, Text} from 'react-native'
 class HomeScreen extends Component {
   render() {
     return(
-      <View>
+      <View style={{paddingTop: 100}}>
         <Text>Ola Hands-on rn!</Text>
       </View>
     )
