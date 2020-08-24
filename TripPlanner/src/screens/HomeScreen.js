@@ -1,33 +1,8 @@
 import React from 'react'
 import {StyleSheet, View, Text, ImageBackground, Image, TouchableWithoutFeedback} from 'react-native'
 
-const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'stretch',
-    justifyContent: 'space-between'
-  },
-  wrapperlogoTripePlanner: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  wrapperlogoDevPLeno: { 
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    justifyContent: 'center',
-    paddingBottom: 32
-  },
-  buttonBackground: { 
-    backgroundColor: 'white',
-    paddingBottom: 16,
-    paddingTop: 16
-  },
-  buttonText: { textAlign: 'center', fontSize: 18 }
-})
-
 export default class HomeScreen extends React.Component {
+  
   state = {
     counter: 0
   }
@@ -60,3 +35,32 @@ export default class HomeScreen extends React.Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'stretch',
+    justifyContent: 'space-between'
+  },
+  wrapperlogoTripePlanner: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  wrapperlogoDevPLeno: { 
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+    paddingBottom: 32
+  },
+  buttonBackground: { 
+    backgroundColor: 'white',
+    paddingBottom: 16,
+    paddingTop: 16
+  },
+  buttonText: { 
+    textAlign: 'center',
+    fontSize: 18 
+  }
+})
