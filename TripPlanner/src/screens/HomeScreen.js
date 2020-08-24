@@ -20,7 +20,7 @@ class HomeScreen extends Component {
           <Image source={require('../assets/logo-devpleno.png')} />
         </View>
         <View>
-          <Text>comecar!</Text>
+          <Text>COMEÇAR!</Text>
         </View>
       </ImageBackground>
     )
