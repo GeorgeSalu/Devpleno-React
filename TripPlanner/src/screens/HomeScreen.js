@@ -36,7 +36,7 @@ export default class HomeScreen extends React.Component {
           alignItems: 'flex-end',
           justifyContent: 'center',
           paddingBottom: 32
-         }}>
+        }}>
           <Image source={require('../assets/logo-devpleno.png')} />
         </View>
         <TouchableWithoutFeedback onPress={this.handleCounter}>
