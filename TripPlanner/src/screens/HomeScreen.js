@@ -1,5 +1,30 @@
 import React from 'react'
-import {View, Text, ImageBackground, Image, TouchableWithoutFeedback} from 'react-native'
+import {StyleSheet, View, Text, ImageBackground, Image, TouchableWithoutFeedback} from 'react-native'
+
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'stretch',
+    justifyContent: 'space-between'
+  },
+  wrapperlogoTripePlanner: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  wrapperlogoDevPLeno: { 
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+    paddingBottom: 32
+  },
+  buttonBackground: { 
+    backgroundColor: 'white',
+    paddingBottom: 16,
+    paddingTop: 16
+  }
+})
 
 export default class HomeScreen extends React.Component {
   state = {
@@ -17,34 +42,16 @@ export default class HomeScreen extends React.Component {
       <ImageBackground 
         source={require('../assets/background.png')}
         imageStyle={{ resizeMode: 'stretch' }}
-        style={{
-          flex: 1,
-          flexDirection: 'column',
-          alignItems: 'stretch',
-          justifyContent: 'space-between'
-        }}
+        style={styles.background}
       >
-        <View style={{
-          flex: 1,
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
+        <View style={styles.wrapperlogoTripePlanner}>
           <Image source={require('../assets/logo-tripplanner.png')} />
         </View>
-        <View style={{ 
-          flexDirection: 'row',
-          alignItems: 'flex-end',
-          justifyContent: 'center',
-          paddingBottom: 32
-        }}>
+        <View style={styles.wrapperlogoDevPLeno}>
           <Image source={require('../assets/logo-devpleno.png')} />
         </View>
         <TouchableWithoutFeedback onPress={this.handleCounter}>
-          <View style={{ 
-            backgroundColor: 'white',
-            paddingBottom: 16,
-            paddingTop: 16
-          }}>
+          <View style={styles.buttonBackground}>
             <Text style={{ textAlign: 'center', fontSize: 18 }}>COMEÇAR!{this.state.counter}</Text>
           </View>
         </TouchableWithoutFeedback>
