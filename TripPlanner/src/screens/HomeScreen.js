@@ -2,7 +2,7 @@ import React from 'react'
 import {StyleSheet, View, Text, ImageBackground, Image, TouchableWithoutFeedback} from 'react-native'
 
 export default class HomeScreen extends React.Component {
-  
+
   state = {
     counter: 0
   }
@@ -16,15 +16,15 @@ export default class HomeScreen extends React.Component {
   render() {
     return(
       <ImageBackground 
-        source={require('../assets/background.png')}
+        source={assets.background}
         imageStyle={{ resizeMode: 'stretch' }}
         style={styles.background}
       >
         <View style={styles.wrapperlogoTripePlanner}>
-          <Image source={require('../assets/logo-tripplanner.png')} />
+          <Image source={assets.tripplanner} />
         </View>
         <View style={styles.wrapperlogoDevPLeno}>
-          <Image source={require('../assets/logo-devpleno.png')} />
+          <Image source={assets.devpleno} />
         </View>
         <TouchableWithoutFeedback onPress={this.handleCounter}>
           <View style={styles.buttonBackground}>
@@ -34,6 +34,12 @@ export default class HomeScreen extends React.Component {
       </ImageBackground>
     )
   }
+}
+
+const assets = {
+  background: require('../assets/background.png'),
+  tripplanner: require('../assets/logo-tripplanner.png'),
+  devpleno: require('../assets/logo-devpleno.png')
 }
 
 const styles = StyleSheet.create({
@@ -61,6 +67,7 @@ const styles = StyleSheet.create({
   },
   buttonText: { 
     textAlign: 'center',
-    fontSize: 18 
+    fontSize: 18,
+    color: 'black'
   }
 })
