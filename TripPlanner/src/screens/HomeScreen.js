@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingBottom: 16,
     paddingTop: 16
-  }
+  },
+  buttonText: { textAlign: 'center', fontSize: 18 }
 })
 
 export default class HomeScreen extends React.Component {
@@ -52,7 +53,7 @@ export default class HomeScreen extends React.Component {
         </View>
         <TouchableWithoutFeedback onPress={this.handleCounter}>
           <View style={styles.buttonBackground}>
-            <Text style={{ textAlign: 'center', fontSize: 18 }}>COMEÇAR!{this.state.counter}</Text>
+            <Text style={styles.buttonText}>COMEÇAR!{this.state.counter}</Text>
           </View>
         </TouchableWithoutFeedback>
       </ImageBackground>
