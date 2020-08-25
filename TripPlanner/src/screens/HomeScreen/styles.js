@@ -28,6 +28,13 @@ export default styles = StyleSheet.create({
     fontSize: 18,
     color: 'black'
   }, 
+  pin: {
+    marginTop: 16,
+    marginBottom: 16
+  },
+  arrow: {
+    marginTop: 16
+  },
   buttonEmptyStateBackground: { 
     backgroundColor: 'white',
     paddingBottom: 16,

@@ -38,9 +38,9 @@ export default class HomeScreen extends React.Component {
           : 
           <TouchableWithoutFeedback onPress={this.handleCounter}>
             <View style={styles.buttonEmptyStateBackground}>
-              <Image source={assets.pin} />
+              <Image source={assets.pin} style={styles.pin} />
               <Text style={styles.buttonEmptyStateText}>Vamos planejar sua primeira viajem!{this.state.counter}</Text>
-              <Image source={assets.arrow} />
+              <Image source={assets.arrow}  style={styles.arrow}/>
             </View>
           </TouchableWithoutFeedback>
         }
