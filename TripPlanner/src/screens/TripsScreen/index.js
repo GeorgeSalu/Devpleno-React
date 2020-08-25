@@ -4,7 +4,14 @@ import {View, Text} from 'react-native'
 class TripsScreen extends Component {
   render() {
     return(
-      <Text>Ola</Text>
+      <View>
+        <View>
+          <Text>Mapa</Text>
+        </View>
+        <View>
+          <Text>Lista de viagens</Text>
+        </View>
+      </View>
     )
   }
 }

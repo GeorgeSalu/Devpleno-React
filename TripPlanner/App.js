@@ -5,6 +5,6 @@ import TripsScreen from './src/screens/TripsScreen'
 const AppNavigator = createStackNavigator({
   Home: HomeScreen,
   Trips: TripsScreen
-}, { initialRouteName: 'Home' })
+}, { initialRouteName: 'Trips' })
 
 export default createAppContainer(AppNavigator)
