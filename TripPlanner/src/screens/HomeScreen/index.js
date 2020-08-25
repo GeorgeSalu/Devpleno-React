@@ -6,12 +6,12 @@ import styles from './styles'
 export default class HomeScreen extends React.Component {
 
   state = {
-    counter: 0
+    show: true
   }
 
   handleCounter = () => {
     this.setState({
-      counter: this.state.counter + 1
+      show: !this.state.show
     })
   }
 
@@ -28,11 +28,22 @@ export default class HomeScreen extends React.Component {
         <View style={styles.wrapperlogoDevPLeno}>
           <Image source={assets.devpleno} />
         </View>
-        <TouchableWithoutFeedback onPress={this.handleCounter}>
-          <View style={styles.buttonBackground}>
-            <Text style={styles.buttonText}>COMEÇAR!{this.state.counter}</Text>
-          </View>
-        </TouchableWithoutFeedback>
+        {
+          !this.state.show ?
+          <TouchableWithoutFeedback onPress={this.handleCounter}>
+            <View style={styles.buttonBackground}>
+              <Text style={styles.buttonText}>COMEÇAR!</Text>
+            </View>
+          </TouchableWithoutFeedback>
+          : 
+          <TouchableWithoutFeedback onPress={this.handleCounter}>
+            <View style={styles.buttonEmptyStateBackground}>
+              <Image source={assets.pin} />
+              <Text style={styles.buttonEmptyStateText}>Vamos planejar sua primeira viajem!{this.state.counter}</Text>
+              <Image source={assets.arrow} />
+            </View>
+          </TouchableWithoutFeedback>
+        }
       </ImageBackground>
     )
   }
