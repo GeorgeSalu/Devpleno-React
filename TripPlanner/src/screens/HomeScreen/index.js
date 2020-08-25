@@ -5,6 +5,10 @@ import styles from './styles'
 
 export default class HomeScreen extends React.Component {
 
+  static navigationOptions = {
+    header: null
+  }
+
   state = {
     show: true
   }
