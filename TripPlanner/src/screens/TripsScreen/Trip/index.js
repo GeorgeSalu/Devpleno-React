@@ -6,7 +6,7 @@ const Trip = props => {
   const dim = Dimensions.get('window')
   return (
     <View style={styles.wrapperTrip}>
-      <View style={[styles.image], { width: dim.width - 32 }}><Text>Image</Text></View>
+      <View style={[styles.image, { width: dim.width - 32 }]}><Text>Image</Text></View>
       <Text>{props.title}</Text>
       <Text style={styles.price}>{props.price}</Text>
     </View>

@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text} from 'react-native'
+import {View, Text, FlatList} from 'react-native'
 import Trip from './Trip'
 
 export default class TripsScreen extends React.Component {
@@ -8,7 +8,13 @@ export default class TripsScreen extends React.Component {
     header: null
   }
 
+  
+
   render() {
+    const trips = [
+      {id: '1', name: 'eurotrip 2019', price: 'r$ 200'},
+      {id: '2', name: 'atacama', price: 'r$ 300'}
+    ]
     return(
       <View style={{
         flex: 1,
@@ -24,6 +30,7 @@ export default class TripsScreen extends React.Component {
         <View style={{
           backgroundColor: 'pink'
         }}>
+
           <Trip title='EuroTrip 2019' price='R$ 4000'/>
         </View>
       </View>
