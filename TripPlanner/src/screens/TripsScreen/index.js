@@ -9,7 +9,7 @@ export default class TripsScreen extends React.Component {
   }
 
   renderItem = item => {
-    return <Trip title='EuroTrip 2019' price='R$ 4000'/>
+    return <Trip title={item.item.name} price={item.item.price}/>
   }
 
   render() {
