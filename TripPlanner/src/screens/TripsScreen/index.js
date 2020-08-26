@@ -8,12 +8,15 @@ export default class TripsScreen extends React.Component {
     header: null
   }
 
-  
+  renderItem = item => {
+    return <Trip title='EuroTrip 2019' price='R$ 4000'/>
+  }
 
   render() {
     const trips = [
       {id: '1', name: 'eurotrip 2019', price: 'r$ 200'},
-      {id: '2', name: 'atacama', price: 'r$ 300'}
+      {id: '2', name: 'atacama', price: 'r$ 300'},
+      {id: '3', name: 'portugal', price: 'r$ 1300'}
     ]
     return(
       <View style={{
@@ -30,8 +33,13 @@ export default class TripsScreen extends React.Component {
         <View style={{
           backgroundColor: 'pink'
         }}>
-
-          <Trip title='EuroTrip 2019' price='R$ 4000'/>
+          <FlatList
+            data={trips}
+            renderItem={this.renderItem}
+            horizontal
+            keyExtractor={ item => item.id}
+          />
+          
         </View>
       </View>
     )
