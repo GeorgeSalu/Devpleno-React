@@ -1,5 +1,6 @@
 import React from 'react'
 import {View, Text, Dimensions} from 'react-native'
+import Trip from './Trip'
 
 export default class TripsScreen extends React.Component {
 
@@ -8,7 +9,7 @@ export default class TripsScreen extends React.Component {
   }
 
   render() {
-    const dim = Dimensions.get('window')
+    
     return(
       <View style={{
         flex: 1,
@@ -24,7 +25,7 @@ export default class TripsScreen extends React.Component {
         <View style={{
           backgroundColor: 'pink'
         }}>
-          
+          <Trip />
         </View>
       </View>
     )
