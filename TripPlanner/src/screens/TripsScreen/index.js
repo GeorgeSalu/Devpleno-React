@@ -24,7 +24,7 @@ export default class TripsScreen extends React.Component {
         <View style={{
           backgroundColor: 'pink'
         }}>
-          <Trip />
+          <Trip title='EuroTrip 2019' price='R$ 4000'/>
         </View>
       </View>
     )
