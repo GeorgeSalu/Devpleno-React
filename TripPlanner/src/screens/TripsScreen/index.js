@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {View, Text} from 'react-native'
 
-class TripsScreen extends Component {
+class TripsScreen extends React.Component {
   render() {
     return(
       <View>
