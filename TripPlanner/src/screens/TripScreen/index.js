@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, FlatList, TouchableOpacity,Image , TouchableWithoutFeedback} from 'react-native'
+import {View, Text, FlatList, TouchableOpacity,Image } from 'react-native'
 
 export default class TripScreen extends React.Component {
 
@@ -9,10 +9,25 @@ export default class TripScreen extends React.Component {
 
   renderItem = item => {
     return (
-      <View>
-        <Text>{item.item.name}</Text>
-        <Text>{item.item.description}</Text>
-        <Text>{item.item.price}</Text>
+      <View style={{
+        flex: 1,
+        flexDirection: 'row',
+        paddingBottom: 16
+      }}>
+        <View style={{ flex: 1 }}>
+          <Text style={{
+            fontWeight: 'bold',
+            fontSize: 18
+          }}>{item.item.name}</Text>
+          <Text>{item.item.description}</Text>
+        </View>
+        <View style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          paddingRight: 16
+        }}>
+          <Text style={{ textAlign: 'right', color: '#24C6DC', fontWeight: 'bold' }}>{item.item.price}</Text>
+        </View>
       </View>
     )
   }
@@ -30,13 +45,25 @@ export default class TripScreen extends React.Component {
       <View style={{
         flex: 1
       }}>
-        <TouchableWithoutFeedback>
-          <Image source={require('../../assets/icon-chevron-left.png')} />
-        </TouchableWithoutFeedback>
+        
         <View style={{
           height: 192,
           backgroundColor: 'grey'
         }}>
+          <View style={{
+            position: 'absolute',
+            top: 36,
+            left: 16,
+            paddingTop: 10,
+            paddingLeft: 10,
+            paddingRight: 10,
+            paddingBottom: 10
+          }}>
+            <TouchableOpacity onPress={() => this.props.navigation.goBack()} >
+              <Image source={require('../../assets/icon-chevron-left.png')} />
+            </TouchableOpacity>
+          </View>
+
           <Text style={{
             position: 'absolute',
             left: 16,
@@ -58,6 +85,11 @@ export default class TripScreen extends React.Component {
         <FlatList style={{
           flex: 1
         }}
+          contentContainerStyle={{
+            paddingTop: 16,
+            paddingLeft: 16
+          }}
+          keyExtractor={item => item.id}
           data={trip.places}
           renderItem={this.renderItem}
         />
