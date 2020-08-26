@@ -1,6 +1,6 @@
 import React from 'react'
 import {View, Text, FlatList, TouchableOpacity,Image } from 'react-native'
-
+import styles from './styles'
 export default class TripScreen extends React.Component {
 
   static navigationOptions = {
@@ -9,24 +9,13 @@ export default class TripScreen extends React.Component {
 
   renderItem = item => {
     return (
-      <View style={{
-        flex: 1,
-        flexDirection: 'row',
-        paddingBottom: 16
-      }}>
-        <View style={{ flex: 1 }}>
-          <Text style={{
-            fontWeight: 'bold',
-            fontSize: 18
-          }}>{item.item.name}</Text>
+      <View style={styles.item}>
+        <View style={styles.wrapperInfo}>
+          <Text style={styles.itemName}>{item.item.name}</Text>
           <Text>{item.item.description}</Text>
         </View>
-        <View style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          paddingRight: 16
-        }}>
-          <Text style={{ textAlign: 'right', color: '#24C6DC', fontWeight: 'bold' }}>{item.item.price}</Text>
+        <View style={styles.wrapperItemPice}>
+          <Text style={styles.itemPrice}>{item.item.price}</Text>
         </View>
       </View>
     )
