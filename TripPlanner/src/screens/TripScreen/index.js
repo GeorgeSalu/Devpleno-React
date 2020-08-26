@@ -31,23 +31,10 @@ export default class TripScreen extends React.Component {
       ]
     }
     return (
-      <View style={{
-        flex: 1
-      }}>
+      <View style={styles.wrapper}>
         
-        <View style={{
-          height: 192,
-          backgroundColor: 'grey'
-        }}>
-          <View style={{
-            position: 'absolute',
-            top: 36,
-            left: 16,
-            paddingTop: 10,
-            paddingLeft: 10,
-            paddingRight: 10,
-            paddingBottom: 10
-          }}>
+        <View style={styles.header}>
+          <View style={styles.backButton}>
             <TouchableOpacity onPress={() => this.props.navigation.goBack()} >
               <Image source={require('../../assets/icon-chevron-left.png')} />
             </TouchableOpacity>
