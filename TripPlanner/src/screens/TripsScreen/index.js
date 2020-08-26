@@ -9,7 +9,7 @@ export default class TripsScreen extends React.Component {
   }
 
   renderItem = item => {
-    return <Trip title={item.item.name} price={item.item.price}/>
+    return <Trip onPress={() => this.props.navigation.navigate('Trip')} title={item.item.name} price={item.item.price}/>
   }
 
   render() {

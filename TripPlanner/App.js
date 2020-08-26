@@ -7,6 +7,6 @@ const AppNavigator = createStackNavigator({
   Home: HomeScreen,
   Trips: TripsScreen, 
   Trip: TripScreen
-}, { initialRouteName: 'Trip' })
+}, { initialRouteName: 'Trips' })
 
 export default createAppContainer(AppNavigator)
