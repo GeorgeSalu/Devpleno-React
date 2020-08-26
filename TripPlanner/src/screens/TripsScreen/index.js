@@ -1,7 +1,7 @@
 import React from 'react'
 import {View, Text, Dimensions} from 'react-native'
 
-class TripsScreen extends React.Component {
+export default class TripsScreen extends React.Component {
 
   static navigationOptions = {
     header: null
@@ -53,5 +53,3 @@ class TripsScreen extends React.Component {
     )
   }
 }
-
-export default TripsScreen
