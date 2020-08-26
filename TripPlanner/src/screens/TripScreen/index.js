@@ -1,7 +1,7 @@
 import React from 'react'
 import {View, Text, FlatList, TouchableOpacity,Image , TouchableWithoutFeedback} from 'react-native'
 
-class TripScreen extends React.Component {
+export default class TripScreen extends React.Component {
 
   static navigationOptions = {
     header: null
@@ -65,5 +65,3 @@ class TripScreen extends React.Component {
     )
   }
 }
-
-export default TripScreen
