@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {View, Text, FlatList, TouchableOpacity,Image , TouchableWithoutFeedback} from 'react-native'
 
-class TripScreen extends Component {
+class TripScreen extends React.Component {
 
   static navigationOptions = {
     header: null
