@@ -2,6 +2,7 @@ import React from 'react'
 import {View, Text, FlatList} from 'react-native'
 import Trip from './Trip'
 import isIphoneX from '../../utils/isIphoneX'
+import MapView from 'react-native-maps'
 
 export default class TripsScreen extends React.Component {
 
@@ -26,10 +27,17 @@ export default class TripsScreen extends React.Component {
         alignItems: 'stretch'
       }}>
         <View style={{
-          backgroundColor: 'red',
           flex: 1
         }}>
-          <Text>Mapa</Text>
+          <MapView
+          style={{flex: 1}}
+            initialRegion={{
+              latitude: 37.78825,
+              longitude: -122.4324,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421
+            }}
+          />
         </View>
         <View style={{
           backgroundColor: 'white'
