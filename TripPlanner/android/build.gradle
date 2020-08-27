@@ -8,6 +8,7 @@ buildscript {
         targetSdkVersion = 26
         supportLibVersion = "27.1.1"
 
+        // necessario para o funcionamento do react-native-maps
         googlePlayServicesVersion = "11.8.0"
         androidMapsUtilsVersion = "0.5+"
     }

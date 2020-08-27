@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    //necessario para o funcionamento do react-native-maps
     implementation(project(':react-native-maps'))
     compile project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])
