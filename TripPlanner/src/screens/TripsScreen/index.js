@@ -30,7 +30,7 @@ export default class TripsScreen extends React.Component {
           flex: 1
         }}>
           <MapView
-          style={{flex: 1}}
+            style={{flex: 1}}
             initialRegion={{
               latitude: 37.78825,
               longitude: -122.4324,
