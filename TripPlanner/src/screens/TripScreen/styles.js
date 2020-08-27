@@ -15,7 +15,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingRight: 16
   },
-  itemPrice: { textAlign: 'right', color: '#24C6DC', fontWeight: 'bold' },
+  itemPrice: { 
+    textAlign: 'right',
+    color: '#24C6DC', 
+    fontWeight: 'bold' 
+  },
   wrapperInfo: { 
     flex: 1 
   },
