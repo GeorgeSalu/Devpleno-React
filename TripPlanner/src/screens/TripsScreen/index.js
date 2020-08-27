@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, FlatList} from 'react-native'
+import {View, Text, FlatList, TouchableOpacity, Image} from 'react-native'
 import Trip from './Trip'
 import isIphoneX from '../../utils/isIphoneX'
 import MapView from 'react-native-maps'
@@ -38,6 +38,14 @@ export default class TripsScreen extends React.Component {
               longitudeDelta: 0.0421
             }}
           />
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('AddTrip')} style={{
+            position: 'absolute',
+            bottom: 0,
+            right: 20,
+            padding: 10
+          }}>
+            <Image source={require('../../assets/icon-add-trip.png')} />
+          </TouchableOpacity>
         </View>
         <View style={{
           backgroundColor: 'white'
