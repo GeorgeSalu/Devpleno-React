@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, FlatList, TouchableOpacity, Image} from 'react-native'
+import {View, FlatList, TouchableOpacity, Image} from 'react-native'
 import Trip from './Trip'
 import isIphoneX from '../../utils/isIphoneX'
 import MapView from 'react-native-maps'
