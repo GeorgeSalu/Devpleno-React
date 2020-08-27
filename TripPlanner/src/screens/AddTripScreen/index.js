@@ -1,5 +1,6 @@
 import React from 'react'
 import {View, Text, FlatList, TouchableOpacity,Image } from 'react-native'
+import MapView, {Marker} from 'react-native-maps'
 import styles from './styles'
 
 export default class AddTripScreen extends React.Component {
@@ -35,6 +36,20 @@ export default class AddTripScreen extends React.Component {
       <View style={styles.wrapper}>
         
         <View style={styles.header}>
+            <MapView style={{flex: 1}} initialRegion={{
+              latitude: 37.78825,
+              longitude: -122.4324,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421
+            }}>
+              <Marker 
+                draggable
+                coordinate={{
+                  latitude: 37.78825,
+                  longitude: -122.4324
+                }} 
+              />
+            </MapView>
           <View style={styles.backButton}>
             <TouchableOpacity onPress={() => this.props.navigation.goBack()} >
               <Image source={require('../../assets/icon-chevron-left.png')} />
