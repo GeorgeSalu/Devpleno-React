@@ -1,6 +1,7 @@
 import React from 'react'
 import {View, Text, FlatList} from 'react-native'
 import Trip from './Trip'
+import isIphoneX from '../../utils/isIphoneX'
 
 export default class TripsScreen extends React.Component {
 
@@ -31,13 +32,16 @@ export default class TripsScreen extends React.Component {
           <Text>Mapa</Text>
         </View>
         <View style={{
-          backgroundColor: 'pink'
+          backgroundColor: 'white'
         }}>
           <FlatList
             data={trips}
             renderItem={this.renderItem}
             horizontal
             keyExtractor={ item => item.id}
+            style={[
+              isIphoneX() ? { marginBottom: 20 } : null
+            ]}
           />
           
         </View>
