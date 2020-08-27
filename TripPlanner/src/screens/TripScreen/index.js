@@ -40,23 +40,8 @@ export default class TripScreen extends React.Component {
             </TouchableOpacity>
           </View>
 
-          <Text style={{
-            position: 'absolute',
-            left: 16,
-            bottom: 16
-          }}>{trip.name}</Text>
-          <Text style={{
-              position: 'absolute',
-              bottom: 16,
-              right: 32,
-              textAlign: 'right',
-              backgroundColor: '#24C6DC',
-              paddingTop: 4,
-              paddingBottom: 4,
-              paddingRight: 4,
-              paddingLeft: 4,
-              color: 'white'
-          }}>R$ 5000</Text>
+          <Text style={styles.tripName}>{trip.name}</Text>
+          <Text style={styles.tripPrice}>R$ 5000</Text>
         </View>
         <FlatList style={{
           flex: 1

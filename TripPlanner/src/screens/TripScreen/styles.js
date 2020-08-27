@@ -38,6 +38,23 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     paddingBottom: 10
+  },
+  tripName: {
+    position: 'absolute',
+    left: 16,
+    bottom: 16
+  },
+  tripPrice: {
+    position: 'absolute',
+    bottom: 16,
+    right: 32,
+    textAlign: 'right',
+    backgroundColor: '#24C6DC',
+    paddingTop: 4,
+    paddingBottom: 4,
+    paddingRight: 4,
+    paddingLeft: 4,
+    color: 'white'
   }
 })
 
