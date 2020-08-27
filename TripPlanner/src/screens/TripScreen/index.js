@@ -1,6 +1,7 @@
 import React from 'react'
 import {View, Text, FlatList, TouchableOpacity,Image } from 'react-native'
 import styles from './styles'
+
 export default class TripScreen extends React.Component {
 
   static navigationOptions = {
