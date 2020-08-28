@@ -69,9 +69,9 @@ export default class AddTripScreen extends React.Component {
             </TouchableOpacity>
           </View>
         </View>
-          <TextInput  placeholder='Nome do ponto' onChangeText={txt => this.setState({ pointName: txt })}></TextInput>
-          <TextInput  placeholder='Descricao' onChangeText={txt => this.setState({ description: txt })}></TextInput>
-          <TextInput  placeholder='Preco' onChangeText={txt => this.setState({ price: txt })}></TextInput>
+          <TextInput style={styles.input} placeholder='Nome do ponto' onChangeText={txt => this.setState({ pointName: txt })}></TextInput>
+          <TextInput style={styles.input} placeholder='Descricao' onChangeText={txt => this.setState({ description: txt })}></TextInput>
+          <TextInput style={styles.input} placeholder='Preco' onChangeText={txt => this.setState({ price: txt })}></TextInput>
           <TouchableOpacity>
             <Text>Salvar ponto</Text>
           </TouchableOpacity>
