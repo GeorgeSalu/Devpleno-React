@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, FlatList, TouchableOpacity,Image } from 'react-native'
+import {View, Text, FlatList, TouchableOpacity,Image, TextInput } from 'react-native'
 import MapView, {Marker} from 'react-native-maps'
 import styles from './styles'
 
@@ -7,6 +7,16 @@ export default class AddTripScreen extends React.Component {
 
   static navigationOptions = {
     header: null
+  }
+
+  state = {
+    position: {
+      latitude: 37.78825,
+      longitude: -122.4324
+    },
+    pointName: '',
+    description: '',
+    price: 0
   }
 
   renderItem = item => {
@@ -43,11 +53,14 @@ export default class AddTripScreen extends React.Component {
               longitudeDelta: 0.0421
             }}>
               <Marker 
-                draggable
                 coordinate={{
                   latitude: 37.78825,
                   longitude: -122.4324
                 }} 
+                draggable
+                onDragEnd={
+                  (evt) => this.setState({ position: evt.nativeEvent.coordinate })
+                }
               />
             </MapView>
           <View style={styles.backButton}>
@@ -56,20 +69,14 @@ export default class AddTripScreen extends React.Component {
             </TouchableOpacity>
           </View>
 
-          <Text style={styles.tripName}>{trip.name}</Text>
-          <Text style={styles.tripPrice}>R$ 5000</Text>
+          <TextInput  placeholder='Nome do ponto' onChangeText={txt => this.setState({ pointName: txt })}></TextInput>
+          <TextInput  placeholder='Descricao' onChangeText={txt => this.setState({ description: txt })}></TextInput>
+          <TextInput  placeholder='Preco' onChangeText={txt => this.setState({ price: txt })}></TextInput>
+          <TouchableOpacity>
+            <Text>Salvar ponto</Text>
+          </TouchableOpacity>
         </View>
-        <FlatList style={{
-          flex: 1
-        }}
-          contentContainerStyle={{
-            paddingTop: 16,
-            paddingLeft: 16
-          }}
-          keyExtractor={item => item.id}
-          data={trip.places}
-          renderItem={this.renderItem}
-        />
+        
       </View>
     )
   }

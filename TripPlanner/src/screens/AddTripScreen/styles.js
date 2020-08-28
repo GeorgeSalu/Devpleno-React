@@ -55,6 +55,11 @@ const styles = StyleSheet.create({
     paddingRight: 4,
     paddingLeft: 4,
     color: 'white'
+  },
+  input: {
+    backgroundColor: '#E5E5E5',
+    padding: 20,
+    marginBottom: 16
   }
 })
 
