@@ -1,4 +1,4 @@
-### Devpleno React - devReactJS - você vai do zero à entrega aplicações profissionais em React.
+## Devpleno React - devReactJS - você vai do zero à entrega aplicações profissionais em React.
 #### https://lp.devpleno.com/devreactjs/
 
 O QUE VOCÊ IRÁ APRENDER.
