@@ -60,6 +60,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#E5E5E5',
     padding: 20,
     marginBottom: 16
+  },
+  btn: {
+    backgroundColor: '#E5E5E5',
+    padding: 20,
+    marginBottom: 16
   }
 })
 
