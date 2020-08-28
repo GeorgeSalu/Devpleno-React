@@ -68,15 +68,13 @@ export default class AddTripScreen extends React.Component {
               <Image source={require('../../assets/icon-chevron-left.png')} />
             </TouchableOpacity>
           </View>
-
+        </View>
           <TextInput  placeholder='Nome do ponto' onChangeText={txt => this.setState({ pointName: txt })}></TextInput>
           <TextInput  placeholder='Descricao' onChangeText={txt => this.setState({ description: txt })}></TextInput>
           <TextInput  placeholder='Preco' onChangeText={txt => this.setState({ price: txt })}></TextInput>
           <TouchableOpacity>
             <Text>Salvar ponto</Text>
           </TouchableOpacity>
-        </View>
-        
       </View>
     )
   }
