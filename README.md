@@ -87,7 +87,7 @@ Tópicos avançados.
   - Context API / New Context API.
   - Portals.
 
-Teste e documentação com Storybook.
+Teste e documentação com Storybook (https://storybook.js.org/).
 
   - Configuração do Storybook no projeto.
   - Decorators e carregamento de stories dinamicamente.
