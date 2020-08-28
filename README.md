@@ -46,7 +46,7 @@ deste planejamento, desenvolvemos o projeto utilizando React Native.
 Algumas funcionalidades específicas que exploramos: trabalhamos com o projeto com código nativo (também conhecido 
 como projeto “ejetado” ou sem utilizar o expo.io "https://expo.io/" ). 
 
-  - Prototipação no Figma.
+  - Prototipação no Figma(https://www.figma.com/).
   - Fontes customizadas.
   - Navegação com React-navigation.
   - Funcionalidade.
