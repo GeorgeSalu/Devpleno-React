@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, TouchableOpacity, TextInput } from 'react-native'
+import {View, Text, TouchableOpacity, TextInput, AsyncStorage } from 'react-native'
 import styles from './styles'
 
 export default class AddTripScreen extends React.Component {
@@ -26,6 +26,24 @@ export default class AddTripScreen extends React.Component {
     )
   }
 
+  handleSave = async () => {
+    const trip = {
+      id: new Date().getTime(),
+      trip: this.state.trip,
+      price: 0,
+      latitude: 0,
+      longitude: 0
+    }
+
+    const tripsAS = await AsyncStorage.getItem('trips')
+    let trips = []
+    if(tripsAS) {
+      trips = JSON.parse(tripsAS)
+    }
+    trips.push(trip)
+    await AsyncStorage.setItem('trips', JSON.stringify(trips))
+  }
+
   render() {
     const trip = {
       name: 'EuroTrip 2019',
@@ -37,9 +55,8 @@ export default class AddTripScreen extends React.Component {
     }
     return (
       <View style={styles.wrapper}>
-          <TextInput style={styles.input} placeholder='Nome do ponto' onChangeText={txt => this.setState({ trip: txt })}></TextInput>
-          
-          <TouchableOpacity style={styles.btn}>
+          <TextInput style={styles.input} placeholder='Nome da viajem' onChangeText={txt => this.setState({ trip: txt })}></TextInput>
+          <TouchableOpacity style={styles.btn} onPress={this.handleSave}>
             <Text>Salvar viagem</Text>
           </TouchableOpacity>
       </View>
