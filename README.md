@@ -72,9 +72,8 @@ Ciclo de vida de um componente em ReactJS.
   - Ciclo de vida de um componente com Hooks.
   - Ciclo de vida de um componente com classes ES6:
   - Mounting, Updating e Unmounting.
-    Métodos
-    - O método componentDidUpdate.
-    - O método getSnapshotBeforeUpdate.
+  - O método componentDidUpdate.
+  - O método getSnapshotBeforeUpdate.
 
 Tópicos avançados.
 
