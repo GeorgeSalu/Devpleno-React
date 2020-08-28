@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
     flex: 1 
   },
   wrapper: {
-    flex: 1
+    flex: 1,
+    paddingTop: 120
   },
   header: {
     height: 192,
