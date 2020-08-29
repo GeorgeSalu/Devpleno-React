@@ -45,14 +45,6 @@ export default class AddTripScreen extends React.Component {
   }
 
   render() {
-    const trip = {
-      name: 'EuroTrip 2019',
-      price: 'R$ 5000',
-      places: [
-        {id: '1', name: 'Amsterdam', description: 'chegada',  price: 100, lat: 0, long: 0},
-        {id: '2', name: 'bruxelas', description: 'hospedagem', price: 1000, lat: 0, long: 0},
-      ]
-    }
     return (
       <View style={styles.wrapper}>
           <TextInput style={styles.input} placeholder='Nome da viajem' onChangeText={txt => this.setState({ trip: txt })}></TextInput>
