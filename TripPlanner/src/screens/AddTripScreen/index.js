@@ -34,7 +34,6 @@ export default class AddTripScreen extends React.Component {
       latitude: 0,
       longitude: 0
     }
-
     const tripsAS = await AsyncStorage.getItem('trips')
     let trips = []
     if(tripsAS) {
