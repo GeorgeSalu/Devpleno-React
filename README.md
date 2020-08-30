@@ -15,8 +15,7 @@ Alinhamento de conceitos.
   - Integração com Firebase.
   - Functional Components e boas práticas.
   - Testes unitários com react-testing-library.
-  - Teste automatizado do componente Comments.
-  - Teste automatizado do NewComment.
+  - Teste automatizado do componente Comments e NewComment.
   - Injeção de Dependências.
   - Publicação do projeto no Firebase Hosting.
   - Autenticação com Firebase.
