@@ -47,7 +47,7 @@ export default class AddTripScreen extends React.Component {
   render() {
     return (
       <View style={styles.wrapper}>
-          <TextInput style={styles.input} placeholder='Nome da viajem' onChangeText={txt => this.setState({ trip: txt })}></TextInput>
+          <TextInput style={styles.input} placeholder='Nome da viagem' onChangeText={txt => this.setState({ trip: txt })}></TextInput>
           <TouchableOpacity style={styles.btn} onPress={this.handleSave}>
             <Text>Salvar viagem</Text>
           </TouchableOpacity>
