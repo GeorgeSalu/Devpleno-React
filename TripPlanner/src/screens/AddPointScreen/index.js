@@ -89,8 +89,8 @@ class AddPointScreen extends React.Component {
           </View>
         </View>
           <TextInput style={styles.input} placeholder='Nome do ponto' onChangeText={txt => this.setState({ pointName: txt })}></TextInput>
-          <TextInput style={styles.input} placeholder='Descricao' onChangeText={txt => this.setState({ description: txt })}></TextInput>
-          <TextInput style={styles.input} placeholder='Preco' onChangeText={txt => this.setState({ price: parseFloat(txt) })}></TextInput>
+          <TextInput style={styles.input} placeholder='Descrição' onChangeText={txt => this.setState({ description: txt })}></TextInput>
+          <TextInput style={styles.input} placeholder='Preço' onChangeText={txt => this.setState({ price: parseFloat(txt) })}></TextInput>
           <TouchableOpacity style={styles.btn} onPress={this.handleSave}>
             <Text>Salvar ponto</Text>
           </TouchableOpacity>
