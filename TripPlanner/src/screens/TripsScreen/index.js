@@ -16,9 +16,9 @@ export default class TripsScreen extends React.Component {
 
   render() {
     const trips = [
-      {id: '1', name: 'eurotrip 2019', price: 'r$ 200'},
-      {id: '2', name: 'atacama', price: 'r$ 300'},
-      {id: '3', name: 'portugal', price: 'r$ 1300'}
+      {id: '1', name: 'Euro trip 2019', price: 'R$ 200'},
+      {id: '2', name: 'Atacama', price: 'R$ 300'},
+      {id: '3', name: 'Portugal', price: 'R$ 1300'}
     ]
     return(
       <View style={{
