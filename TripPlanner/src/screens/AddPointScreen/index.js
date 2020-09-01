@@ -1,6 +1,6 @@
 import React from 'react'
-import {View, Text, TouchableOpacity,Image, TextInput, AsyncStorage } from 'react-native'
-import MapView, {Marker} from 'react-native-maps'
+import { View, Text, TouchableOpacity,Image, TextInput, AsyncStorage } from 'react-native'
+import MapView, { Marker} from 'react-native-maps'
 import styles from './styles'
 
 class AddPointScreen extends React.Component {

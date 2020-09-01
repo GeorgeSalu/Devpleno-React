@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, TouchableOpacity, TextInput, AsyncStorage } from 'react-native'
+import { View, Text, TouchableOpacity, TextInput, AsyncStorage } from 'react-native'
 import styles from './styles'
 
 export default class AddTripScreen extends React.Component {
