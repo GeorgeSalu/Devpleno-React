@@ -39,7 +39,6 @@ export default class TripScreen extends React.Component {
               <Image source={require('../../assets/icon-chevron-left.png')} />
             </TouchableOpacity>
           </View>
-
           <Text style={styles.tripName}>{trip.name}</Text>
           <Text style={styles.tripPrice}>R$ 5000</Text>
         </View>
