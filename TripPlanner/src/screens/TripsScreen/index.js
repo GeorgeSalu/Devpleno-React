@@ -22,13 +22,13 @@ export default class TripsScreen extends React.Component {
     ]
     return(
       <View style={{
-        flex: 1,
-        justifyContent: 'space-between',
-        alignItems: 'stretch'
-      }}>
-        <View style={{
-          flex: 1
+          flex: 1,
+          justifyContent: 'space-between',
+          alignItems: 'stretch'
         }}>
+        <View style={{
+            flex: 1
+          }}>
           <MapView
             style={{flex: 1}}
             initialRegion={{
@@ -39,17 +39,17 @@ export default class TripsScreen extends React.Component {
             }}
           />
           <TouchableOpacity onPress={() => this.props.navigation.navigate('AddTrip')} style={{
-            position: 'absolute',
-            bottom: 0,
-            right: 20,
-            padding: 10
-          }}>
+              position: 'absolute',
+              bottom: 0,
+              right: 20,
+              padding: 10
+            }}>
             <Image source={require('../../assets/icon-add-trip.png')} />
           </TouchableOpacity>
         </View>
         <View style={{
-          backgroundColor: 'white'
-        }}>
+            backgroundColor: 'white'
+          }}>
           <FlatList
             data={trips}
             renderItem={this.renderItem}
@@ -59,7 +59,6 @@ export default class TripsScreen extends React.Component {
               isIphoneX() ? { marginBottom: 20 } : null
             ]}
           />
-          
         </View>
       </View>
     )
