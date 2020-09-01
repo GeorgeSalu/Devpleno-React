@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, FlatList, TouchableOpacity, Image } from 'react-native'
+import { View, FlatList, TouchableOpacity, Image, AsyncStorage } from 'react-native'
 import Trip from './Trip'
 import isIphoneX from '../../utils/isIphoneX'
 import MapView from 'react-native-maps'
@@ -10,16 +10,29 @@ export default class TripsScreen extends React.Component {
     header: null
   }
 
+  state = {
+    trips: []
+  }
+
   renderItem = item => {
     return <Trip onPress={() => this.props.navigation.navigate('Trip')} title={item.item.name} price={item.item.price}/>
   }
 
+  componentDidMount() {
+    this.loadData()
+  }
+
+  loadData = async() => {
+    const tripsAs = await AsyncStorage.getItem('trips')
+    let trips = []
+    if(tripsAs) {
+      trips = JSON.parse(tripsAs)
+    }
+    this.setState({ trips: trips })
+  }
+
   render() {
-    const trips = [
-      {id: '1', name: 'Euro trip 2019', price: 'R$ 200'},
-      {id: '2', name: 'Atacama', price: 'R$ 300'},
-      {id: '3', name: 'Portugal', price: 'R$ 1300'}
-    ]
+    const { trips } = this.state
     return(
       <View style={{
           flex: 1,
