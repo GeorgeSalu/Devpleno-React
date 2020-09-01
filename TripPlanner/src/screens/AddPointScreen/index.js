@@ -65,7 +65,8 @@ class AddPointScreen extends React.Component {
     return (
       <View style={styles.wrapper}>
         <View style={styles.header}>
-            <MapView style={{flex: 1}} initialRegion={{
+            <MapView style={{flex: 1}} 
+              initialRegion={{
                 latitude: 37.78825,
                 longitude: -122.4324,
                 latitudeDelta: 0.0922,
