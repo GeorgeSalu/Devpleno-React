@@ -55,6 +55,8 @@ class AddPointScreen extends React.Component {
     trips.forEach((trip, index) => {
       if(trip.id === id) {
         trips[index].price = total
+        trips[index].latitude = points[0].position.latitude
+        trips[index].longitude = points[0].position.longitude
       }
     })
   }
@@ -89,7 +91,7 @@ class AddPointScreen extends React.Component {
           <TextInput style={styles.input} placeholder='Nome do ponto' onChangeText={txt => this.setState({ pointName: txt })}></TextInput>
           <TextInput style={styles.input} placeholder='Descricao' onChangeText={txt => this.setState({ description: txt })}></TextInput>
           <TextInput style={styles.input} placeholder='Preco' onChangeText={txt => this.setState({ price: parseFloat(txt) })}></TextInput>
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity style={styles.btn} onPress={this.handleSave}>
             <Text>Salvar ponto</Text>
           </TouchableOpacity>
       </View>
