@@ -34,7 +34,29 @@ class AddPointScreen extends React.Component {
   }
 
   handleSave = async() => {
+    const pointsAs = await AsyncStorage.getItem('trip-')
+    let points = []
+    if(pointsAs) {
+      points = JSON.parse(pointsAs)
+    }
+    points.push(this.state)
+    await AsyncStorage.setItem('trip-', JSON.stringify(points))
 
+    let total = 0
+    points.forEach( p => {
+      total += p.price
+    })
+
+    const tripsAs = await AsyncStorage.getItem('trips')
+    let trips = []
+    if(tripsAs) {
+      trips = JSON.parse(tripsAs)
+    }
+    trips.forEach((trip, index) => {
+      if(trip.id === id) {
+        trips[index].price = total
+      }
+    })
   }
 
   render() {
@@ -66,7 +88,7 @@ class AddPointScreen extends React.Component {
         </View>
           <TextInput style={styles.input} placeholder='Nome do ponto' onChangeText={txt => this.setState({ pointName: txt })}></TextInput>
           <TextInput style={styles.input} placeholder='Descricao' onChangeText={txt => this.setState({ description: txt })}></TextInput>
-          <TextInput style={styles.input} placeholder='Preco' onChangeText={txt => this.setState({ price: txt })}></TextInput>
+          <TextInput style={styles.input} placeholder='Preco' onChangeText={txt => this.setState({ price: parseFloat(txt) })}></TextInput>
           <TouchableOpacity style={styles.btn}>
             <Text>Salvar ponto</Text>
           </TouchableOpacity>
