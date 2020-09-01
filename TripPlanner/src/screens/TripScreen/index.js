@@ -33,7 +33,6 @@ export default class TripScreen extends React.Component {
     }
     return (
       <View style={styles.wrapper}>
-        
         <View style={styles.header}>
           <View style={styles.backButton}>
             <TouchableOpacity onPress={() => this.props.navigation.goBack()} >
