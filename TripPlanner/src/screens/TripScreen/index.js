@@ -43,8 +43,8 @@ export default class TripScreen extends React.Component {
           <Text style={styles.tripPrice}>R$ 5000</Text>
         </View>
         <FlatList style={{
-          flex: 1
-        }}
+            flex: 1
+          }}
           contentContainerStyle={{
             paddingTop: 16,
             paddingLeft: 16
