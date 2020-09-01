@@ -28,7 +28,7 @@ export default class TripScreen extends React.Component {
       price: 'R$ 5000',
       places: [
         {id: '1', name: 'Amsterdam', description: 'chegada',  price: 100, lat: 0, long: 0},
-        {id: '2', name: 'bruxelas', description: 'hospedagem', price: 1000, lat: 0, long: 0},
+        {id: '2', name: 'Bruxelas', description: 'hospedagem', price: 1000, lat: 0, long: 0},
       ]
     }
     return (
