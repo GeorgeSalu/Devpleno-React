@@ -22,6 +22,29 @@ export default class TripScreen extends React.Component {
     )
   }
 
+  componentDidMount() {
+    this.loadData()
+  }
+
+  loadData = async() => {
+
+    const tripsAS = await AsyncStorage.getItem('trips')
+    let trips = []
+    if(tripsAS) {
+      trips = JSON.parse(tripsAS)
+    }
+    trips.push(trip)
+    await AsyncStorage.setItem('trips', JSON.stringify(trips))
+
+
+    const pointsAs = await AsyncStorage.getItem('trip-')
+    let points = []
+    if(pointsAs) {
+      points = JSON.parse(pointsAs)
+    }
+    this.setState({ trips, points: points })
+  }
+
   render() {
     const trip = {
       name: 'EuroTrip 2019',
