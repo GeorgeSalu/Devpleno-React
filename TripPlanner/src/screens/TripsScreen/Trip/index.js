@@ -7,8 +7,12 @@ const Trip = props => {
   return (
     <TouchableOpacity onPress={props.onPress} style={styles.wrapperTrip}>
       <View style={[styles.image, { width: dim.width - 32 }]}><Text>Image</Text></View>
-      <Text>{props.title}</Text>
-      <Text style={styles.price}>{props.price}</Text>
+      <Text>
+        {props.title}
+      </Text>
+      <Text style={styles.price}>
+        {props.price}
+      </Text>
     </TouchableOpacity>
   )
 }
