@@ -42,7 +42,7 @@ export default class TripScreen extends React.Component {
     if(pointsAs) {
       points = JSON.parse(pointsAs)
     }
-    this.setState({ trips, points: points })
+    this.setState({ trips: trips, points: points })
   }
 
   render() {
