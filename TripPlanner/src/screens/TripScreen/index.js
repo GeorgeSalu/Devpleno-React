@@ -27,7 +27,6 @@ export default class TripScreen extends React.Component {
   }
 
   loadData = async() => {
-
     const tripsAS = await AsyncStorage.getItem('trips')
     let trips = []
     if(tripsAS) {
@@ -35,7 +34,6 @@ export default class TripScreen extends React.Component {
     }
     trips.push(trip)
     await AsyncStorage.setItem('trips', JSON.stringify(trips))
-
 
     const pointsAs = await AsyncStorage.getItem('trip-')
     let points = []
