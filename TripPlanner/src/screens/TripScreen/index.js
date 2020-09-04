@@ -21,7 +21,7 @@ export default class TripScreen extends React.Component {
           <Text>{item.item.description}</Text>
         </View>
         <View style={styles.wrapperItemPice}>
-          <Text style={styles.itemPrice}>{item.item.price}</Text>
+          <Text style={styles.itemPrice}>R$ {item.item.price.toFixed(2)}</Text>
         </View>
       </View>
     )
@@ -44,19 +44,26 @@ export default class TripScreen extends React.Component {
     if(pointsAs) {
       points = JSON.parse(pointsAs)
     }
-    this.setState({ trips: trips, points: points })
+
+    let trip = {
+      name: '',
+      price: 0
+    }
+    trips.forEach(t => {
+      if(t.id === id) {
+        trip = t
+      }
+    })
+
+    this.setState({ 
+      trip: trip, 
+      points: points 
+    })
   }
 
   render() {
-    const trip = {
-      name: 'EuroTrip 2019',
-      price: 'R$ 5000',
-      places: [
-        {id: '1', name: 'Amsterdam', description: 'Chegada',  price: 100, lat: 0, long: 0},
-        {id: '2', name: 'Bruxelas', description: 'Hospedagem', price: 1000, lat: 0, long: 0},
-      ]
-    }
-    const { points } = this.state
+    
+    const { points, trip } = this.state
     return (
       <View style={styles.wrapper}>
         <View style={styles.header}>
