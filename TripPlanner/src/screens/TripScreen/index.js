@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, FlatList, TouchableOpacity, Image } from 'react-native'
+import {View, Text, FlatList, TouchableOpacity, Image, AsyncStorage } from 'react-native'
 import styles from './styles'
 
 export default class TripScreen extends React.Component {
@@ -8,11 +8,16 @@ export default class TripScreen extends React.Component {
     header: null
   }
 
+  state = {
+    trips: [],
+    points: []
+  }
+
   renderItem = item => {
     return (
       <View style={styles.item}>
         <View style={styles.wrapperInfo}>
-          <Text style={styles.itemName}>{item.item.name}</Text>
+          <Text style={styles.itemName}>{item.item.pointName}</Text>
           <Text>{item.item.description}</Text>
         </View>
         <View style={styles.wrapperItemPice}>
@@ -32,8 +37,7 @@ export default class TripScreen extends React.Component {
     if(tripsAS) {
       trips = JSON.parse(tripsAS)
     }
-    trips.push(trip)
-    await AsyncStorage.setItem('trips', JSON.stringify(trips))
+    
 
     const pointsAs = await AsyncStorage.getItem('trip-')
     let points = []
@@ -52,6 +56,7 @@ export default class TripScreen extends React.Component {
         {id: '2', name: 'Bruxelas', description: 'Hospedagem', price: 1000, lat: 0, long: 0},
       ]
     }
+    const { points } = this.state
     return (
       <View style={styles.wrapper}>
         <View style={styles.header}>
@@ -71,7 +76,7 @@ export default class TripScreen extends React.Component {
             paddingLeft: 16
           }}
           keyExtractor={item => item.id}
-          data={trip.places}
+          data={points}
           renderItem={this.renderItem}
         />
       </View>
