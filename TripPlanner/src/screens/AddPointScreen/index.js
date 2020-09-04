@@ -10,6 +10,7 @@ class AddPointScreen extends React.Component {
   }
 
   state = {
+    id: new Date().getTime(),
     position: {
       latitude: 37.78825,
       longitude: -122.4324

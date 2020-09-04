@@ -32,13 +32,14 @@ export default class TripScreen extends React.Component {
   }
 
   loadData = async() => {
+    const id = this.props.navigation.state.params.id
     const tripsAS = await AsyncStorage.getItem('trips')
     let trips = []
     if(tripsAS) {
       trips = JSON.parse(tripsAS)
     }
 
-    const pointsAs = await AsyncStorage.getItem('trip-')
+    const pointsAs = await AsyncStorage.getItem('trip-'+id)
     let points = []
     if(pointsAs) {
       points = JSON.parse(pointsAs)
