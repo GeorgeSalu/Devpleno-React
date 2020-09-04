@@ -51,7 +51,8 @@ export default class TripsScreen extends React.Component {
               longitudeDelta: 0.0421
             }}
           />
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('AddTrip', { refresh: this.loadData })} style={{
+          <TouchableOpacity 
+              onPress={() => this.props.navigation.navigate('AddTrip', { refresh: this.loadData })} style={{
               position: 'absolute',
               bottom: 0,
               right: 20,
