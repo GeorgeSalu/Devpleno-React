@@ -67,7 +67,7 @@ export default class TripsScreen extends React.Component {
             data={trips}
             renderItem={this.renderItem}
             horizontal
-            keyExtractor={ item => item.id}
+            keyExtractor={ item => item.id.toString()}
             style={[
               isIphoneX() ? { marginBottom: 20 } : null
             ]}

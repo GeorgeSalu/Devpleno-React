@@ -45,12 +45,13 @@ export default class TripScreen extends React.Component {
     }
 
     let trip = {
-      name: '',
+      trip: '',
       price: 0
     }
     trips.forEach(t => {
       if(t.id === id) {
-        trip = t
+        trip.trip = t.trip
+        trip.price = t.price ? t.price : 0
       }
     })
 
@@ -70,8 +71,8 @@ export default class TripScreen extends React.Component {
               <Image source={require('../../assets/icon-chevron-left.png')} />
             </TouchableOpacity>
           </View>
-          <Text style={styles.tripName}>{trip.name}</Text>
-          <Text style={styles.tripPrice}>R$ 5000</Text>
+          <Text style={styles.tripName}>{trip.trip}</Text>
+          <Text style={styles.tripPrice}>R$ {parseFloat(trip.price).toFixed(2)}</Text>
         </View>
         <FlatList style={{
             flex: 1
@@ -80,7 +81,7 @@ export default class TripScreen extends React.Component {
             paddingTop: 16,
             paddingLeft: 16
           }}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.id.toString()}
           data={points}
           renderItem={this.renderItem}
         />
