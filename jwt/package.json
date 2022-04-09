@@ -9,7 +9,7 @@
     "axios": "^0.20.0",
     "input-moment": "0.4.0",
     "jwt-decode": "2.2.0",
-    "moment": "2.22.1",
+    "moment": "2.29.2",
     "moment-timezone": "0.5.17",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
